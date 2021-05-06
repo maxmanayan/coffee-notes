@@ -1,6 +1,7 @@
 
 
 const Note = (props) => {
+  const { id, title, body } = props
 
   const dragStart = (e) => {
     console.log('drag start')
@@ -22,13 +23,14 @@ const Note = (props) => {
 
   return(
     <div
-      id={props.id}
+      id={id}
       className="note"
       draggable="true"
       onDragStart={dragStart}
       onDragOver={dragOver}
     >
-      <p>This is a Note!</p>
+      <h1>{title}</h1>
+      <p>{body}</p>
     </div>
   )
 }

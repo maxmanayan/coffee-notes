@@ -28,9 +28,7 @@ const Home = () => {
       {/* </TodoBoard> */}
 
 
-      <CompletedBoard className="board">
-
-      </CompletedBoard>
+      <CompletedBoard className="board" />
     </div>
   )
 }
