@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Note from "./Note";
+import { Droppable } from "react-beautiful-dnd";
 
 
 const TodoBoard = (props) => {
@@ -15,46 +16,29 @@ const TodoBoard = (props) => {
     try {
       let res = await axios.get('/api/get_todo_notes')
       setNotes(res.data)
+      console.log('got todo notes')
     } catch (error) {
       console.log(error)
     }
   }
 
   const renderNotes = () => {
-    return notes.map( note => {
+    return notes.map( (note, index) => {
       return (
-        <Note key={note.id} id={note.id} title={note.title} body={note.body} />
+        <Note index={index} key={note.id} id={note.id} title={note.title} body={note.body} />
       )
     })
   }
 
-  const drop = (e) => {
-    console.log('todo - dropped')
-    e.preventDefault()
-    const note_id = e.dataTransfer.getData('note_id')
-
-    console.log('note_id', note_id)
-
-    const note = document.getElementById(note_id)
-
-    console.log('note', note)
-    note.style.display = 'block'
-
-    e.target.appendChild(note)
-  }
-
-  const dragOver = (e) => {
-    console.log('todo - dragOver')
-    e.preventDefault()
-  }
-
   return(
-    <div 
-      id={props.id}
-      className="todo-board"
-      onDrop={drop}
-      onDragOver={dragOver}
-    >
+    // <Droppable droppableId="notes">
+    //   {(provided) => {
+    //     <div {...provided.droppableProps} ref={provided.innerRef} >
+    //       { notes && renderNotes() }
+    //     </div>
+    //   }}
+    // </Droppable>
+    <div>
       { notes && renderNotes() }
     </div>
   )

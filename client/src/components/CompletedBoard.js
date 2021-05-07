@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Note from "./Note";
+import { Droppable } from "react-beautiful-dnd";
 
 const CompletedBoard = (props) => {
 
@@ -14,44 +15,33 @@ const CompletedBoard = (props) => {
     try {
       let res = await axios.get('/api/get_completed_notes')
       setNotes(res.data)
+      console.log('got completed notes')
     } catch (error) {
       console.log(error)
     }
   }
 
   const renderNotes = () => {
-    return notes.map( note => {
+    return notes.map( (note, index) => {
       return (
-        <Note key={note.id} id={note.id} title={note.title} body={note.body} />
+        <div>
+          <Note index={index} key={note.id} id={note.id} title={note.title} body={note.body} />
+        </div>
       )
     })
   }
 
-  const drop = (e) => {
-    console.log('completed - dropped')
-    e.preventDefault()
-    const note_id = e.dataTransfer.getData('note_id')
-
-    const note = document.getElementById(note_id)
-    note.style.display = 'block'
-
-    e.target.appendChild(note)
-  }
-
-  const dragOver = (e) => {
-    console.log('completed - dragOver')
-    e.preventDefault()
-  }
-
+  //Droppable breaks app ... give error > `Invariant failed: provided.innerRef has not been provided with a HTMLElement.`
   return(
-    <div 
-      id={props.id}
-      className="completed-board"
-      onDrop={drop}
-      onDragOver={dragOver}
-    >
-      {notes && renderNotes()}
-    </div>
+    <Droppable droppableId="notes">
+      {(provided) => {
+        <div {...provided.droppableProps} ref={provided.innerRef} >
+          <div>
+            { notes && renderNotes() }
+          </div>
+        </div>
+      }}
+    </Droppable>
   )
 }
 

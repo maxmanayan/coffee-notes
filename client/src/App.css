@@ -1,50 +1,20 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
+
+.App {
+  text-align: center;
+}
 
 body{
   background-color: #f3f3f3;
 }
 
-
-.flexbox {
-  display: flex;
-  justify-content: space-between;
-
-  width: 100%;
-  max-width: 1440px;
-  height: 100vh;
-
-  overflow: hidden;
-
-  margin: 0 auto;
-  padding: 15px;
+.home {
+  background: red;
 }
 
-.flexbox .board {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  max-width: 700px;
-
-  background-color: #313131;
-
-  padding: 15px;
+.board-container {
+  background: blue;
 }
-
-
-.flexbox .board .card {
-  padding: 15px 25px;
-  background: #f3f3f3;
-
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-
 
 .todo-board {
   display: flex;
@@ -90,8 +60,8 @@ body{
   background: yellow;
   padding: 25px;
 
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
 
   margin: 15px;
 }
