@@ -10,7 +10,7 @@ const DragAndDrop = () => {
   const [ todoNotes, setTodoNotes ] = useState([])
   const [ completedNotes, setCompletedNotes ] = useState([])
 
-  const [ viewNoteID, setViewNoteID ] = useState(null)
+  const [ viewNote, setViewNote ] = useState(null)
 
   const [ showViewNoteModal, setShowViewNoteModal ] = useState(false)
   const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
@@ -27,7 +27,6 @@ const DragAndDrop = () => {
     try {
       let res = await axios.get('/api/get_todo_notes')
       setTodoNotes(res.data)
-      console.log('got todo notes')
     } catch (error) {
       console.log(error)
     }
@@ -37,7 +36,6 @@ const DragAndDrop = () => {
     try {
       let res = await axios.get('/api/get_completed_notes')
       setCompletedNotes(res.data)
-      console.log('got completed notes')
     } catch (error) {
       console.log(error)
     }
@@ -52,9 +50,17 @@ const DragAndDrop = () => {
       console.log(error)
     }
   }
+
+  const getNote = async (noteID) => {
+    try {
+      let res = await axios.get(`/api/notes/${noteID}`)
+      setViewNote(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  } 
   
   const openCreateNoteModal = () => {
-    console.log('open modal')
     setShowCreateNoteModal(true)
   }
   
@@ -63,14 +69,12 @@ const DragAndDrop = () => {
   }
     
   const openViewNoteModal = (id) => {
-    console.log('open modal')
-    console.log('id', id)
-    setViewNoteID(id)
+    getNote(id)
     setShowViewNoteModal(true)
   }
   
   const closeViewNoteModal = () => {
-    setViewNoteID(null)
+    setViewNote(null)
     setShowViewNoteModal(false)
   }
     
@@ -193,12 +197,12 @@ const DragAndDrop = () => {
         </div>
       </DragDropContext>
       {showCreateNoteModal && 
-      <CreateNoteModal 
-        closeCreateNoteModal={closeCreateNoteModal} getTodoNotes={getTodoNotes}
+        <CreateNoteModal 
+          closeCreateNoteModal={closeCreateNoteModal} getTodoNotes={getTodoNotes}
       />}
-      {showViewNoteModal && 
-      <ViewNoteModal 
-        closeViewNoteModal={closeViewNoteModal} viewNoteID={viewNoteID}
+      {viewNote && 
+        <ViewNoteModal 
+          closeViewNoteModal={closeViewNoteModal} viewNote={viewNote}
       />}
   </div>
   );
