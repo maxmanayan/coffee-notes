@@ -4,7 +4,7 @@ import { Button, Form, Modal } from "react-bootstrap";
 import * as Icon from 'react-bootstrap-icons';
 
 const CreateNoteModal = (props) => {
-  const { closeNoteModal, getTodoNotes } = props
+  const { closeCreateNoteModal, getTodoNotes } = props
   const [ title, setTitle ] = useState('')
   const [ info, setInfo ] = useState('')
 
@@ -19,7 +19,7 @@ const CreateNoteModal = (props) => {
     } catch (error) {
       console.log(error)
     } finally {
-      closeNoteModal()
+      closeCreateNoteModal()
     }
   }
 
@@ -29,7 +29,7 @@ const CreateNoteModal = (props) => {
       <Modal.Header >
         <Modal.Title>Create New Note</Modal.Title>
         <div style={{cursor: 'pointer'}}>
-          <Icon.X onClick={closeNoteModal} size={20} />
+          <Icon.X onClick={closeCreateNoteModal} size={20} />
         </div>
       </Modal.Header>
       <Modal.Body>

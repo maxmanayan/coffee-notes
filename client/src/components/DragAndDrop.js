@@ -3,13 +3,18 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import axios from 'axios';
 import * as Icon from 'react-bootstrap-icons';
 import CreateNoteModal from "../components/CreateNoteModal";
+import ViewNoteModal from './ViewNoteModal';
 
 
 const DragAndDrop = () => {
   const [ todoNotes, setTodoNotes ] = useState([])
   const [ completedNotes, setCompletedNotes ] = useState([])
 
-  const [showNoteModal, setShowNoteModal] = useState(false)
+  const [ viewNoteID, setViewNoteID ] = useState(null)
+
+  const [ showViewNoteModal, setShowViewNoteModal ] = useState(false)
+  const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
+
   
    
   useEffect(() => {
@@ -48,13 +53,25 @@ const DragAndDrop = () => {
     }
   }
   
-  const openNoteModal = () => {
+  const openCreateNoteModal = () => {
     console.log('open modal')
-    setShowNoteModal(true)
+    setShowCreateNoteModal(true)
   }
   
-  const closeNoteModal = () => {
-    setShowNoteModal(false)
+  const closeCreateNoteModal = () => {
+    setShowCreateNoteModal(false)
+  }
+    
+  const openViewNoteModal = (id) => {
+    console.log('open modal')
+    console.log('id', id)
+    setViewNoteID(id)
+    setShowViewNoteModal(true)
+  }
+  
+  const closeViewNoteModal = () => {
+    setViewNoteID(null)
+    setShowViewNoteModal(false)
   }
     
   const handleOnDragEnd = (result) => {
@@ -106,7 +123,7 @@ const DragAndDrop = () => {
     <div>
       <div style={{cursor: 'pointer'}}>
         <Icon.PlusSquare 
-          onClick={openNoteModal}
+          onClick={openCreateNoteModal}
           size={50} 
         />
       </div>
@@ -129,7 +146,12 @@ const DragAndDrop = () => {
                             </div>
                             {/* <p>{note.id}</p> */}
                             <h4>{note.title}</h4>
-                            <p>{note.body}</p>
+                            {/* <p>{note.body}</p> */}
+                            <div>
+                              <div style={{cursor: 'pointer'}} >
+                                <Icon.List onClick={() => openViewNoteModal(note.id)} />
+                              </div>
+                            </div>
                           </div>
                         )}
                       </Draggable>
@@ -170,9 +192,13 @@ const DragAndDrop = () => {
           </div>
         </div>
       </DragDropContext>
-      {showNoteModal && 
+      {showCreateNoteModal && 
       <CreateNoteModal 
-        closeNoteModal={closeNoteModal} getTodoNotes={getTodoNotes}
+        closeCreateNoteModal={closeCreateNoteModal} getTodoNotes={getTodoNotes}
+      />}
+      {showViewNoteModal && 
+      <ViewNoteModal 
+        closeViewNoteModal={closeViewNoteModal} viewNoteID={viewNoteID}
       />}
   </div>
   );
