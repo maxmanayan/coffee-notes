@@ -78,3 +78,9 @@ body{
   flex-direction: row;
   justify-content: flex-end;
 }
+
+.note-view-edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

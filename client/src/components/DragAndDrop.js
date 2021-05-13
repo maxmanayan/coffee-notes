@@ -4,6 +4,7 @@ import axios from 'axios';
 import * as Icon from 'react-bootstrap-icons';
 import CreateNoteModal from "../components/CreateNoteModal";
 import ViewNoteModal from './ViewNoteModal';
+import UpdateNoteModal from './UpdateNoteModal';
 
 
 const DragAndDrop = () => {
@@ -11,9 +12,11 @@ const DragAndDrop = () => {
   const [ completedNotes, setCompletedNotes ] = useState([])
 
   const [ viewNote, setViewNote ] = useState(null)
+  const [ updateNote, setUpdateNote ] = useState(null)
 
   const [ showViewNoteModal, setShowViewNoteModal ] = useState(false)
   const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
+  const [ showUpdateNoteModal, setShowUpdateNoteModal ] = useState(false)
 
   
    
@@ -59,6 +62,18 @@ const DragAndDrop = () => {
       console.log(error)
     }
   } 
+
+  // const editNote = async (id, title, info, completed) => {
+  //   try {
+  //     let res = await axios.put(`/api/notes/ ${id}`, {
+  //       title: title,
+  //       body: info,
+  //       completed: completed
+  //     })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
   
   const openCreateNoteModal = () => {
     setShowCreateNoteModal(true)
@@ -67,15 +82,25 @@ const DragAndDrop = () => {
   const closeCreateNoteModal = () => {
     setShowCreateNoteModal(false)
   }
+
+  const openUpdateNoteModal = (note) => {
+    setUpdateNote(note)
+    // setShowUpdateNoteModal(true)
+  }
+  
+  const closeUpdateNoteModal = () => {
+    setUpdateNote(null)
+    // setShowUpdateNoteModal(false)
+  }
     
   const openViewNoteModal = (id) => {
     getNote(id)
-    setShowViewNoteModal(true)
+    // setShowViewNoteModal(true)
   }
   
   const closeViewNoteModal = () => {
     setViewNote(null)
-    setShowViewNoteModal(false)
+    // setShowViewNoteModal(false)
   }
     
   const handleOnDragEnd = (result) => {
@@ -151,9 +176,12 @@ const DragAndDrop = () => {
                             {/* <p>{note.id}</p> */}
                             <h4>{note.title}</h4>
                             {/* <p>{note.body}</p> */}
-                            <div>
+                            <div className='note-view-edit'>
                               <div style={{cursor: 'pointer'}} >
                                 <Icon.List onClick={() => openViewNoteModal(note.id)} />
+                              </div>
+                              <div style={{cursor: 'pointer'}} >
+                                <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
                               </div>
                             </div>
                           </div>
@@ -207,6 +235,11 @@ const DragAndDrop = () => {
       {viewNote && 
         <ViewNoteModal 
           closeViewNoteModal={closeViewNoteModal} viewNote={viewNote}
+      />}
+      {updateNote && 
+        <UpdateNoteModal 
+          closeUpdateNoteModal={closeUpdateNoteModal} updateNote={updateNote} 
+          getTodoNotes={getTodoNotes} getCompletedNotes={getCompletedNotes}
       />}
   </div>
   );
