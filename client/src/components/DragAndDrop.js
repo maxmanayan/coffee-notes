@@ -101,22 +101,18 @@ const DragAndDrop = () => {
 
   const openUpdateNoteModal = (note) => {
     setUpdateNote(note)
-    // setShowUpdateNoteModal(true)
   }
   
   const closeUpdateNoteModal = () => {
     setUpdateNote(null)
-    // setShowUpdateNoteModal(false)
   }
     
   const openViewNoteModal = (id) => {
     getNote(id)
-    // setShowViewNoteModal(true)
   }
   
   const closeViewNoteModal = () => {
     setViewNote(null)
-    // setShowViewNoteModal(false)
   }
     
   const handleOnDragEnd = (result) => {
@@ -148,8 +144,7 @@ const DragAndDrop = () => {
       const todos = Array.from(todoNotes);
       const [newCompleted] = todos.splice(result.source.index, 1);
 
-      setTodoNotes(todos);
-      setCompletedNotes([...completedNotes, newCompleted])
+      moveToCompleted(newCompleted)
     }
 
     // moving note from todo list to completed list
@@ -157,8 +152,7 @@ const DragAndDrop = () => {
       const completes = Array.from(completedNotes);
       const [newTodo] = completes.splice(result.source.index, 1);
 
-      setCompletedNotes(completes);
-      setTodoNotes([...todoNotes, newTodo])
+      moveToTodo(newTodo)
     }
 
 
