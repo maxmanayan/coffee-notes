@@ -72,3 +72,9 @@ body{
 
   margin: 15px;
 }
+
+.delete-note {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

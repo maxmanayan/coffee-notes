@@ -37,6 +37,16 @@ const DragAndDrop = () => {
       console.log(error)
     }
   }
+
+  const deleteNote = async (id) => {
+    try {
+      let res = await axios.delete(`/api/notes/${id}`)
+      getTodoNotes()
+      getCompletedNotes()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
   const openNoteModal = () => {
     console.log('open modal')
@@ -112,8 +122,13 @@ const DragAndDrop = () => {
                       <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                         {(provided) => (
                           <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
-                            <p>{note.id}</p>
-                            <h1>{note.title}</h1>
+                            <div className='delete-note'>
+                              <div  style={{cursor: 'pointer'}}>
+                                <Icon.X onClick={() => deleteNote(note.id)} />
+                              </div>
+                            </div>
+                            {/* <p>{note.id}</p> */}
+                            <h4>{note.title}</h4>
                             <p>{note.body}</p>
                           </div>
                         )}
@@ -135,8 +150,13 @@ const DragAndDrop = () => {
                       <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                         {(provided) => (
                           <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
-                            <p>{note.id}</p>
-                            <h1>{note.title}</h1>
+                            <div className='delete-note'>
+                              <div  style={{cursor: 'pointer'}}>
+                                <Icon.X onClick={() => deleteNote(note.id)} />
+                              </div>
+                            </div>
+                            {/* <p>{note.id}</p> */}
+                            <h4>{note.title}</h4>
                             <p>{note.body}</p>
                           </div>
                         )}
