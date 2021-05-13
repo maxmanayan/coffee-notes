@@ -132,7 +132,7 @@ const DragAndDrop = () => {
         />
       </div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <div style={{display: 'flex'}}>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
           <div style={{background: 'red', width: '45%'}}>
             <h1>Todo</h1>
             <Droppable droppableId="todo">
@@ -183,7 +183,11 @@ const DragAndDrop = () => {
                             </div>
                             {/* <p>{note.id}</p> */}
                             <h4>{note.title}</h4>
-                            <p>{note.body}</p>
+                            <div>
+                              <div style={{cursor: 'pointer'}} >
+                                <Icon.List onClick={() => openViewNoteModal(note.id)} />
+                              </div>
+                            </div>
                           </div>
                         )}
                       </Draggable>
