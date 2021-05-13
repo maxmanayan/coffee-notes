@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Note from "./Note";
-import { Droppable } from "react-beautiful-dnd";
+import { Draggable, Droppable } from "react-beautiful-dnd";
 
 
 const TodoBoard = (props) => {
@@ -25,22 +25,29 @@ const TodoBoard = (props) => {
   const renderNotes = () => {
     return notes.map( (note, index) => {
       return (
-        <Note index={index} key={note.id} id={note.id} title={note.title} body={note.body} />
+        // <Draggable key={note.id} draggableId={note.body} index={index}>
+        //   {provided => (
+        //     <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+              <Note key={note.id} index={index} id={note.id} title={note.title} body={note.body} />
+        //     </div>
+        //   )}
+        // </Draggable>
       )
     })
   }
 
   return(
-    // <Droppable droppableId="notes">
-    //   {(provided) => {
-    //     <div {...provided.droppableProps} ref={provided.innerRef} >
-    //       { notes && renderNotes() }
-    //     </div>
-    //   }}
-    // </Droppable>
-    <div>
-      { notes && renderNotes() }
-    </div>
+    <Droppable droppableId="notes" >
+      {(provided) => (
+        <div {...provided.droppableProps} ref={provided.innerRef} >
+          { notes && renderNotes() }
+          {provided.placeholder}
+        </div>
+      )}
+    </Droppable>
+    // <div>
+    //   { notes && renderNotes() }
+    // </div>
   )
 }
 
