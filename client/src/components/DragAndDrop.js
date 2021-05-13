@@ -63,17 +63,33 @@ const DragAndDrop = () => {
     }
   } 
 
-  // const editNote = async (id, title, info, completed) => {
-  //   try {
-  //     let res = await axios.put(`/api/notes/ ${id}`, {
-  //       title: title,
-  //       body: info,
-  //       completed: completed
-  //     })
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+  const moveToCompleted = async (note) => {
+    try {
+      await axios.put(`/api/notes/${note.id}`, {
+        title: note.title,
+        body: note.body,
+        completed: true
+      })
+      getTodoNotes()
+      getCompletedNotes()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  const moveToTodo = async (note) => {
+    try {
+      await axios.put(`/api/notes/${note.id}`, {
+        title: note.title,
+        body: note.body,
+        completed: false
+      })
+      getTodoNotes()
+      getCompletedNotes()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
   const openCreateNoteModal = () => {
     setShowCreateNoteModal(true)
@@ -183,6 +199,9 @@ const DragAndDrop = () => {
                               <div style={{cursor: 'pointer'}} >
                                 <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
                               </div>
+                              <div style={{cursor: 'pointer'}} >
+                                <Icon.ArrowRightSquare onClick={() => moveToCompleted(note)} />
+                              </div>
                             </div>
                           </div>
                         )}
@@ -217,6 +236,9 @@ const DragAndDrop = () => {
                               </div>
                               <div style={{cursor: 'pointer'}} >
                                 <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
+                              </div>
+                              <div style={{cursor: 'pointer'}} >
+                                <Icon.ArrowLeftSquare onClick={() => moveToTodo(note)} />
                               </div>
                             </div>
                           </div>
