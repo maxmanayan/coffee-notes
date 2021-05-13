@@ -211,9 +211,12 @@ const DragAndDrop = () => {
                             </div>
                             {/* <p>{note.id}</p> */}
                             <h4>{note.title}</h4>
-                            <div>
+                            <div className='note-view-edit'>
                               <div style={{cursor: 'pointer'}} >
                                 <Icon.List onClick={() => openViewNoteModal(note.id)} />
+                              </div>
+                              <div style={{cursor: 'pointer'}} >
+                                <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
                               </div>
                             </div>
                           </div>
