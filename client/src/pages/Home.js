@@ -1,38 +1,35 @@
 import React, { useState } from "react";
-import { DragDropContext } from "react-beautiful-dnd";
-import CompletedBoard from "../components/CompletedBoard";
-import DnDTutorial from "../components/DnDTutorial";
 import DragAndDrop from "../components/DragAndDrop";
-import TodoBoard from "../components/TodoBoard";
+import * as Icon from 'react-bootstrap-icons';
+import CreateNoteModal from "../components/CreateNoteModal";
 
 const Home = () => {
-  const [characters, updateCharacters] = useState('');
+  const [showNoteModal, setShowNoteModal] = useState(false)
+  
 
-  const handleOnDragEnd = () => {
-
+  const openNoteModal = () => {
+    console.log('open modal')
+    setShowNoteModal(true)
   }
-
-  // function handleOnDragEnd(result) {
-  //   if (!result.destination) return;
-
-  //   const items = Array.from(characters);
-  //   const [reorderedItem] = items.splice(result.source.index, 1);
-  //   items.splice(result.destination.index, 0, reorderedItem);
-
-  //   updateCharacters(items);
-  // }
+  
+  const closeNoteModal = () => {
+    setShowNoteModal(false)
+  }
 
   return(
     <div className='home'>
       <h1>Home</h1>
+      <div style={{cursor: 'pointer'}}>
+        <Icon.PlusSquare 
+          onClick={openNoteModal}
+          size={50} 
+        />
+      </div>
       <DragAndDrop />
-      {/* <DnDTutorial /> */}
-      {/* <DragDropContext onDragEnd={handleOnDragEnd}>
-        <div className='board-container'>
-          <TodoBoard />
-          <CompletedBoard />
-        </div>
-      </DragDropContext> */}
+      {showNoteModal && 
+      <CreateNoteModal 
+        closeNoteModal={closeNoteModal}
+      />}
     </div>
   )
 }
