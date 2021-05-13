@@ -106,7 +106,7 @@ const DragAndDrop = () => {
             <h1>Todo</h1>
             <Droppable droppableId="todo">
               {(provided) => (
-                <div {...provided.droppableProps} ref={provided.innerRef}>
+                <div className='todo-board' {...provided.droppableProps} ref={provided.innerRef}>
                   {todoNotes && todoNotes.map((note, index) => {
                     return (
                       <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
@@ -129,7 +129,7 @@ const DragAndDrop = () => {
             <h1>Completed</h1>
             <Droppable droppableId="completed">
               {(provided) => (
-                <div style={{background: 'white', minHeight: '100vh'}} {...provided.droppableProps} ref={provided.innerRef}>
+                <div className='completed-board' {...provided.droppableProps} ref={provided.innerRef}>
                   {completedNotes && completedNotes.map((note, index) => {
                     return (
                       <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
