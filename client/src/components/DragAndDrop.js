@@ -1,16 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import axios from 'axios';
+import * as Icon from 'react-bootstrap-icons';
+import CreateNoteModal from "../components/CreateNoteModal";
 
 
 const DragAndDrop = () => {
   const [ todoNotes, setTodoNotes ] = useState([])
   const [ completedNotes, setCompletedNotes ] = useState([])
 
+  const [showNoteModal, setShowNoteModal] = useState(false)
+  
+   
   useEffect(() => {
     getTodoNotes()
+    getCompletedNotes()
   },[])
-
+  
+  
+  const getTodoNotes = async () => {
+    try {
+      let res = await axios.get('/api/get_todo_notes')
+      setTodoNotes(res.data)
+      console.log('got todo notes')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  const getCompletedNotes = async () => {
+    try {
+      let res = await axios.get('/api/get_completed_notes')
+      setCompletedNotes(res.data)
+      console.log('got completed notes')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  const openNoteModal = () => {
+    console.log('open modal')
+    setShowNoteModal(true)
+  }
+  
+  const closeNoteModal = () => {
+    setShowNoteModal(false)
+  }
+    
   const handleOnDragEnd = (result) => {
     const { destination, source, draggableId } = result;
 
@@ -37,48 +73,33 @@ const DragAndDrop = () => {
 
     // moving note from todo list to completed list
     if (source.droppableId === 'todo' && destination.droppableId === 'completed') {
-    const todos = Array.from(todoNotes);
-    const [newCompleted] = todos.splice(result.source.index, 1);
+      const todos = Array.from(todoNotes);
+      const [newCompleted] = todos.splice(result.source.index, 1);
 
-    setTodoNotes(todos);
-    setCompletedNotes([...completedNotes, newCompleted])
+      setTodoNotes(todos);
+      setCompletedNotes([...completedNotes, newCompleted])
     }
 
     // moving note from todo list to completed list
     if (source.droppableId === 'completed' && destination.droppableId === 'todo') {
-    const completes = Array.from(completedNotes);
-    const [newTodo] = completes.splice(result.source.index, 1);
+      const completes = Array.from(completedNotes);
+      const [newTodo] = completes.splice(result.source.index, 1);
 
-    setCompletedNotes(completes);
-    setTodoNotes([...todoNotes, newTodo])
+      setCompletedNotes(completes);
+      setTodoNotes([...todoNotes, newTodo])
     }
 
 
   }
-
-  const getTodoNotes = async () => {
-    try {
-      let res = await axios.get('/api/get_todo_notes')
-      setTodoNotes(res.data)
-      console.log('got todo notes')
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  const getCompletedNotes = async () => {
-    try {
-      let res = await axios.get('/api/get_completed_notes')
-      setCompletedNotes(res.data)
-      console.log('got completed notes')
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
 
   return (
-    <div className="App">
+    <div>
+      <div style={{cursor: 'pointer'}}>
+        <Icon.PlusSquare 
+          onClick={openNoteModal}
+          size={50} 
+        />
+      </div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <div style={{display: 'flex'}}>
           <div style={{background: 'red', width: '45%'}}>
@@ -108,7 +129,7 @@ const DragAndDrop = () => {
             <h1>Completed</h1>
             <Droppable droppableId="completed">
               {(provided) => (
-                <div style={{background: 'white', minHeight: '200px'}} {...provided.droppableProps} ref={provided.innerRef}>
+                <div style={{background: 'white', minHeight: '100vh'}} {...provided.droppableProps} ref={provided.innerRef}>
                   {completedNotes && completedNotes.map((note, index) => {
                     return (
                       <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
@@ -129,6 +150,10 @@ const DragAndDrop = () => {
           </div>
         </div>
       </DragDropContext>
+      {showNoteModal && 
+      <CreateNoteModal 
+        closeNoteModal={closeNoteModal} getTodoNotes={getTodoNotes}
+      />}
   </div>
   );
 }
