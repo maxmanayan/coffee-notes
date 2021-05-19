@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
+* {
+  font-family: 'Mulish', sans-serif;
+}
 
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 body{
-  background-color: #f3f3f3;
+  background-color: #628EAC;
 }
 
 .home {
-  background: aliceblue;
+  background: #628fac8c;
+  height: 100vh;
+
 }
 
 .board-container {
@@ -20,6 +27,7 @@ body{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -30,9 +38,10 @@ body{
   width: 100%;
   max-width: 700px;
 
-  border: 1px solid black;
+  /* border-right: 1px solid rgb(92, 92, 92); */
+  border-radius: 5px 0 0 5px;
 
-  background-color: #f3f3f3;
+  background-color: #628fac8c;
 
   padding: 15px;
 }
@@ -41,6 +50,7 @@ body{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -51,9 +61,11 @@ body{
   width: 100%;
   max-width: 700px;
 
-  border: 1px solid black;
+  /* border-right: 1px solid rgb(92, 92, 92); */
+   border-radius: 0 5px 5px 0;
 
-  background-color: aliceblue;
+
+  background-color: #628EAC;
 
   padding: 15px;
 
@@ -62,15 +74,22 @@ body{
 
 
 .note {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   cursor: pointer;
 
-  background: yellow;
+  background: #FFF9BD;
   padding: 25px;
 
   height: 200px;
   width: 200px;
 
   margin: 15px;
+
+  box-shadow: 2px 2px rgb(204, 204, 204);
+  border-radius: 5px;
 }
 
 .delete-note {

@@ -160,7 +160,7 @@ const DragAndDrop = () => {
 
   return (
     <div>
-      <div style={{cursor: 'pointer'}}>
+      <div style={{cursor: 'pointer', display: 'flex', justifyContent: 'flex-start', marginLeft: '3em'}}>
         <Icon.PlusSquare 
           onClick={openCreateNoteModal}
           size={50} 
@@ -168,7 +168,7 @@ const DragAndDrop = () => {
       </div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <div style={{display: 'flex', justifyContent: 'center'}}>
-          <div style={{background: 'red', width: '45%'}}>
+          <div>
             <h1>Todo</h1>
             <Droppable droppableId="todo">
               {(provided) => (
@@ -207,7 +207,7 @@ const DragAndDrop = () => {
               )}
             </Droppable>
           </div>
-          <div style={{background: 'blue', width: '45%'}}>
+          <div>
             <h1>Completed</h1>
             <Droppable droppableId="completed">
               {(provided) => (
