@@ -12,8 +12,9 @@ const AuthProvider = (props) => {
   const handleRegister = async (user, history) => {
     try {
       let res = await axios.post("/api/auth", user)
+      console.log('in handleRegister', res.data.data)
       setUser({ user: res.data.data })
-      history.push("/")
+      history.push("/home")
     } catch (error) {
       console.log(error)
     }
@@ -22,8 +23,9 @@ const AuthProvider = (props) => {
   const handleLogin = async (user, history) => {
     try {
       let res = await axios.post("/api/auth/sign_in", user)
+      console.log('in handleLogin', res.data.data)
       setUser({ user: res.data.data })
-      history.push("/")
+      history.push("/home")
     } catch (error) {
       console.log(error)
     }

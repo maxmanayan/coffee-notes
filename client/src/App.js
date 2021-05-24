@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route exact path='/loginRegister' component={LoginRegister} />
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={LoginRegister} />
+        <Route exact path='/home' component={Home} />
       </Switch>
     </div>
   );
