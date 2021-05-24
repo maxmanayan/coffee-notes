@@ -11,7 +11,7 @@ const NavBar = () => {
     <div>
       <Navbar style={{background: '#628fac8c'}}>
         <Nav>
-          <Nav.Link to='/' >Home</Nav.Link>
+          <Nav.Link to='/home' >Home</Nav.Link>
           {user && <Nav.Link onClick={() => handleLogout(history)} >Logout</Nav.Link>}
         </Nav>
       </Navbar>
