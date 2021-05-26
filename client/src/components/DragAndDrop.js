@@ -163,7 +163,7 @@ const DragAndDrop = () => {
     <div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <div style={{display: 'flex', justifyContent: 'center'}}>
-          <Col md={{span:3, offset:6}}>
+          <Col>
             <div>
               <div style={{display: 'flex', justifyContent: 'center'}}>
                 <h1>Todo</h1>
@@ -212,7 +212,7 @@ const DragAndDrop = () => {
               </Droppable>
             </div>
           </Col>
-          <Col>
+          <Col >
             <div>
               <h1>Completed</h1>
               <Droppable droppableId="completed">
