@@ -7,7 +7,7 @@ const Home = () => {
   return(
     <div className='home'>
       <Row>
-        <Col>
+        <Col style={{background: 'aliceblue'}}>
           <TodoList />
         </Col>
         <Col md={5}>
