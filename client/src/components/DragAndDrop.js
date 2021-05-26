@@ -5,6 +5,7 @@ import * as Icon from 'react-bootstrap-icons';
 import CreateNoteModal from "../components/CreateNoteModal";
 import ViewNoteModal from './ViewNoteModal';
 import UpdateNoteModal from './UpdateNoteModal';
+import { Col } from 'react-bootstrap';
 
 
 const DragAndDrop = () => {
@@ -160,91 +161,97 @@ const DragAndDrop = () => {
 
   return (
     <div>
-      <div style={{cursor: 'pointer', display: 'flex', justifyContent: 'flex-start', marginLeft: '3em'}}>
-        <Icon.PlusSquare 
-          onClick={openCreateNoteModal}
-          size={50} 
-        />
-      </div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <div style={{display: 'flex', justifyContent: 'center'}}>
-          <div>
-            <h1>Todo</h1>
-            <Droppable droppableId="todo">
-              {(provided) => (
-                <div className='todo-board' {...provided.droppableProps} ref={provided.innerRef}>
-                  {todoNotes && todoNotes.map((note, index) => {
-                    return (
-                      <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
-                        {(provided) => (
-                          <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
-                            <div className='delete-note'>
-                              <div  style={{cursor: 'pointer'}}>
-                                <Icon.X onClick={() => deleteNote(note.id)} />
-                              </div>
-                            </div>
-                            {/* <p>{note.id}</p> */}
-                            <h4>{note.title}</h4>
-                            {/* <p>{note.body}</p> */}
-                            <div className='note-view-edit'>
-                              <div style={{cursor: 'pointer'}} >
-                                <Icon.List onClick={() => openViewNoteModal(note.id)} />
-                              </div>
-                              <div style={{cursor: 'pointer'}} >
-                                <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
-                              </div>
-                              <div style={{cursor: 'pointer'}} >
-                                <Icon.ArrowRightSquare onClick={() => moveToCompleted(note)} />
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                      </Draggable>
-                    );
-                  })}
-                  {provided.placeholder}
+          <Col>
+            <div>
+              <div style={{display: 'flex', justifyContent: 'center'}}>
+                <h1>Todo</h1>
+                <div style={{cursor: 'pointer', display: 'flex', justifyContent: 'flex-start', marginLeft: '1em'}}>
+                  <Icon.PlusSquare 
+                    onClick={openCreateNoteModal}
+                    size={40} 
+                  />
                 </div>
-              )}
-            </Droppable>
-          </div>
-          <div>
-            <h1>Completed</h1>
-            <Droppable droppableId="completed">
-              {(provided) => (
-                <div className='completed-board' {...provided.droppableProps} ref={provided.innerRef}>
-                  {completedNotes && completedNotes.map((note, index) => {
-                    return (
-                      <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
-                        {(provided) => (
-                          <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
-                            <div className='delete-note'>
-                              <div  style={{cursor: 'pointer'}}>
-                                <Icon.X onClick={() => deleteNote(note.id)} />
+              </div>
+              <Droppable droppableId="todo">
+                {(provided) => (
+                  <div className='todo-board' {...provided.droppableProps} ref={provided.innerRef}>
+                    {todoNotes && todoNotes.map((note, index) => {
+                      return (
+                        <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
+                          {(provided) => (
+                            <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                              <div className='delete-note'>
+                                <div  style={{cursor: 'pointer'}}>
+                                  <Icon.X onClick={() => deleteNote(note.id)} />
+                                </div>
+                              </div>
+                              {/* <p>{note.id}</p> */}
+                              <h4>{note.title}</h4>
+                              {/* <p>{note.body}</p> */}
+                              <div className='note-view-edit'>
+                                <div style={{cursor: 'pointer'}} >
+                                  <Icon.List onClick={() => openViewNoteModal(note.id)} />
+                                </div>
+                                <div style={{cursor: 'pointer'}} >
+                                  <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
+                                </div>
+                                <div style={{cursor: 'pointer'}} >
+                                  <Icon.ArrowRightSquare onClick={() => moveToCompleted(note)} />
+                                </div>
                               </div>
                             </div>
-                            {/* <p>{note.id}</p> */}
-                            <h4>{note.title}</h4>
-                            <div className='note-view-edit'>
-                              <div style={{cursor: 'pointer'}} >
-                                <Icon.List onClick={() => openViewNoteModal(note.id)} />
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </div>
+          </Col>
+          <Col >
+            <div>
+              <h1>Completed</h1>
+              <Droppable droppableId="completed">
+                {(provided) => (
+                  <div className='completed-board' {...provided.droppableProps} ref={provided.innerRef}>
+                    {completedNotes && completedNotes.map((note, index) => {
+                      return (
+                        <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
+                          {(provided) => (
+                            <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                              <div className='delete-note'>
+                                <div  style={{cursor: 'pointer'}}>
+                                  <Icon.X onClick={() => deleteNote(note.id)} />
+                                </div>
                               </div>
-                              <div style={{cursor: 'pointer'}} >
-                                <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
-                              </div>
-                              <div style={{cursor: 'pointer'}} >
-                                <Icon.ArrowLeftSquare onClick={() => moveToTodo(note)} />
+                              {/* <p>{note.id}</p> */}
+                              <h4>{note.title}</h4>
+                              <div className='note-view-edit'>
+                                <div style={{cursor: 'pointer'}} >
+                                  <Icon.List onClick={() => openViewNoteModal(note.id)} />
+                                </div>
+                                <div style={{cursor: 'pointer'}} >
+                                  <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
+                                </div>
+                                <div style={{cursor: 'pointer'}} >
+                                  <Icon.ArrowLeftSquare onClick={() => moveToTodo(note)} />
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        )}
-                      </Draggable>
-                    );
-                  })}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </div>
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </div>
+          </Col>
         </div>
       </DragDropContext>
       {showCreateNoteModal && 
