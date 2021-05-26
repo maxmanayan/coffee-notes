@@ -188,15 +188,17 @@ const DragAndDrop = () => {
                                 </div>
                               </div>
                               {/* <p>{note.id}</p> */}
-                              <h4>{note.title}</h4>
+                              <div style={{cursor: 'pointer'}} onClick={() => openUpdateNoteModal(note)}>
+                                <h4>{note.title}</h4>
+                              </div>
                               {/* <p>{note.body}</p> */}
                               <div className='note-view-edit'>
-                                <div style={{cursor: 'pointer'}} >
+                                {/* <div style={{cursor: 'pointer'}} >
                                   <Icon.List onClick={() => openViewNoteModal(note.id)} />
                                 </div>
                                 <div style={{cursor: 'pointer'}} >
                                   <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
-                                </div>
+                                </div> */}
                                 <div style={{cursor: 'pointer'}} >
                                   <Icon.ArrowRightSquare onClick={() => moveToCompleted(note)} />
                                 </div>
@@ -229,14 +231,16 @@ const DragAndDrop = () => {
                                 </div>
                               </div>
                               {/* <p>{note.id}</p> */}
-                              <h4>{note.title}</h4>
+                              <div style={{cursor: 'pointer'}} onClick={() => openUpdateNoteModal(note)}>
+                                <h4>{note.title}</h4>
+                              </div>
                               <div className='note-view-edit'>
-                                <div style={{cursor: 'pointer'}} >
+                                {/* <div style={{cursor: 'pointer'}} >
                                   <Icon.List onClick={() => openViewNoteModal(note.id)} />
                                 </div>
                                 <div style={{cursor: 'pointer'}} >
                                   <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
-                                </div>
+                                </div> */}
                                 <div style={{cursor: 'pointer'}} >
                                   <Icon.ArrowLeftSquare onClick={() => moveToTodo(note)} />
                                 </div>
