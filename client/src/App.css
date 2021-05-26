@@ -103,3 +103,16 @@ body{
   flex-direction: row;
   justify-content: space-around;
 }
+
+
+.modal-header {
+  background: #FFF9BD;
+}
+
+.modal-body {
+  background: #FFF9BD;
+}
+
+.modal-button {
+  background: #FFF9BD;
+}

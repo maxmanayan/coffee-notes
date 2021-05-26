@@ -30,25 +30,25 @@ const UpdateNoteModal = (props) => {
   return(
     <>
     <Modal show={true}>
-      <Modal.Header >
+      <Modal.Header  className='modal-header'>
         <Modal.Title>Update Note</Modal.Title>
         <div style={{cursor: 'pointer'}}>
           <Icon.X onClick={closeUpdateNoteModal} size={20} />
         </div>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className='modal-body'>
         <Form>
-          <Form.Group>
+          <Form.Group className='modal-body'>
             {/* <Form.Label>Title</Form.Label> */}
-            <Form.Control name='title' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
+            <Form.Control className='modal-body' name='title' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
           </Form.Group>
-          <Form.Group>
+          <Form.Group className='modal-body'>
             {/* <Form.Label>Info</Form.Label> */}
-            <Form.Control as='textarea' name='info' placeholder='Info' value={info} onChange={(e) => setInfo(e.target.value)} />
+            <Form.Control className='modal-body' as='textarea' name='info' placeholder='Info' value={info} onChange={(e) => setInfo(e.target.value)} />
           </Form.Group>
         </Form>
       </Modal.Body>
-      <Button onClick={editNote} >
+      <Button className='modal-button' style={{background: '#FFF9BD', borderColor: '#FFF9BD', color: 'black'}} onClick={editNote} >
         Submit
       </Button>
     </Modal>
