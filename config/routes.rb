@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do 
     resources :notes 
+    resources :items
 
     get "/get_todo_notes", to: "notes#get_todo_notes"
     get "/get_completed_notes", to: "notes#get_completed_notes"

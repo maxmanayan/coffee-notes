@@ -19,7 +19,6 @@ const FetchUser = (props) => {
 
     try {
       const res = await axios.get('/api/auth/validate_token')
-      console.log( 'in fetchUser', res.data.data)
       setUser({ user: res.data.data })
     } catch (error) {
       console.error("Unable to validate token. Error details: " + error)
