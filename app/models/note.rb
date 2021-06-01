@@ -1,5 +1,6 @@
 class Note < ApplicationRecord
-
+  has_many :items, dependent: :destroy
+  
   def self.get_todo_notes
     select("*")
     .from("notes")

@@ -12,18 +12,21 @@ Note.destroy_all
 Item.destroy_all
 
 5.times do 
-  Note.create(
+  note = Note.create(
     title: Faker::Movies::HarryPotter.character,
     body: Faker::Movies::HarryPotter.quote,
     completed: false
   )
+
+  2.times do
+    note.items.create(
+      content: Faker::Movies::HarryPotter.quote,
+      completed: false
+    )
+  end
 end
 
-5.times do
-  Item.create(
-    todo: Faker::Movies::HarryPotter.quote,
-  )
-end
+
 
 
 puts "Seeded #{Note.all.size} new notes"

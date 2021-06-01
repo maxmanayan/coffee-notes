@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import * as Icon from 'react-bootstrap-icons';
 
 const TodoList = () => {
   const [items, setItems] = useState(null)
@@ -20,7 +21,14 @@ const TodoList = () => {
   const renderItems = () => {
     return items.map(item => {
       return(
-        <p className='todo-item'>{item.todo}</p>
+        <div className='todo-item-container'>
+          <div>
+            <Icon.CheckSquare className='todo-check' size={25} />
+          </div>
+          <div>
+            <p className='todo-item'>{item.todo}</p>
+          </div>
+        </div>
       )
     })
   }
