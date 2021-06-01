@@ -8,7 +8,8 @@
 
 
 require "faker"
-
+Note.destroy_all
+Item.destroy_all
 
 5.times do 
   Note.create(
@@ -18,5 +19,12 @@ require "faker"
   )
 end
 
+5.times do
+  Item.create(
+    todo: Faker::Movies::HarryPotter.quote,
+  )
+end
+
 
 puts "Seeded #{Note.all.size} new notes"
+puts "Seeded #{Item.all.size} new items"
