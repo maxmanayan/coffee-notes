@@ -1,16 +1,16 @@
 class Api::ItemsController < ApplicationController
-  before_action :get_item, only: [:show, :update, :destroy]
+  before_action :get_note, only: [:index, :show, :create, :update, :destroy]
 
   def index 
-    render json: Item.all
+    render json: @note.items.all
   end
 
   def show
-    render json: @item
+    render json: @note.items.find(params[:id])
   end
 
   def create
-    new_item = Item.new(item_params)
+    new_item = @note.items.new(item_params)
 
     if (new_item.save)
       render json: new_item
@@ -20,6 +20,8 @@ class Api::ItemsController < ApplicationController
   end
 
   def update
+    @item = @note.items.find(params[:id])
+
     if @item.update(item_params)
       render json: @item
     else
@@ -28,23 +30,14 @@ class Api::ItemsController < ApplicationController
   end
 
   def destroy
+    @item = @note.items.find(params[:id])
     render json: @item.destroy
-  end
-
-  def get_todo_items
-    todo_items = Item.get_todo_items
-    render json: todo_items
-  end
-
-  def get_completed_items
-    completed_items = Item.get_completed_items
-    render json: completed_items
   end
 
   private
 
-  def get_item
-    @item = Item.find(params[:id])
+  def get_note
+    @note = Note.find(params[:note_id])
   end
 
   def item_params
