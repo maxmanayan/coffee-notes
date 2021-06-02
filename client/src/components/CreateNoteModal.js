@@ -40,11 +40,11 @@ const CreateNoteModal = (props) => {
           </Form.Group>
           <Form.Group>
             {/* <Form.Label>Info</Form.Label> */}
-            <Form.Control as='textarea' name='info' placeholder='Info' value={info} onChange={(e) => setInfo(e.target.value)} />
+            <Form.Control as='textarea' name='info' placeholder='Try to summarize your task in one sentence!' value={info} onChange={(e) => setInfo(e.target.value)} />
           </Form.Group>
         </Form>
       </Modal.Body>
-      <Button onClick={createNote} >
+      <Button style={{background: '#FFF9BD', borderColor: '#FFF9BD', color: 'black'}} onClick={createNote} >
         Submit
       </Button>
     </Modal>

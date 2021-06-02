@@ -38,7 +38,8 @@ const TodoList = (props) => {
 
   return(
     <>
-      <h1>TodoList</h1>
+      <h1>{note.title}</h1>
+      <h5>{note.body}</h5>
       <div className='todo-list'>
         {items && renderItems()}
       </div>
