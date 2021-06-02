@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import * as Icon from 'react-bootstrap-icons';
+import CreateTodoInput from './CreateTodoInput';
 
 const TodoList = (props) => {
   const { note } = props
@@ -11,7 +12,6 @@ const TodoList = (props) => {
   },[])
 
   const getItems = async () => {
-    console.log('note', note)
     try {
       let res = await axios.get(`/api/notes/${note.id}/items`)
       setItems(res.data)
@@ -30,7 +30,6 @@ const TodoList = (props) => {
         getItems()
       }
       if (item.completed) {
-        console.log('item', item)
         await axios.put(`/api/notes/${note.id}/items/${item.id}`, {
           content: note.content,
           completed: false
@@ -81,7 +80,13 @@ const TodoList = (props) => {
       <h1>{note.title}</h1>
       <h5>{note.body}</h5>
       <div className='todo-list'>
-        <h6>Todo</h6>
+        <div className='todo-list-title'>
+          <h6>Todo</h6>
+          <Icon.PlusSquare style={{marginLeft: '1em', cursor: 'pointer'}} onClick={() => console.log('create todo')} />
+        </div>
+        <div>
+          <CreateTodoInput key={note.id} note={note}/>
+        </div>
         {items && renderTodoItems()}
       </div>
       <div className='todo-list-completed'>

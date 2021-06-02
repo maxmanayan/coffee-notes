@@ -122,6 +122,7 @@ body{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
 }
 
 .todo-list-completed {
@@ -160,4 +161,15 @@ body{
 
 .todo-item {
   text-align: left;
+}
+
+.todo-list-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-todo-form {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
 }
