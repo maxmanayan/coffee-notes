@@ -1,17 +1,23 @@
 
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 
 const CreateTodoInput = (props) => {
-  const { note } = props
+  const { note, getItems } = props
   const [todo, setTodo] = useState(null)
 
   const createTodo = async (e) => {
     e.preventDefault()
     try {
-      console.log('note', note)
-      console.log('todo', todo)
+      await axios.post(`/api/notes/${note.id}/items`, {
+        content: todo,
+        completed: false
+      })
+
+      setTodo('')
+      getItems()
     } catch (error) {
       console.log(error)
     }

@@ -85,7 +85,7 @@ const TodoList = (props) => {
           <Icon.PlusSquare style={{marginLeft: '1em', cursor: 'pointer'}} onClick={() => console.log('create todo')} />
         </div>
         <div>
-          <CreateTodoInput key={note.id} note={note}/>
+          <CreateTodoInput key={note.id} note={note} getItems={getItems} />
         </div>
         {items && renderTodoItems()}
       </div>
