@@ -124,6 +124,15 @@ body{
   align-items: flex-start;
 }
 
+.todo-list-completed {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  color: grey;
+}
+
 .todo-item-container {
   height: 30px;
   display: flex;
@@ -140,6 +149,14 @@ body{
   background: gray;
   border-radius: 3px;
 }
+
+.todo-check-completed {
+  margin-right: 1em;
+  cursor: pointer;
+
+  background: lightgrey;
+}
+
 
 .todo-item {
   text-align: left;
