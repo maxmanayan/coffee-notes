@@ -11,16 +11,23 @@ const Home = () => {
     try {
       let res = await axios.get(`/api/notes/${noteID}`)
       setNote(res.data)
+      openTodoList(res.data)
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const openTodoList = (note) => {
+    return(
+      <TodoList key={note.id} note={note}/>
+    )
   }
 
   return(
     <div className='home'>
       <Row>
         <Col style={{background: 'aliceblue'}}>
-          {note && <TodoList note={note}/>}
+          {note && openTodoList(note)}
         </Col>
         <Col md={5}>
           <DragAndDrop displayNote={displayNote} />
