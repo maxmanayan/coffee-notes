@@ -8,7 +8,9 @@ import UpdateNoteModal from './UpdateNoteModal';
 import { Col } from 'react-bootstrap';
 
 
-const DragAndDrop = () => {
+const DragAndDrop = (props) => {
+  const { displayNote } = props
+
   const [ todoNotes, setTodoNotes ] = useState([])
   const [ completedNotes, setCompletedNotes ] = useState([])
 
@@ -181,7 +183,7 @@ const DragAndDrop = () => {
                       return (
                         <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                           {(provided) => (
-                            <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                            <div className='note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
                               <div className='delete-note'>
                                 <div  style={{cursor: 'pointer'}}>
                                   <Icon.X onClick={() => deleteNote(note.id)} />
@@ -224,7 +226,7 @@ const DragAndDrop = () => {
                       return (
                         <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                           {(provided) => (
-                            <div className='note' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                            <div className='note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
                               <div className='delete-note'>
                                 <div  style={{cursor: 'pointer'}}>
                                   <Icon.X onClick={() => deleteNote(note.id)} />
