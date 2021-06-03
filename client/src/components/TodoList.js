@@ -41,6 +41,15 @@ const TodoList = (props) => {
     }
   }
 
+  const deleteItem = async (item) => {
+    try {
+      await axios.delete(`/api/notes/${note.id}/items/${item.id}`)
+      getItems()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const renderTodoItems = () => {
     return items.map(item => {
       if (!item.completed) {
@@ -53,7 +62,7 @@ const TodoList = (props) => {
               <p className='todo-item'>{item.content}</p>
             </div>
             <div>
-              <Icon.Trash className='todo-item-trash'/>
+              <Icon.Trash className='todo-item-trash' onClick={() => deleteItem(item)}/>
             </div>
           </div>
         )
@@ -73,7 +82,7 @@ const TodoList = (props) => {
               <p className='todo-item'>{item.content}</p>
             </div>
             <div>
-              <Icon.Trash className='todo-item-trash' />
+              <Icon.Trash className='todo-item-trash' onClick={() => deleteItem(item)} />
             </div>
           </div>
         )
