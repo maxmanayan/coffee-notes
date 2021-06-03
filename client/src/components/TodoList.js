@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import * as Icon from 'react-bootstrap-icons';
 import CreateTodoInput from './CreateTodoInput';
+import ShowTodoItem from './ShowTodoItem';
 
 const TodoList = (props) => {
   const { note } = props
@@ -59,7 +60,7 @@ const TodoList = (props) => {
               <Icon.CheckSquare className='todo-check' onClick={() => editComplete(item)} size={25} />
             </div>
             <div>
-              <p className='todo-item'>{item.content}</p>
+              <ShowTodoItem key={item.id} item={item} note={note} getItems={getItems} />
             </div>
             <div>
               <Icon.Trash className='todo-item-trash' onClick={() => deleteItem(item)}/>
@@ -79,7 +80,7 @@ const TodoList = (props) => {
               <Icon.CheckSquare className='todo-check-completed' onClick={() => editComplete(item)} size={25} />
             </div>
             <div>
-              <p className='todo-item'>{item.content}</p>
+              <ShowTodoItem key={item.id} item={item} note={note} getItems={getItems} />
             </div>
             <div>
               <Icon.Trash className='todo-item-trash' onClick={() => deleteItem(item)} />
