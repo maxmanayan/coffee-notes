@@ -7,8 +7,8 @@ const LoginRegister = () => {
   const [showRegisterForm, setShowRegisterForm] = useState(false)
 
   return(
-    <>
-      <Row style={{marginTop: '3em', marginBottom: '1em'}}>
+    <div className='login-register'>
+      <Row style={{paddingTop: '3em', paddingBottom: '1em'}}>
         <Col md={{span: 5, offset: 6}}>
           <Button style={{marginRight: '1em'}} onClick={()=>setShowRegisterForm(false)}>Login</Button>
           <Button onClick={()=>setShowRegisterForm(true)}>Sign Up</Button>
@@ -21,7 +21,7 @@ const LoginRegister = () => {
           {showRegisterForm && <RegisterForm />}
         </Col>
       </Row>
-    </>
+    </div>
   )
 };
 
