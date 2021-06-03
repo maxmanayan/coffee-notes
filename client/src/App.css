@@ -71,6 +71,11 @@ body{
 
 }
 
+.navbar {
+  background: #090804;
+}
+
+
 .login-register {
   background-image: url(./images/coffee.jpg);
   background-color: grey;
