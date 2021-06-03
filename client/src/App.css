@@ -122,12 +122,23 @@ body{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
+}
+
+.todo-list-completed {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  color: grey;
 }
 
 .todo-item-container {
   height: 30px;
   display: flex;
   overflow: hidden;
+  justify-content: space-between;
 }
 
 .todo-check {
@@ -141,6 +152,37 @@ body{
   border-radius: 3px;
 }
 
+.todo-check-completed {
+  margin-right: 1em;
+  cursor: pointer;
+
+  background: lightgrey;
+}
+
+
 .todo-item {
   text-align: left;
+}
+
+.todo-item-trash {
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.todo-item-trash:hover {
+  margin-left: 1em;
+  cursor: pointer;
+
+  color: white;
+}
+
+.todo-list-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-todo-form {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
 }

@@ -26,7 +26,7 @@ const Home = () => {
   return(
     <div className='home'>
       <Row>
-        <Col style={{background: 'aliceblue'}}>
+        <Col>
           {note && openTodoList(note)}
         </Col>
         <Col md={5}>
