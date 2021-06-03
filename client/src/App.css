@@ -137,7 +137,8 @@ body{
 .todo-item-container {
   height: 30px;
   display: flex;
-  overflow: hidden;
+  margin: 1em;
+  /* overflow: hidden; */
   justify-content: space-between;
 }
 
@@ -162,6 +163,7 @@ body{
 
 .todo-item {
   text-align: left;
+  cursor: pointer;
 }
 
 .todo-item-trash {
@@ -185,4 +187,18 @@ body{
   margin: 1em;
   display: flex;
   flex-direction: row;
+}
+
+.edit-item-input {
+  display: flex;
+}
+
+.edit-item-input-x {
+  margin-left: -8px;
+  margin-top: -7px;
+
+  background: white;
+  border-radius: 100%;
+
+  cursor: pointer;
 }
