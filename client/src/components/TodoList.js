@@ -52,6 +52,9 @@ const TodoList = (props) => {
             <div>
               <p className='todo-item'>{item.content}</p>
             </div>
+            <div>
+              <Icon.Trash className='todo-item-trash'/>
+            </div>
           </div>
         )
       }
@@ -69,6 +72,9 @@ const TodoList = (props) => {
             <div>
               <p className='todo-item'>{item.content}</p>
             </div>
+            <div>
+              <Icon.Trash className='todo-item-trash' />
+            </div>
           </div>
         )
       }
@@ -82,7 +88,6 @@ const TodoList = (props) => {
       <div className='todo-list'>
         <div className='todo-list-title'>
           <h6>Todo</h6>
-          <Icon.PlusSquare style={{marginLeft: '1em', cursor: 'pointer'}} onClick={() => console.log('create todo')} />
         </div>
         <div>
           <CreateTodoInput key={note.id} note={note} getItems={getItems} />

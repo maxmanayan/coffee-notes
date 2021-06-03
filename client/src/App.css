@@ -138,6 +138,7 @@ body{
   height: 30px;
   display: flex;
   overflow: hidden;
+  justify-content: space-between;
 }
 
 .todo-check {
@@ -161,6 +162,18 @@ body{
 
 .todo-item {
   text-align: left;
+}
+
+.todo-item-trash {
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.todo-item-trash:hover {
+  margin-left: 1em;
+  cursor: pointer;
+
+  color: white;
 }
 
 .todo-list-title {
