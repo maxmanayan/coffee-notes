@@ -29,7 +29,7 @@ const CreateTodoInput = (props) => {
         <Form.Group>
           <Form.Control placeholder='Add Todo Item...' name='todo' value={todo} onChange={(e) => setTodo(e.target.value)} />
         </Form.Group>
-        <Button type='submit'>Add</Button>
+        <Button type='submit' style={{background: '#090804', border: 'none'}} >Add</Button>
       </Form>
     </>
   )

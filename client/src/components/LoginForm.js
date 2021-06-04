@@ -23,7 +23,7 @@ const LoginForm = () => {
 
   return(
     <>
-      <h1 className='login-register-form-title'>Login</h1>
+      <h3 className='login-register-form-title'>Login</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group className='login-register-form-group'>
           <Form.Control autoFocus placeholder='Email' id='email' value={account.email} onChange={(e) => setAccount({...account, email: e.target.value})}/>
