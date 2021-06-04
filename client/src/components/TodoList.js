@@ -7,6 +7,7 @@ import ShowTodoItem from './ShowTodoItem';
 const TodoList = (props) => {
   const { note } = props
   const [items, setItems] = useState(null)
+  const [hideTrash, setHideTrash] = useState(false)
 
   useEffect(()=>{
     getItems()
@@ -60,10 +61,7 @@ const TodoList = (props) => {
               <Icon.CheckSquare className='todo-check' onClick={() => editComplete(item)} size={25} />
             </div>
             <div>
-              <ShowTodoItem key={item.id} item={item} note={note} getItems={getItems} />
-            </div>
-            <div>
-              <Icon.Trash className='todo-item-trash' onClick={() => deleteItem(item)}/>
+              <ShowTodoItem key={item.id} item={item} note={note} getItems={getItems} deleteItem={deleteItem}/>
             </div>
           </div>
         )
@@ -81,9 +79,6 @@ const TodoList = (props) => {
             </div>
             <div>
               <ShowTodoItem key={item.id} item={item} note={note} getItems={getItems} />
-            </div>
-            <div>
-              <Icon.Trash className='todo-item-trash' onClick={() => deleteItem(item)} />
             </div>
           </div>
         )

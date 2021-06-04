@@ -167,7 +167,7 @@ const DragAndDrop = (props) => {
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <Col>
             <div>
-              <div style={{display: 'flex', justifyContent: 'center'}}>
+              <div style={{display: 'flex', justifyContent: 'center', color: '#090804'}}>
                 <h1>Todo</h1>
                 <div style={{cursor: 'pointer', display: 'flex', justifyContent: 'flex-start', marginLeft: '1em'}}>
                   <Icon.PlusSquare 
@@ -218,7 +218,7 @@ const DragAndDrop = (props) => {
           </Col>
           <Col >
             <div>
-              <h1>Completed</h1>
+              <h1 style={{color: '#090804'}}>Completed</h1>
               <Droppable droppableId="completed">
                 {(provided) => (
                   <div className='completed-board' {...provided.droppableProps} ref={provided.innerRef}>

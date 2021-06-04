@@ -28,6 +28,9 @@ const Home = () => {
       <Row>
         <Col>
           <div className='todo-list-container'>
+            {!note && 
+              <h1 className='todo-list-default-text'>create or select a note...</h1>
+            }
             {note && openTodoList(note)}
           </div>
         </Col>

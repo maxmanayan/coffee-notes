@@ -48,7 +48,7 @@ const UpdateNoteModal = (props) => {
           </Form.Group>
         </Form>
       </Modal.Body>
-      <Button className='modal-button' style={{background: '#FFF9BD', borderColor: '#FFF9BD', color: 'black'}} onClick={editNote} >
+      <Button className='modal-button' style={{background: '#ece0d1', borderColor: '#ece0d1', color: 'black'}} onClick={editNote} >
         Submit
       </Button>
     </Modal>

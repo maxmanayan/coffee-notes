@@ -8,15 +8,35 @@
   text-align: center;
   height: 100vh;
 }
-
+/* 
 body{
   background-color: red;
-}
+} */
 
 .home {
-  background: #ECE0D1;
+  /* background: #ECE0D1;
   height: 100vh;
-  padding-top: 3em;
+  padding-top: 3em; */
+
+  background-image: url(./images/wood.jpg);
+  background-color: #ece0d1b6;
+  background-blend-mode: screen;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+
+  /* position:absolute; */
+  top:10px;
+  margin: 0;
+
+  min-height: 100vh;
+  min-width: 1024px;
+
+  width: 100%;
+  height: auto;
+  padding-top: 2em;
 }
 
 .todo-board {
@@ -37,7 +57,8 @@ body{
   /* border-right: 1px solid rgb(92, 92, 92); */
   border-radius: 5px 0 0 5px;
 
-  background-color: #967259;
+  color: #090804;
+  background-color: #96725956;
 
   padding: 15px;
 }
@@ -60,8 +81,8 @@ body{
   /* border-right: 1px solid rgb(92, 92, 92); */
    border-radius: 0 5px 5px 0;
 
-
-  background-color: #634832;
+  color: #090804;
+  background-color: #63483252;
 
   padding: 15px;
 
@@ -118,7 +139,7 @@ body{
 
   cursor: pointer;
 
-  background: #DBC1AB;
+  background: #ece0d1;
   padding: 25px;
 
   height: 200px;
@@ -126,7 +147,26 @@ body{
 
   margin: 15px;
 
-  box-shadow: 2px 2px #38220F;
+  box-shadow: 2px 2px #38220f34;
+  border-radius: 0px;
+}
+
+.note:hover {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  background: #ece0d1c4;
+  padding: 25px;
+
+  height: 200px;
+  width: 200px;
+
+  margin: 15px;
+
+  box-shadow: 2px 2px #38220f54;
   border-radius: 0px;
 }
 
@@ -144,15 +184,15 @@ body{
 
 
 .modal-header {
-  background: #FFF9BD;
+  background: #ece0d1;
 }
 
 .modal-body {
-  background: #FFF9BD;
+  background: #ece0d1;
 }
 
 .modal-button {
-  background: #FFF9BD;
+  background: #ece0d1;
 }
 
 .todo-list-container {
@@ -168,6 +208,13 @@ body{
   align-items: flex-start;
 
   margin-left: 3em;
+  color: #090804;
+
+}
+
+.todo-list-default-text {
+  padding-top: 6em;
+  color: #09080442;
 }
 
 .todo-list-completed {
@@ -179,7 +226,7 @@ body{
   margin-left: 3em;
   margin-top: 1em;
 
-  color: grey;
+  color: #0908047e;
 }
 
 .todo-item-container {
@@ -193,11 +240,13 @@ body{
 .todo-check {
   margin-right: 1em;
   cursor: pointer;
+
+  color: #090804;
 }
 
 .todo-check:hover {
   margin-right: 1em;
-  background: gray;
+  background: #0908044b;
   border-radius: 3px;
 }
 
@@ -205,7 +254,14 @@ body{
   margin-right: 1em;
   cursor: pointer;
 
-  background: lightgrey;
+  background: #0908041f;
+}
+
+.todo-check-completed:hover {
+  margin-right: 1em;
+  cursor: pointer;
+
+  background: #09080400;
 }
 
 
@@ -214,9 +270,14 @@ body{
   cursor: pointer;
 }
 
+.todo-item-trash-container {
+  display: flex;
+}
+
 .todo-item-trash {
   margin-left: 1em;
   cursor: pointer;
+  color: #090804;
 }
 
 .todo-item-trash:hover {
@@ -235,16 +296,25 @@ body{
   margin: 1em;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+
+  /* background: red; */
+  width: 200%;
 }
 
 .edit-item-input {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 250%;
 }
 
 .edit-item-input-x {
   margin-left: -8px;
   margin-top: -7px;
 
+  color: #090804;
   background: white;
   border-radius: 100%;
 
