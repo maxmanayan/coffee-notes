@@ -167,12 +167,12 @@ const DragAndDrop = (props) => {
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <Col>
             <div>
-              <div style={{display: 'flex', justifyContent: 'center', color: '#090804'}}>
+              <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center',color: '#090804'}}>
                 <h1>Todo</h1>
                 <div style={{cursor: 'pointer', display: 'flex', justifyContent: 'flex-start', marginLeft: '1em'}}>
                   <Icon.PlusSquare 
                     onClick={openCreateNoteModal}
-                    size={40} 
+                    size={30} 
                   />
                 </div>
               </div>
