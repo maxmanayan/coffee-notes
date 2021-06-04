@@ -10,17 +10,13 @@
 }
 
 body{
-  background-color: #628EAC;
+  background-color: red;
 }
 
 .home {
-  background: #628fac8c;
+  background: #ECE0D1;
   height: 100vh;
   padding-top: 3em;
-}
-
-.board-container {
-  background: blue;
 }
 
 .todo-board {
@@ -41,7 +37,7 @@ body{
   /* border-right: 1px solid rgb(92, 92, 92); */
   border-radius: 5px 0 0 5px;
 
-  background-color: #628fac8c;
+  background-color: #967259;
 
   padding: 15px;
 }
@@ -65,7 +61,7 @@ body{
    border-radius: 0 5px 5px 0;
 
 
-  background-color: #628EAC;
+  background-color: #634832;
 
   padding: 15px;
 
@@ -118,7 +114,7 @@ body{
 
   cursor: pointer;
 
-  background: #FFF9BD;
+  background: #DBC1AB;
   padding: 25px;
 
   height: 200px;
@@ -126,8 +122,8 @@ body{
 
   margin: 15px;
 
-  box-shadow: 2px 2px rgb(204, 204, 204);
-  border-radius: 5px;
+  box-shadow: 2px 2px #38220F;
+  border-radius: 0px;
 }
 
 .delete-note {
