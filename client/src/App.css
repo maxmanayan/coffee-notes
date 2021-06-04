@@ -14,9 +14,29 @@ body{
 }
 
 .home {
-  background: #ECE0D1;
+  /* background: #ECE0D1;
   height: 100vh;
-  padding-top: 3em;
+  padding-top: 3em; */
+
+  background-image: url(./images/wood.jpg);
+  background-color: #ece0d1b6;
+  background-blend-mode: screen;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+
+  /* position:absolute; */
+  top:10px;
+  margin: 0;
+
+  min-height: 100vh;
+  min-width: 1024px;
+
+  width: 100%;
+  height: auto;
+  padding-top: 2em;
 }
 
 .todo-board {
@@ -37,7 +57,7 @@ body{
   /* border-right: 1px solid rgb(92, 92, 92); */
   border-radius: 5px 0 0 5px;
 
-  background-color: #967259;
+  background-color: #96725956;
 
   padding: 15px;
 }
@@ -61,7 +81,7 @@ body{
    border-radius: 0 5px 5px 0;
 
 
-  background-color: #634832;
+  background-color: #63483252;
 
   padding: 15px;
 
