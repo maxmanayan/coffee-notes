@@ -9,10 +9,10 @@ const NavBar = () => {
 
   return(
     <div>
-      <Navbar style={{background: '#628fac8c'}}>
+      <Navbar className='navbar' >
         <Nav>
-          <Nav.Link to='/home' >Home</Nav.Link>
-          {user && <Nav.Link onClick={() => handleLogout(history)} >Logout</Nav.Link>}
+          <Nav.Link to='/home' style={{color: 'white'}}>Home</Nav.Link>
+          {user && <Nav.Link onClick={() => handleLogout(history)} style={{color: 'white'}}>Logout</Nav.Link>}
         </Nav>
       </Navbar>
     </div>
