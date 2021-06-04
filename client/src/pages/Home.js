@@ -27,7 +27,9 @@ const Home = () => {
     <div className='home'>
       <Row>
         <Col>
-          {note && openTodoList(note)}
+          <div className='todo-list-container'>
+            {note && openTodoList(note)}
+          </div>
         </Col>
         <Col md={5}>
           <DragAndDrop displayNote={displayNote} />

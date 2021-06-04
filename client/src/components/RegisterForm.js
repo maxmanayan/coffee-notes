@@ -24,7 +24,7 @@ const RegisterForm = () => {
 
   return(
     <>
-      <h1 className='login-register-form-title'>Sign Up</h1>
+      <h3 className='login-register-form-title'>Sign Up</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group className='login-register-form-group'>
           <Form.Control autoFocus placeholder='Name' id='name' value={account.name} onChange={(e) => setAccount({...account, name: e.target.value})} />
