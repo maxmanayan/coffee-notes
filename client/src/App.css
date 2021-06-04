@@ -8,10 +8,10 @@
   text-align: center;
   height: 100vh;
 }
-
+/* 
 body{
   background-color: red;
-}
+} */
 
 .home {
   /* background: #ECE0D1;
@@ -138,7 +138,7 @@ body{
 
   cursor: pointer;
 
-  background: #DBC1AB;
+  background: #ece0d1;
   padding: 25px;
 
   height: 200px;
@@ -146,7 +146,26 @@ body{
 
   margin: 15px;
 
-  box-shadow: 2px 2px #38220F;
+  box-shadow: 2px 2px #38220f34;
+  border-radius: 0px;
+}
+
+.note:hover {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  background: #ece0d1c4;
+  padding: 25px;
+
+  height: 200px;
+  width: 200px;
+
+  margin: 15px;
+
+  box-shadow: 2px 2px #38220f34;
   border-radius: 0px;
 }
 
@@ -188,6 +207,11 @@ body{
   align-items: flex-start;
 
   margin-left: 3em;
+}
+
+.todo-list-default-text {
+  padding-top: 6em;
+  color: #09080442;
 }
 
 .todo-list-completed {
