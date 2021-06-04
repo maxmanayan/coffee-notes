@@ -16,8 +16,8 @@ const LoginRegister = () => {
 
       <Row style={{paddingTop: '1em', paddingBottom: '1em'}}>
         <Col md={{span: 5, offset: 6}}>
-          <Button style={{marginRight: '1em', background: '#090804', border: 'none'}} onClick={()=>setShowRegisterForm(false)}>Login</Button>
-          <Button style={{marginRight: '1em', background: '#090804', border: 'none'}} onClick={()=>setShowRegisterForm(true)}>Sign Up</Button>
+          <Button style={{marginRight: '1em', padding: '1em 3em',background: '#09080450', border: 'none', fontWeight: 'bold'}} onClick={()=>setShowRegisterForm(false)}>LOGIN</Button>
+          <Button style={{marginRight: '1em', padding: '1em 3em', background: '#090804', border: 'none', fontWeight: 'bold'}} onClick={()=>setShowRegisterForm(true)}>SIGN UP</Button>
         </Col>
       </Row>
 

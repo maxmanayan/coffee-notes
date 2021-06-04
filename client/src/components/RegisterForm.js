@@ -24,7 +24,7 @@ const RegisterForm = () => {
 
   return(
     <>
-      <h3 className='login-register-form-title'>Sign Up</h3>
+      <h6 className='login-register-form-title'>Sign Up</h6>
       <Form onSubmit={handleSubmit}>
         <Form.Group className='login-register-form-group'>
           <Form.Control autoFocus placeholder='Name' id='name' value={account.name} onChange={(e) => setAccount({...account, name: e.target.value})} />
@@ -38,7 +38,7 @@ const RegisterForm = () => {
         <Form.Group className='login-register-form-group'>
           <Form.Control placeholder='Confirm Password' id='passwordConfirmation' value={account.passwordConfirmation} onChange={(e) => setAccount({...account, passwordConfirmation: e.target.value})} />
         </Form.Group>
-        <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>Submit</Button>
+        <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>SUBMIT</Button>
       </Form>
     </>
   )
