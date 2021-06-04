@@ -24,21 +24,21 @@ const RegisterForm = () => {
 
   return(
     <>
-      <h1>Sign Up</h1>
+      <h1 className='login-register-form-title'>Sign Up</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group>
+        <Form.Group className='login-register-form-group'>
           <Form.Control autoFocus placeholder='Name' id='name' value={account.name} onChange={(e) => setAccount({...account, name: e.target.value})} />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className='login-register-form-group'>
           <Form.Control placeholder='Email' id='email' value={account.email} onChange={(e) => setAccount({...account, email: e.target.value})} />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className='login-register-form-group'>
           <Form.Control placeholder='Password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})} />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className='login-register-form-group'>
           <Form.Control placeholder='Confirm Password' id='passwordConfirmation' value={account.passwordConfirmation} onChange={(e) => setAccount({...account, passwordConfirmation: e.target.value})} />
         </Form.Group>
-        <Button type='submit'>Submit</Button>
+        <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>Submit</Button>
       </Form>
     </>
   )

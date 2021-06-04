@@ -16,7 +16,7 @@ body{
 .home {
   background: #628fac8c;
   height: 100vh;
-
+  padding-top: 3em;
 }
 
 .board-container {
@@ -97,6 +97,19 @@ body{
   height: auto;
 }
 
+.login-register-title {
+  color: white;
+  font-weight: bolder;
+  font-size: 4em;
+}
+
+.login-register-form-title {
+  color: white;
+}
+
+.login-register-form-group {
+  margin-top: 1em;
+}
 
 .note {
   display:flex;

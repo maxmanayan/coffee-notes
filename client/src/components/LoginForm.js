@@ -23,15 +23,15 @@ const LoginForm = () => {
 
   return(
     <>
-      <h1>Login</h1>
+      <h1 className='login-register-form-title'>Login</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group>
+        <Form.Group className='login-register-form-group'>
           <Form.Control autoFocus placeholder='Email' id='email' value={account.email} onChange={(e) => setAccount({...account, email: e.target.value})}/>
         </Form.Group>
-        <Form.Group>
+        <Form.Group className='login-register-form-group'> 
           <Form.Control placeholder='Password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})}/>
         </Form.Group>
-        <Button type='submit'>Submit</Button>
+        <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>Submit</Button>
       </Form>
     </>
   )
