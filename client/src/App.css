@@ -279,6 +279,10 @@ body{
   margin: 1em;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+
+  /* background: red; */
+  width: 200%;
 }
 
 .edit-item-input {
