@@ -89,7 +89,8 @@ body{
 }
 
 .navbar {
-  background: #090804;
+  /* background: #090804; */
+  background: none;
   width: 100vw;
 
   display: flex;
@@ -118,8 +119,10 @@ body{
 }
 
 .about-header {
+  color: #090804;
   padding-top: 1em;
   font-size: 100px;
+  font-weight: bolder;
 }
 .about-button-container {
   display: flex;

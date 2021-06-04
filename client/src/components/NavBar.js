@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return(
     <div>
-      <Navbar>
+      <Navbar fixed='top'>
         <div className='navbar'>
           <Nav>
             <Nav.Link href='/home' style={{color: 'white'}}>Home</Nav.Link>
