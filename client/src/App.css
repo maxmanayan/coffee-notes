@@ -106,7 +106,7 @@ body{
   background-size: cover;
   background-attachment: fixed;
 
-  /* position:absolute; */
+  position:absolute;
   /* top:10px; */
   margin: 0;
 
@@ -117,10 +117,42 @@ body{
   height: 100vh;
 }
 
-.about-website {
-  background: rgba(255, 0, 0, 0.452);
-  height: 80vh;
+.about-header {
+  padding-top: 1em;
+  font-size: 100px;
 }
+.about-button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+
+  height: 60vh;
+
+  margin-left: 10%;
+  margin-right: 10%;
+  /* margin-bottom: 3.5%; */
+}
+
+
+.about-icon-text {
+  font-weight: bold;
+}
+
+.about-icon-website:hover {
+  cursor: pointer;
+  border-bottom: 5px solid #090804;
+}
+
+.about-icon-creator:hover {
+  cursor: pointer;
+  border-bottom: 5px solid #090804;
+}
+
+.about-icon-coming-soon:hover {
+  cursor: pointer;
+  border-bottom: 5px solid #090804;
+}
+
 .about-creator {
   background-image: url(./images/begin.jpg);
   background-color: #ece0d180;
@@ -161,7 +193,7 @@ body{
   width: 100%;
   height: auto;
 
-  border-top: 100px outset rgba(0, 0, 0, 0.425);
+  border-top: 10px solid rgba(0, 0, 0, 0.425);
 }
 
 .login-register {
