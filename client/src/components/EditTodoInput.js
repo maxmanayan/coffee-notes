@@ -27,7 +27,7 @@ const EditTodoInput = (props) => {
     <>
       <Form onSubmit={editItem} className='edit-item-input'>
         <Form.Group>
-          <Form.Control placeholder='Edit Item...' name='item' value={item} onChange={(e) => setItem(e.target.value)}/>
+          <Form.Control style={{width: '255%', border: 'none'}} placeholder='Edit Item...' name='item' value={item} onChange={(e) => setItem(e.target.value)}/>
         </Form.Group>
         <Icon.XCircleFill className='edit-item-input-x' onClick={hideItemEditInput} />
       </Form>
