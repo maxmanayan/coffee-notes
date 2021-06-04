@@ -12,7 +12,8 @@ const NavBar = () => {
       <Navbar>
         <div className='navbar'>
           <Nav>
-            <Nav.Link to='/home' style={{color: 'white'}}>Home</Nav.Link>
+            <Nav.Link href='/home' style={{color: 'white'}}>Home</Nav.Link>
+            <Nav.Link href='/about' style={{color: 'white'}}>About</Nav.Link>
           </Nav>
           <Nav>
             {user && <Nav.Link onClick={() => handleLogout(history)} style={{color: 'white'}}>Logout</Nav.Link>}
