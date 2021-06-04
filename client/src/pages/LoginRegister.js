@@ -10,7 +10,7 @@ const LoginRegister = () => {
     <div className='login-register'>
       <Row style={{paddingTop: '5em', paddingBottom: '1em'}}>
         <Col md={{span: 5, offset: 6}}>
-          <h1 className='login-register-title'>Coffee & Notes</h1>
+          <h1 className='login-register-title'>Coffee Notes</h1>
         </Col>
       </Row>
 
