@@ -196,6 +196,38 @@ body{
   width: 100%;
   height: auto;
 }
+
+.about-creator-header{
+  color: #090804;
+  padding: 1em;
+  font-weight: bold;
+}
+
+.about-creator-content {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.about-creator-text {
+  margin: 1em;
+  font-weight: bold;
+}
+
+.about-creator-link {
+  color: #09080483;
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.about-creator-link:hover {
+  color: #090804;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 .about-coming-soon {
   background-image: url(./images/grinds.jpg);
   background-color: #ece0d180;
@@ -217,6 +249,12 @@ body{
   height: auto;
 
   border-top: 1px solid rgba(0, 0, 0, 0.425);
+}
+
+.about-coming-soon-header {
+  color: #090804;
+  padding: 1em;
+  font-weight: bold;
 }
 
 .login-register {
