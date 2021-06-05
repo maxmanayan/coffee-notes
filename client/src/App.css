@@ -156,8 +156,24 @@ body{
 }
 
 .about-website {
-  background: #09080471;
+  background: #090804;
   height: 100vh;
+}
+
+.about-website-header {
+  color: white;
+  padding: 1em;
+  font-weight: bold;
+}
+
+.about-website-text-container {
+  padding: 1em;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.about-website-text {
+  color: white;
 }
 
 .about-creator {
