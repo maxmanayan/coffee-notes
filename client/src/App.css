@@ -230,7 +230,7 @@ body{
 
 .about-coming-soon {
   background-image: url(./images/grinds.jpg);
-  background-color: #ece0d180;
+  background-color: #ece0d19c;
   background-blend-mode: screen;
 
   background-position: center;
@@ -254,6 +254,32 @@ body{
 .about-coming-soon-header {
   color: #090804;
   padding: 1em;
+  font-weight: bold;
+}
+
+
+.about-coming-soon-link {
+  margin-bottom: 2em;
+  color: #09080483;
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.about-coming-soon-link:hover {
+  margin-bottom: 2em;
+  color: #090804;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.about-coming-soon-row {
+  margin-bottom: 1em;
+  align-items: center;
+}
+
+.about-coming-soon-text {
   font-weight: bold;
 }
 
