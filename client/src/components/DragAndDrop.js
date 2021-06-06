@@ -154,7 +154,7 @@ const DragAndDrop = (props) => {
       // newResult[destination.droppableId] = completes
 
       moveToCompleted(newCompleted)
-      getCompletedNotes()
+      // getCompletedNotes()
       // return newResult
     }
 
