@@ -145,15 +145,25 @@ const DragAndDrop = (props) => {
     // moving note from todo list to completed list
     if (source.droppableId === 'todo' && destination.droppableId === 'completed') {
       const todos = Array.from(todoNotes);
+      // const completes = Array.from(completedNotes);
       const [newCompleted] = todos.splice(result.source.index, 1);
+      // completes.splice(result.destination.index, 0, newCompleted)
+
+      // const newResult = {}
+      // newResult[source.droppableId] = todos
+      // newResult[destination.droppableId] = completes
 
       moveToCompleted(newCompleted)
+      // getCompletedNotes()
+      // return newResult
     }
 
     // moving note from todo list to completed list
     if (source.droppableId === 'completed' && destination.droppableId === 'todo') {
       const completes = Array.from(completedNotes);
+      // const todos = Array.from(todoNotes);
       const [newTodo] = completes.splice(result.source.index, 1);
+      // todos.splice(result.destination.index, 0, newTodo)
 
       moveToTodo(newTodo)
     }
