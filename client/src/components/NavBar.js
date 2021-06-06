@@ -16,6 +16,7 @@ const NavBar = () => {
             <Nav.Link href='/about' style={{color: 'white', fontSize: '1.2em', fontWeight: 'bold'}}>About</Nav.Link>
           </Nav>
           <Nav>
+            {user && <Nav.Link href='/profile' style={{color: 'white', fontSize: '1.2em', fontWeight: 'bold'}}>Profile</Nav.Link>}
             {user && <Nav.Link onClick={() => handleLogout(history)} style={{color: 'white', fontSize: '1.2em', fontWeight: 'bold'}}>Logout</Nav.Link>}
           </Nav>
         </div>
