@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 
 * {
-  font-family: 'Mulish', sans-serif;
+  font-family: 'Crimson Text', serif;
 }
 
 .App {
@@ -317,7 +317,7 @@ body{
 .login-register-title {
   color: white;
   font-weight: bolder;
-  font-size: 5.2em;
+  font-size: 6.1em;
 }
 
 .login-register-form-title {
