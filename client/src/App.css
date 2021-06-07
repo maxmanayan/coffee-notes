@@ -96,6 +96,16 @@ body{
   justify-content: space-between;
 }
 
+.user-profile {
+  background: #090804;
+  height: 100vh;
+}
+
+.user-profile {
+  color: white;
+  padding-top: 5em
+}
+
 .about {
   background-image: url(./images/cafe.jpg);
   background-color: #ece0d180;
