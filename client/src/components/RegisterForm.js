@@ -18,6 +18,7 @@ const RegisterForm = () => {
     e.preventDefault()
 
     console.log('account', account)
+    console.log('account.name', account.name)
     handleRegister({ ...account }, history)
   }
 
