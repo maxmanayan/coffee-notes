@@ -28,7 +28,7 @@ const AboutCreator = () => {
             Favorite Cafe: The Barista Parlor in Nashville, TN
           </h6>
           <h6 className='about-creator-text'>
-            What I Drank While Building This: Starbucks Pikes Place Roast
+            What I Drank While Building This: Stumptown Holler Mountain
           </h6>
           <a className='about-creator-link' target='_blank' href='https://maxmanayan.netlify.app/'>
            Checkout my other projects!
