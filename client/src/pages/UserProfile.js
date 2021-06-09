@@ -12,9 +12,9 @@ const UserProfile = () => {
       <h1 className='user-profile-header'>User Profile</h1>
       {user &&
         <div>
-          {/* <h3>
+          <h3>
             Name: {user.name}
-          </h3> */}
+          </h3>
           <h3>
             Email: {user.email}
           </h3>

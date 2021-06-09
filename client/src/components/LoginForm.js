@@ -7,6 +7,9 @@ const LoginForm = () => {
   const { handleLogin, authenticated } = useContext(AuthContext)
   const history = useHistory()
 
+  const [noEmail, setNoEmail] = useState(false)
+  const [noPassword, setNoPassword] = useState(false)
+
   const [account, setAccount] = useState({
     name: '',
     email: '',
@@ -16,6 +19,18 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (account.email === '') {
+      setNoEmail(true)
+    } else {
+      setNoEmail(false)
+    }
+
+    if (account.password === '') {
+      setNoPassword(true)
+    } else {
+      setNoPassword(false)
+    }
 
     console.log('account', account)
     handleLogin({ ...account }, history)
@@ -28,9 +43,11 @@ const LoginForm = () => {
         <Form.Group className='login-register-form-group'>
           <Form.Control autoFocus placeholder='Email' id='email' value={account.email} onChange={(e) => setAccount({...account, email: e.target.value})}/>
         </Form.Group>
+        {noEmail && <p className='login-register-error-text'>*Email required</p>}
         <Form.Group className='login-register-form-group'> 
           <Form.Control placeholder='Password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})}/>
         </Form.Group>
+        {noPassword && <p className='login-register-error-text'>*Password required</p>}
         <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>SUBMIT</Button>
       </Form>
     </>

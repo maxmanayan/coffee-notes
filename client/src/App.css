@@ -94,6 +94,12 @@ body{
 
   display: flex;
   justify-content: space-between;
+  margin-right: 0.5em;
+}
+
+.navbar-logo {
+  margin-left: 1em;
+  margin-top: none;
 }
 
 .user-profile {
@@ -328,6 +334,11 @@ body{
   margin-top: 1em;
 }
 
+.login-register-error-text {
+  color: lightgrey;
+  display: flex;
+  justify-content: flex-start;
+}
 .note {
   display:flex;
   flex-direction: column;
