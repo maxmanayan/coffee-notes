@@ -329,7 +329,7 @@ body{
 }
 
 .login-register-error-text {
-  color:white;
+  color: lightgrey;
   display: flex;
   justify-content: flex-start;
 }
