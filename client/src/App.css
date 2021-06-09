@@ -328,6 +328,11 @@ body{
   margin-top: 1em;
 }
 
+.login-register-error-text {
+  color:white;
+  display: flex;
+  justify-content: flex-start;
+}
 .note {
   display:flex;
   flex-direction: column;
