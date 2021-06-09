@@ -96,6 +96,11 @@ body{
   justify-content: space-between;
 }
 
+.navbar-logo {
+  margin-left: 1em;
+  margin-top: none;
+}
+
 .user-profile {
   background: #090804;
   height: 100vh;
