@@ -1,9 +1,9 @@
 class Api::NotesController < ApplicationController
-  before_action :authenticate_user!, only: [:create,:update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show, :create, :update, :destroy]
   before_action :get_note, only: [:show, :update, :destroy]
 
   def index 
-    render json: Note.all
+    render json: @current_user.notes.all
   end
 
   def show
@@ -45,7 +45,7 @@ class Api::NotesController < ApplicationController
   private
 
   def get_note
-    @note = Note.find(params[:id])
+    @note = @current_user.notes.find(params[:id])
   end
 
   def note_params

@@ -51,7 +51,7 @@ const DragAndDrop = (props) => {
 
   const deleteNote = async (id) => {
     try {
-      let res = await axios.delete(`/api/notes/${id}`)
+      let res = await axios.delete(`/api/users/${user.id}/notes/${id}`)
       getTodoNotes()
       getCompletedNotes()
     } catch (error) {
@@ -59,18 +59,18 @@ const DragAndDrop = (props) => {
     }
   }
 
-  const getNote = async (noteID) => {
-    try {
-      let res = await axios.get(`/api/notes/${noteID}`)
-      setViewNote(res.data)
-    } catch (error) {
-      console.log(error)
-    }
-  } 
+  // const getNote = async (noteID) => {
+  //   try {
+  //     let res = await axios.get(`/api/users/${user.id}/notes/${noteID}`)
+  //     setViewNote(res.data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // } 
 
   const moveToCompleted = async (note) => {
     try {
-      await axios.put(`/api/notes/${note.id}`, {
+      await axios.put(`/api/users/${user.id}/notes/${note.id}`, {
         title: note.title,
         body: note.body,
         completed: true
@@ -84,7 +84,7 @@ const DragAndDrop = (props) => {
   
   const moveToTodo = async (note) => {
     try {
-      await axios.put(`/api/notes/${note.id}`, {
+      await axios.put(`/api/users/${user.id}/notes/${note.id}`, {
         title: note.title,
         body: note.body,
         completed: false
@@ -112,9 +112,9 @@ const DragAndDrop = (props) => {
     setUpdateNote(null)
   }
     
-  const openViewNoteModal = (id) => {
-    getNote(id)
-  }
+  // const openViewNoteModal = (id) => {
+  //   getNote(id)
+  // }
   
   const closeViewNoteModal = () => {
     setViewNote(null)
