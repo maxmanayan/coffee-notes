@@ -1,15 +1,17 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import DragAndDrop from "../components/DragAndDrop";
 import TodoList from "../components/TodoList";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Home = () => {
+  const { user } = useContext(AuthContext)
   const [note, setNote] = useState(null)
 
   const displayNote = async (noteID) => {
     try {
-      let res = await axios.get(`/api/notes/${noteID}`)
+      let res = await axios.get(`/api/users/${user.id}/notes/${noteID}`)
       setNote(res.data)
       openTodoList(res.data)
     } catch (error) {

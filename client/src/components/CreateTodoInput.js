@@ -1,17 +1,19 @@
 
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
+import { AuthContext } from '../providers/AuthProvider';
 
 const CreateTodoInput = (props) => {
+  const { user } = useContext(AuthContext)
   const { note, getItems } = props
   const [todo, setTodo] = useState(null)
 
   const createTodo = async (e) => {
     e.preventDefault()
     try {
-      await axios.post(`/api/notes/${note.id}/items`, {
+      await axios.post(`/api/users/${user.id}/notes/${note.id}/items`, {
         content: todo,
         completed: false
       })

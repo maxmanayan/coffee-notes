@@ -1,9 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import * as Icon from 'react-bootstrap-icons';
+import { AuthContext } from "../providers/AuthProvider";
 
 const UpdateNoteModal = (props) => {
+  const { user } = useContext(AuthContext)
   const { closeUpdateNoteModal, updateNote, getTodoNotes, getCompletedNotes } = props
   const [ id, setId ] = useState(updateNote.id)
   const [ title, setTitle ] = useState(updateNote.title)
@@ -13,7 +15,7 @@ const UpdateNoteModal = (props) => {
   
   const editNote = async () => {
     try {
-      let res = await axios.put(`/api/notes/ ${id}`, {
+      let res = await axios.put(`/api/users/${user.id}/notes/ ${id}`, {
         title: title,
         body: info,
         completed: completed

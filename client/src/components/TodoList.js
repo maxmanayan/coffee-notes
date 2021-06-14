@@ -1,10 +1,12 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import * as Icon from 'react-bootstrap-icons';
+import { AuthContext } from '../providers/AuthProvider';
 import CreateTodoInput from './CreateTodoInput';
 import ShowTodoItem from './ShowTodoItem';
 
 const TodoList = (props) => {
+  const { user } = useContext(AuthContext)
   const { note } = props
   const [items, setItems] = useState(null)
   const [hideTrash, setHideTrash] = useState(false)
@@ -15,7 +17,7 @@ const TodoList = (props) => {
 
   const getItems = async () => {
     try {
-      let res = await axios.get(`/api/notes/${note.id}/items`)
+      let res = await axios.get(`/api/users/${user.id}/notes/${note.id}/items`)
       setItems(res.data)
     } catch (error) {
       console.log(error)
@@ -25,14 +27,14 @@ const TodoList = (props) => {
   const editComplete = async (item) => {
     try {
       if (!item.completed) {
-        await axios.put(`/api/notes/${note.id}/items/${item.id}`, {
+        await axios.put(`/api/users/${user.id}/notes/${note.id}/items/${item.id}`, {
           content: note.content,
           completed: true
         })
         getItems()
       }
       if (item.completed) {
-        await axios.put(`/api/notes/${note.id}/items/${item.id}`, {
+        await axios.put(`/api/users/${user.id}/notes/${note.id}/items/${item.id}`, {
           content: note.content,
           completed: false
         })
@@ -45,7 +47,7 @@ const TodoList = (props) => {
 
   const deleteItem = async (item) => {
     try {
-      await axios.delete(`/api/notes/${note.id}/items/${item.id}`)
+      await axios.delete(`/api/users/${user.id}/notes/${note.id}/items/${item.id}`)
       getItems()
     } catch (error) {
       console.log(error)
@@ -78,7 +80,7 @@ const TodoList = (props) => {
               <Icon.CheckSquare className='todo-check-completed' onClick={() => editComplete(item)} size={25} />
             </div>
             <div>
-              <ShowTodoItem key={item.id} item={item} note={note} getItems={getItems} />
+              <ShowTodoItem key={item.id} item={item} note={note} getItems={getItems} deleteItem={deleteItem}/>
             </div>
           </div>
         )

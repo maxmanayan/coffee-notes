@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
+import { AuthContext } from '../providers/AuthProvider';
 
 const EditTodoInput = (props) => {
+  const { user } = useContext(AuthContext)
   const { hideItemEditInput, defaultItem, note, getItems } = props
 
   const [item, setItem] = useState(defaultItem.content)
@@ -12,7 +14,7 @@ const EditTodoInput = (props) => {
     e.preventDefault()
     try {
       console.log('item', item)
-      await axios.put(`/api/notes/${note.id}/items/${defaultItem.id}`, {
+      await axios.put(`/api/users/${user.id}/notes/${note.id}/items/${defaultItem.id}`, {
         content: item,
         completed: defaultItem.completed
       })
