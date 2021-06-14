@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { AuthContext } from '../providers/AuthProvider';
 
 const LoginForm = () => {
-  const { handleLogin, authenticated } = useContext(AuthContext)
+  const { handleLogin, authenticated, loginErrorMessage } = useContext(AuthContext)
   const history = useHistory()
 
   const [noEmail, setNoEmail] = useState(false)
@@ -47,6 +47,7 @@ const LoginForm = () => {
         <Form.Group className='login-register-form-group'> 
           <Form.Control placeholder='Password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})}/>
         </Form.Group>
+        {loginErrorMessage && <p className='login-register-error-text'>*Email and/or Password Incorrect</p>}
         {noPassword && <p className='login-register-error-text'>*Password required</p>}
         <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>SUBMIT</Button>
       </Form>

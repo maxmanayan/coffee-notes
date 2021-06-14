@@ -66,8 +66,6 @@ const RegisterForm = () => {
       setInvalidEmail(false)
     }
 
-    console.log('account', account)
-    console.log('account.name', account.name)
     handleRegister({ ...account }, history)
   }
 

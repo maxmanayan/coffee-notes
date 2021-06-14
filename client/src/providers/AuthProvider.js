@@ -8,6 +8,7 @@ export const AuthConsumer = AuthContext.Consumer
 const AuthProvider = (props) => {
 
   const [ user, setUser ] = useState(null)
+  const [ loginErrorMessage, setLoginErrorMessage ] = useState(false)
 
   const handleRegister = async (user, history) => {
     try {
@@ -23,8 +24,10 @@ const AuthProvider = (props) => {
     try {
       let res = await axios.post("/api/auth/sign_in", user)
       setUser({ user: res.data.data })
+      setLoginErrorMessage(false)
       history.push("/home")
     } catch (error) {
+      setLoginErrorMessage('Email and/or Password Incorrect')
       console.log(error)
     }
   }
@@ -48,6 +51,7 @@ const AuthProvider = (props) => {
         handleLogin: handleLogin,
         handleLogout: handleLogout,
         setUser: (user) => setUser(user),
+        loginErrorMessage: loginErrorMessage
       }}
     >
       {props.children}
