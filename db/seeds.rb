@@ -7,27 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-require "faker"
-Note.destroy_all
-Item.destroy_all
+# require "faker"
+# Note.destroy_all
+# Item.destroy_all
 
-5.times do 
-  note = Note.create(
-    title: Faker::Movies::HarryPotter.character,
-    body: Faker::Movies::HarryPotter.quote,
-    completed: false
-  )
+# 5.times do 
+#   note = Note.create(
+#     title: Faker::Movies::HarryPotter.character,
+#     body: Faker::Movies::HarryPotter.quote,
+#     completed: false
+#   )
 
-  2.times do
-    note.items.create(
-      content: Faker::Movies::HarryPotter.quote,
-      completed: false
-    )
-  end
-end
-
-
+#   2.times do
+#     note.items.create(
+#       content: Faker::Movies::HarryPotter.quote,
+#       completed: false
+#     )
+#   end
+# end
 
 
-puts "Seeded #{Note.all.size} new notes"
-puts "Seeded #{Item.all.size} new items"
+
+
+# puts "Seeded #{Note.all.size} new notes"
+# puts "Seeded #{Item.all.size} new items"

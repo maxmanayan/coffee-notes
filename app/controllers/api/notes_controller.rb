@@ -1,4 +1,5 @@
 class Api::NotesController < ApplicationController
+  before_action :authenticate_user!, only: [:create,:update, :destroy]
   before_action :get_note, only: [:show, :update, :destroy]
 
   def index 
@@ -10,7 +11,7 @@ class Api::NotesController < ApplicationController
   end
 
   def create
-    new_note = Note.new(note_params)
+    new_note = @current_user.notes.new(note_params)
 
     if (new_note.save)
       render json: new_note
