@@ -84,12 +84,12 @@ const RegisterForm = () => {
         {noEmail && <p className='login-register-error-text'>*Email required to register</p>}
         {invalidEmail && <p className='login-register-error-text'>*Invalid email address</p>}
         <Form.Group className='login-register-form-group'>
-          <Form.Control placeholder='Password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})} />
+          <Form.Control placeholder='Password' type='password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})} />
         </Form.Group>
         {noPassword && <p className='login-register-error-text'>*Password required to register</p>}
         {invalidPasswordLength && <p className='login-register-error-text'>*Password must be at least 6 characters</p>}
         <Form.Group className='login-register-form-group'>
-          <Form.Control placeholder='Confirm Password' id='passwordConfirmation' value={account.passwordConfirmation} onChange={(e) => setAccount({...account, passwordConfirmation: e.target.value})} />
+          <Form.Control placeholder='Confirm Password' type='password' id='passwordConfirmation' value={account.passwordConfirmation} onChange={(e) => setAccount({...account, passwordConfirmation: e.target.value})} />
         </Form.Group>
         {noPasswordConfirmation && <p className='login-register-error-text'>*Password must be confirmed</p>}
         {passwordAndConfirmationNoMatch && <p className='login-register-error-text'>*Password and confirmation do not match</p>}
