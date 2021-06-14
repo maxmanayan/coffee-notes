@@ -339,7 +339,7 @@ body{
   display: flex;
   justify-content: flex-start;
 }
-.note {
+.todo-note {
   display:flex;
   flex-direction: column;
   justify-content: space-between;
@@ -358,7 +358,7 @@ body{
   border-radius: 0px;
 }
 
-.note:hover {
+.todo-note:hover {
   display:flex;
   flex-direction: column;
   justify-content: space-between;
@@ -366,6 +366,44 @@ body{
   cursor: pointer;
 
   background: #ece0d1c4;
+  padding: 25px;
+
+  height: 200px;
+  width: 200px;
+
+  margin: 15px;
+
+  box-shadow: 2px 2px #38220f54;
+  border-radius: 0px;
+}
+
+.completed-note {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  background: #ece0d181;
+  padding: 25px;
+
+  height: 200px;
+  width: 200px;
+
+  margin: 15px;
+
+  box-shadow: 2px 2px #38220f34;
+  border-radius: 0px;
+}
+
+.completed-note:hover {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  background: #ece0d1af;
   padding: 25px;
 
   height: 200px;

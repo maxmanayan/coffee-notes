@@ -45,7 +45,7 @@ const LoginForm = () => {
         </Form.Group>
         {noEmail && <p className='login-register-error-text'>*Email required</p>}
         <Form.Group className='login-register-form-group'> 
-          <Form.Control placeholder='Password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})}/>
+          <Form.Control placeholder='Password' type='password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})}/>
         </Form.Group>
         {loginErrorMessage && <p className='login-register-error-text'>*Email and/or Password Incorrect</p>}
         {noPassword && <p className='login-register-error-text'>*Password required</p>}
