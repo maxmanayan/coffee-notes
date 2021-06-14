@@ -10,9 +10,10 @@ class Note < ApplicationRecord
     .where("completed = false")
   end
 
-  def self.get_completed_notes
+  def self.get_completed_notes(id)
     select("*")
     .from("notes")
+    .where("user_id = ?", id)
     .where("completed = true")
   end
 end

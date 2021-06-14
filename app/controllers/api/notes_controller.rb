@@ -38,7 +38,7 @@ class Api::NotesController < ApplicationController
   end
 
   def get_completed_notes
-    completed_notes = Note.get_completed_notes
+    completed_notes = Note.get_completed_notes(params[:user_id])
     render json: completed_notes
   end
 
