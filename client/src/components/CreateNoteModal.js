@@ -1,16 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import * as Icon from 'react-bootstrap-icons';
+import { AuthContext } from "../providers/AuthProvider";
 
 const CreateNoteModal = (props) => {
+  const { user } = useContext(AuthContext)
   const { closeCreateNoteModal, getTodoNotes } = props
   const [ title, setTitle ] = useState('')
   const [ info, setInfo ] = useState('')
 
   const createNote = async () => {
     try {
-      await axios.post('/api/notes', {
+      await axios.post(`/api/users/${user.id}/notes`, {
         title: title,
         body: info,
         completed: false

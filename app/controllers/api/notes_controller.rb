@@ -33,7 +33,7 @@ class Api::NotesController < ApplicationController
   end
 
   def get_todo_notes
-    todo_notes = Note.get_todo_notes
+    todo_notes = Note.get_todo_notes(params[:user_id])
     render json: todo_notes
   end
 

@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   namespace :api do 
-    resources :notes do 
-      resources :items
+    resources :users do
+      resources :notes do 
+        resources :items
+      end
     end
 
-    get "/get_todo_notes", to: "notes#get_todo_notes"
-    get "/get_completed_notes", to: "notes#get_completed_notes"
+    get "/users/:user_id/get_todo_notes", to: "notes#get_todo_notes"
+    get "/users/:user_id/get_completed_notes", to: "notes#get_completed_notes"
   end
 end

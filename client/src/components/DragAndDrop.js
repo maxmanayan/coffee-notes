@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import axios from 'axios';
 import * as Icon from 'react-bootstrap-icons';
@@ -6,9 +6,11 @@ import CreateNoteModal from "../components/CreateNoteModal";
 import ViewNoteModal from './ViewNoteModal';
 import UpdateNoteModal from './UpdateNoteModal';
 import { Col } from 'react-bootstrap';
+import { AuthContext } from '../providers/AuthProvider';
 
 
 const DragAndDrop = (props) => {
+  const { user } = useContext(AuthContext)
   const { displayNote } = props
 
   const [ todoNotes, setTodoNotes ] = useState([])
@@ -31,7 +33,7 @@ const DragAndDrop = (props) => {
   
   const getTodoNotes = async () => {
     try {
-      let res = await axios.get('/api/get_todo_notes')
+      let res = await axios.get(`/api/users/${user.id}/get_todo_notes`)
       setTodoNotes(res.data)
     } catch (error) {
       console.log(error)
@@ -40,7 +42,7 @@ const DragAndDrop = (props) => {
   
   const getCompletedNotes = async () => {
     try {
-      let res = await axios.get('/api/get_completed_notes')
+      let res = await axios.get(`/api/users/${user.id}//get_completed_notes`)
       setCompletedNotes(res.data)
     } catch (error) {
       console.log(error)

@@ -3,9 +3,10 @@ class Note < ApplicationRecord
 
   has_many :items, dependent: :destroy
   
-  def self.get_todo_notes
+  def self.get_todo_notes(id)
     select("*")
     .from("notes")
+    .where("user_id = ?", id)
     .where("completed = false")
   end
 
