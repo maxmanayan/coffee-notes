@@ -195,7 +195,7 @@ const DragAndDrop = (props) => {
                       return (
                         <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                           {(provided) => (
-                            <div className='note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                            <div className='todo-note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
                               <div className='delete-note'>
                                 <div  style={{cursor: 'pointer'}}>
                                   <Icon.X onClick={() => deleteNote(note.id)} />
@@ -238,7 +238,7 @@ const DragAndDrop = (props) => {
                       return (
                         <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                           {(provided) => (
-                            <div className='note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                            <div className='completed-note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
                               <div className='delete-note'>
                                 <div  style={{cursor: 'pointer'}}>
                                   <Icon.X onClick={() => deleteNote(note.id)} />
