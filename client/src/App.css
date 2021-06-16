@@ -20,6 +20,38 @@
   padding-top: 5em;
 }
 
+.no-match {
+  background-image: url(./images/tea.jpg);
+  background-color: #ece0d165;
+  background-blend-mode: lighten;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 5em;
+}
+
+.no-match-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.no-match-text {
+  color: #090804;
+  margin-bottom: 1em;
+}
+
+.no-match-link {
+  color: white;
+  text-decoration: none;
+}
+
+.no-match-link:hover {
+  color: rgba(255, 255, 255, 0.692);
+  text-decoration: none;
+}
+
 .todo-board {
   display: flex;
   flex-direction: row;
