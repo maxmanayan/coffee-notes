@@ -6,6 +6,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import About from './pages/About';
 import Home from './pages/Home';
 import LoginRegister from './pages/LoginRegister';
+import NoMatch from './pages/NoMatch';
 import UserProfile from './pages/UserProfile';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <ProtectedRoute exact path='/home' component={Home} />
           <ProtectedRoute exact path='/profile' component={UserProfile} />
           <Route exact path='/about' component={About} />
+          <Route component={NoMatch} />
         </Switch>
       </FetchUser>
     </div>
