@@ -11,16 +11,13 @@ const NavBar = () => {
   return(
     <div>
       <Navbar fixed='top'>
-        <Navbar.Brand className='navbar-logo' href='home'>
-          <img
-            src={cnLogo}
-            height='40px'
-          />
-        </Navbar.Brand>
         <div className='navbar'>
-          <Nav>
-            {/* <Nav.Link href='/home' style={{color: 'white', fontSize: '1.2em', fontWeight: 'bold'}}>Home</Nav.Link> */}
-          </Nav>
+          <Navbar.Brand className='navbar-logo' href='home'>
+            <img
+              src={cnLogo}
+              height='40px'
+            />
+          </Navbar.Brand>
           <Nav>
             <Nav.Link href='/about' style={{color: 'white', fontSize: '1.2em', fontWeight: 'bold'}}>About</Nav.Link>
             {user && <Nav.Link href='/profile' style={{color: 'white', fontSize: '1.2em', fontWeight: 'bold'}}>Profile</Nav.Link>}

@@ -13,7 +13,6 @@ const EditTodoInput = (props) => {
   const editItem = async (e) => {
     e.preventDefault()
     try {
-      console.log('item', item)
       await axios.put(`/api/users/${user.id}/notes/${note.id}/items/${defaultItem.id}`, {
         content: item,
         completed: defaultItem.completed

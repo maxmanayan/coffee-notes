@@ -8,34 +8,15 @@
   text-align: center;
   height: 100vh;
 }
-/* 
-body{
-  background-color: red;
-} */
 
 .home {
-  /* background: #ECE0D1;
-  height: 100vh;
-  padding-top: 3em; */
-
   background-image: url(./images/wood.jpg);
   background-color: #ece0d1b6;
   background-blend-mode: screen;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
-
-  /* position:absolute; */
-  top:10px;
-  margin: 0;
-
   min-height: 100vh;
-  /* min-width: 1024px;
-
-  width: 100%;
-  height: auto; */
   padding-top: 5em;
 }
 
@@ -44,22 +25,14 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
   overflow-y: auto;
   scroll-behavior: smooth;
-
   height: 75vh;
-
-
   width: 100%;
   max-width: 700px;
-
-  /* border-right: 1px solid rgb(92, 92, 92); */
   border-radius: 5px 0 0 5px;
-
   color: #090804;
   background-color: #96725956;
-
   padding: 15px;
 }
 
@@ -68,30 +41,20 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
   overflow-y: auto;
   scroll-behavior: smooth;
-
   height: 75vh;
-
-
   width: 100%;
   max-width: 700px;
-
-  /* border-right: 1px solid rgb(92, 92, 92); */
-   border-radius: 0 5px 5px 0;
-
+  border-radius: 0 5px 5px 0;
   color: #090804;
   background-color: #63483252;
-
   padding: 15px;
-
 }
 
 .navbar {
   background: none;
   width: 100vw;
-
   display: flex;
   justify-content: space-between;
   margin-right: 0.5em;
@@ -116,16 +79,11 @@ body{
   background-image: url(./images/cafe.jpg);
   background-color: #ece0d180;
   background-blend-mode: screen;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
   position:absolute;
-  /* top:10px; */
-  margin: 0;
-
   min-height: 100vh;
 }
 
@@ -135,18 +93,14 @@ body{
   font-size: 100px;
   font-weight: bolder;
 }
+
 .about-button-container {
   display: flex;
   justify-content: space-around;
   align-items:center;
-
   height: 67vh;
-
   margin-left: 10vw;
   margin-right: 10vw;
-
-  /* flex-wrap: wrap; */
-  /* margin-bottom: 3.5%; */
 }
 
 
@@ -194,19 +148,12 @@ body{
   background-image: url(./images/begin.jpg);
   background-color: #ece0d180;
   background-blend-mode: screen;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
-  /* position:absolute; */
-  /* top:10px; */
-  margin: 0;
-
   min-height: 100vh;
   min-width: 1024px;
-
   width: 100%;
   height: auto;
 }
@@ -246,22 +193,14 @@ body{
   background-image: url(./images/grinds.jpg);
   background-color: #ece0d19c;
   background-blend-mode: screen;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
-
-  /* position:absolute; */
-  /* top:10px; */
   margin: 0;
-
   min-height: 100vh;
   min-width: 1024px;
-
   width: 100%;
   height: auto;
-
   border-top: 1px solid rgba(0, 0, 0, 0.425);
 }
 
@@ -301,21 +240,11 @@ body{
   background-image: url(./images/coffee.jpg);
   background-color: grey;
   background-blend-mode: normal;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
-  /* position:absolute; */
-  top:10px;
-  margin: 0;
-
   min-height: 100vh;
-  /* min-width: 1024px; */
-
-  /* width: 100%; */
-  /* height: auto; */
 }
 
 .login-register-title {
@@ -338,21 +267,17 @@ body{
   display: flex;
   justify-content: flex-start;
 }
+
 .todo-note {
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-
   cursor: pointer;
-
   background: #ece0d1;
   padding: 25px;
-
   height: 200px;
   width: 200px;
-
   margin: 15px;
-
   box-shadow: 2px 2px #38220f34;
   border-radius: 0px;
 }
@@ -361,17 +286,12 @@ body{
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-
   cursor: pointer;
-
   background: #ece0d1c4;
   padding: 25px;
-
   height: 200px;
   width: 200px;
-
   margin: 15px;
-
   box-shadow: 2px 2px #38220f54;
   border-radius: 0px;
 }
@@ -380,17 +300,12 @@ body{
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-
   cursor: pointer;
-
   background: #ece0d181;
   padding: 25px;
-
   height: 200px;
   width: 200px;
-
   margin: 15px;
-
   box-shadow: 2px 2px #38220f34;
   border-radius: 0px;
 }
@@ -399,17 +314,12 @@ body{
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-
   cursor: pointer;
-
   background: #ece0d1af;
   padding: 25px;
-
   height: 200px;
   width: 200px;
-
   margin: 15px;
-
   box-shadow: 2px 2px #38220f54;
   border-radius: 0px;
 }
@@ -450,10 +360,8 @@ body{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
   margin-left: 3em;
   color: #090804;
-
 }
 
 .todo-list-default-text {
@@ -466,10 +374,8 @@ body{
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
   margin-left: 3em;
   margin-top: 1em;
-
   color: #0908047e;
 }
 
@@ -477,14 +383,12 @@ body{
   height: 30px;
   display: flex;
   margin: 1em;
-  /* overflow: hidden; */
   justify-content: space-between;
 }
 
 .todo-check {
   margin-right: 1em;
   cursor: pointer;
-
   color: #090804;
 }
 
@@ -497,17 +401,14 @@ body{
 .todo-check-completed {
   margin-right: 1em;
   cursor: pointer;
-
   background: #0908041f;
 }
 
 .todo-check-completed:hover {
   margin-right: 1em;
   cursor: pointer;
-
   background: #09080400;
 }
-
 
 .todo-item {
   text-align: left;
@@ -527,7 +428,6 @@ body{
 .todo-item-trash:hover {
   margin-left: 1em;
   cursor: pointer;
-
   color: #09080462;
 }
 
@@ -541,8 +441,6 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  /* background: red; */
   width: 200%;
 }
 
@@ -550,17 +448,14 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   width: 250%;
 }
 
 .edit-item-input-x {
   margin-left: -8px;
   margin-top: -7px;
-
   color: #090804;
   background: white;
   border-radius: 100%;
-
   cursor: pointer;
 }

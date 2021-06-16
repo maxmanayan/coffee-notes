@@ -10,12 +10,10 @@ const ShowTodoItem = (props) => {
 
   const showItemEditInput = () => {
     setShowItemEdit(true)
-    // setHideTrash(true)
   }
 
   const hideItemEditInput = () => {
     setShowItemEdit(false)
-    // setHideTrash(false)
   }
 
   return(
