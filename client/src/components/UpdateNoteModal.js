@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import * as Icon from 'react-bootstrap-icons';
 import { AuthContext } from "../providers/AuthProvider";
@@ -41,11 +41,9 @@ const UpdateNoteModal = (props) => {
       <Modal.Body className='modal-body'>
         <Form>
           <Form.Group className='modal-body'>
-            {/* <Form.Label>Title</Form.Label> */}
             <Form.Control className='modal-body' name='title' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
           </Form.Group>
           <Form.Group className='modal-body'>
-            {/* <Form.Label>Info</Form.Label> */}
             <Form.Control className='modal-body' as='textarea' name='info' placeholder='Info' value={info} onChange={(e) => setInfo(e.target.value)} />
           </Form.Group>
         </Form>

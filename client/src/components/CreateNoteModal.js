@@ -37,11 +37,9 @@ const CreateNoteModal = (props) => {
       <Modal.Body>
         <Form>
           <Form.Group>
-            {/* <Form.Label>Title</Form.Label> */}
             <Form.Control name='title' placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
           </Form.Group>
           <Form.Group>
-            {/* <Form.Label>Info</Form.Label> */}
             <Form.Control as='textarea' name='info' placeholder='Try to summarize your task in one sentence!' value={info} onChange={(e) => setInfo(e.target.value)} />
           </Form.Group>
         </Form>

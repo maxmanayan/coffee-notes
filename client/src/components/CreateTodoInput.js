@@ -16,7 +16,6 @@ const CreateTodoInput = (props) => {
         content: todo,
         completed: false
       })
-
       setTodo('')
       getItems()
     } catch (error) {
