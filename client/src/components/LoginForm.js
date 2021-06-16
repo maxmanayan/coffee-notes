@@ -32,7 +32,6 @@ const LoginForm = () => {
       setNoPassword(false)
     }
 
-    console.log('account', account)
     handleLogin({ ...account }, history)
   }
 

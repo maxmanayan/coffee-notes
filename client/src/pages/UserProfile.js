@@ -1,12 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext)
 
-  useEffect(() => {
-    console.log('user', user)
-  })
   return(
     <div className='user-profile'>
       <h1 className='user-profile-header'>User Profile</h1>
