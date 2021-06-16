@@ -2,7 +2,6 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
-import * as Icon from 'react-bootstrap-icons';
 import { AuthContext } from '../providers/AuthProvider';
 
 const CreateTodoInput = (props) => {
