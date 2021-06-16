@@ -8,7 +8,6 @@ const AboutComingSoon = () => {
       <h1 className='about-coming-soon-header'>Coming Soon...</h1>
       <div>
         <div className='about-coming-soon-content'>
-          {/* <Col xs={12} md={{span: 12, offset: 5}}> */}
             <Row className='about-coming-soon-row'>
               <Col xs={12} md={{span: 1, offset: 3}}>
                 <Icon.UiChecksGrid color='#090804' size={75} />
@@ -49,7 +48,6 @@ const AboutComingSoon = () => {
                 <h3 className='about-coming-soon-text'>Daily Motivational Quotes</h3>
               </Col>
             </Row>
-          {/* </Col> */}
         </div>
         <div>
           <a className='about-coming-soon-link' 
