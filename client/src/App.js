@@ -11,17 +11,15 @@ import UserProfile from './pages/UserProfile';
 function App() {
   return (
     <div className="App">
-      {/* <div className="page-background"> */}
-        <NavBar />
-        <FetchUser>
-          <Switch>
-            <Route exact path='/' component={LoginRegister} />
-            <ProtectedRoute exact path='/home' component={Home} />
-            <ProtectedRoute exact path='/profile' component={UserProfile} />
-            <Route exact path='/about' component={About} />
-          </Switch>
-        </FetchUser>
-      {/* </div> */}
+      <NavBar />
+      <FetchUser>
+        <Switch>
+          <Route exact path='/' component={LoginRegister} />
+          <ProtectedRoute exact path='/home' component={Home} />
+          <ProtectedRoute exact path='/profile' component={UserProfile} />
+          <Route exact path='/about' component={About} />
+        </Switch>
+      </FetchUser>
     </div>
   );
 }
