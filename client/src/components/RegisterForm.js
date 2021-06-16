@@ -93,7 +93,7 @@ const RegisterForm = () => {
         </Form.Group>
         {noPasswordConfirmation && <p className='login-register-error-text'>*Password must be confirmed</p>}
         {passwordAndConfirmationNoMatch && <p className='login-register-error-text'>*Password and confirmation do not match</p>}
-        <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>SUBMIT</Button>
+        <Button style={{marginTop: '1em', background: '#090804', border: 'none', fontWeight: 'bold', padding: '1em 2em'}} type='submit'>SUBMIT</Button>
       </Form>
     </>
   )
