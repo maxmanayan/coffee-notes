@@ -48,7 +48,7 @@ const LoginForm = () => {
         </Form.Group>
         {loginErrorMessage && <p className='login-register-error-text'>*Email and/or Password Incorrect</p>}
         {noPassword && <p className='login-register-error-text'>*Password required</p>}
-        <Button style={{marginTop: '1em', background: '#090804', border: 'none'}} type='submit'>SUBMIT</Button>
+        <Button style={{marginTop: '1em', background: '#090804', border: 'none', fontWeight: 'bold', padding: '1em 2em'}} type='submit'>SUBMIT</Button>
       </Form>
     </>
   )
