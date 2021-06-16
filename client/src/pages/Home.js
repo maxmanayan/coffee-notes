@@ -28,7 +28,7 @@ const Home = () => {
   return(
     <div className='home'>
       <Row>
-        <Col>
+        <Col xs={12} sm={12} md={7}>
           <div className='todo-list-container'>
             {!note && 
               <h1 className='todo-list-default-text'>create or select a note...</h1>
@@ -36,7 +36,7 @@ const Home = () => {
             {note && openTodoList(note)}
           </div>
         </Col>
-        <Col md={5}>
+        <Col xs={12} sm={12} md={5}>
           <DragAndDrop displayNote={displayNote} />
         </Col>
       </Row>

@@ -176,8 +176,8 @@ const DragAndDrop = (props) => {
   return (
     <div>
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-          <Col>
+        <div style={{display: 'flex'}}>
+          <Col xs={6} md={6}>
             <div>
               <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center',color: '#090804'}}>
                 <h1>Todo</h1>
@@ -228,7 +228,7 @@ const DragAndDrop = (props) => {
               </Droppable>
             </div>
           </Col>
-          <Col >
+          <Col xs={6} md={6}>
             <div>
               <h1 style={{color: '#090804'}}>Completed</h1>
               <Droppable droppableId="completed">
