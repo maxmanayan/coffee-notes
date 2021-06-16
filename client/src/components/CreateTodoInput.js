@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Col } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import { AuthContext } from '../providers/AuthProvider';
 
@@ -28,10 +28,14 @@ const CreateTodoInput = (props) => {
   return(
     <>
       <Form className='create-todo-form' onSubmit={createTodo}>
-          <Form.Group>
-            <Form.Control style={{width: '255%', border: 'none'}} placeholder='Add Todo Item...' name='todo' value={todo} onChange={(e) => setTodo(e.target.value)} />
-          </Form.Group> 
-          <Button type='submit' style={{background: '#090804', border: 'none'}} >Add</Button>
+          <Col xs={3} sm={4} md={4}>
+            <Form.Group>
+              <Form.Control style={{width: '255%', border: 'none'}} placeholder='Add Todo Item...' name='todo' value={todo} onChange={(e) => setTodo(e.target.value)} />
+            </Form.Group> 
+          </Col>
+          <Col xs={12} sm={12} md={1}>
+            <Button type='submit' style={{background: '#090804', border: 'none'}} >Add</Button>
+          </Col>
       </Form>
     </>
   )
