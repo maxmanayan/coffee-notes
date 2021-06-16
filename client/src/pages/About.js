@@ -10,8 +10,8 @@ const About = () => {
   return(
     <div className='about'>
       <h1 className='about-header'>About</h1>
-      <div className='about-button-container'>
-        {/* <Col xs={12} sm={3}> */}
+      <Col xs={12} md={12}>
+        <div className='about-button-container'>
           <Link
               activeClass="active"
               to="about-website"
@@ -25,8 +25,6 @@ const About = () => {
                 <h3 className='about-icon-text'>Coffee Notes</h3>
             </div>
           </Link>
-        {/* </Col>
-        <Col  xs={12} sm={3}> */}
           <Link
               activeClass="active"
               to="about-creator"
@@ -40,8 +38,6 @@ const About = () => {
               <h3 className='about-icon-text'>The Developer</h3>
             </div>
           </Link>
-        {/* </Col>
-        <Col  xs={12} sm={3}> */}
           <Link
               activeClass="active"
               to="about-coming-soon"
@@ -55,8 +51,8 @@ const About = () => {
               <h3 className='about-icon-text'>Future Features</h3>
             </div>
           </Link>
-        {/* </Col> */}
-      </div>
+        </div>
+      </Col>
       <div>
         <AboutWebsite />
         <AboutCreator />
