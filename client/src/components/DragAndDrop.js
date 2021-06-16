@@ -19,9 +19,7 @@ const DragAndDrop = (props) => {
   const [ viewNote, setViewNote ] = useState(null)
   const [ updateNote, setUpdateNote ] = useState(null)
 
-  const [ showViewNoteModal, setShowViewNoteModal ] = useState(false)
   const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
-  const [ showUpdateNoteModal, setShowUpdateNoteModal ] = useState(false)
 
   
    
@@ -58,15 +56,6 @@ const DragAndDrop = (props) => {
       console.log(error)
     }
   }
-
-  // const getNote = async (noteID) => {
-  //   try {
-  //     let res = await axios.get(`/api/users/${user.id}/notes/${noteID}`)
-  //     setViewNote(res.data)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // } 
 
   const moveToCompleted = async (note) => {
     try {
@@ -111,10 +100,6 @@ const DragAndDrop = (props) => {
   const closeUpdateNoteModal = () => {
     setUpdateNote(null)
   }
-    
-  // const openViewNoteModal = (id) => {
-  //   getNote(id)
-  // }
   
   const closeViewNoteModal = () => {
     setViewNote(null)
@@ -131,7 +116,6 @@ const DragAndDrop = (props) => {
       const todos = Array.from(todoNotes);
       const [reorderedTodo] = todos.splice(result.source.index, 1);
       todos.splice(result.destination.index, 0, reorderedTodo);
-
       setTodoNotes(todos);
     }
 
@@ -140,33 +124,20 @@ const DragAndDrop = (props) => {
       const completes = Array.from(completedNotes);
       const [reorderedCompleted] = completes.splice(result.source.index, 1);
       completes.splice(result.destination.index, 0, reorderedCompleted);
-
       setCompletedNotes(completes);
     }
 
     // moving note from todo list to completed list
     if (source.droppableId === 'todo' && destination.droppableId === 'completed') {
       const todos = Array.from(todoNotes);
-      // const completes = Array.from(completedNotes);
       const [newCompleted] = todos.splice(result.source.index, 1);
-      // completes.splice(result.destination.index, 0, newCompleted)
-
-      // const newResult = {}
-      // newResult[source.droppableId] = todos
-      // newResult[destination.droppableId] = completes
-
       moveToCompleted(newCompleted)
-      // getCompletedNotes()
-      // return newResult
     }
 
     // moving note from todo list to completed list
     if (source.droppableId === 'completed' && destination.droppableId === 'todo') {
       const completes = Array.from(completedNotes);
-      // const todos = Array.from(todoNotes);
       const [newTodo] = completes.splice(result.source.index, 1);
-      // todos.splice(result.destination.index, 0, newTodo)
-
       moveToTodo(newTodo)
     }
 
@@ -201,18 +172,10 @@ const DragAndDrop = (props) => {
                                   <Icon.X onClick={() => deleteNote(note.id)} />
                                 </div>
                               </div>
-                              {/* <p>{note.id}</p> */}
                               <div style={{cursor: 'pointer'}} onClick={() => openUpdateNoteModal(note)}>
                                 <h4>{note.title}</h4>
                               </div>
-                              {/* <p>{note.body}</p> */}
                               <div className='note-view-edit'>
-                                {/* <div style={{cursor: 'pointer'}} >
-                                  <Icon.List onClick={() => openViewNoteModal(note.id)} />
-                                </div>
-                                <div style={{cursor: 'pointer'}} >
-                                  <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
-                                </div> */}
                                 <div style={{cursor: 'pointer'}} >
                                   <Icon.ArrowRightSquare onClick={() => moveToCompleted(note)} />
                                 </div>
@@ -244,17 +207,10 @@ const DragAndDrop = (props) => {
                                   <Icon.X onClick={() => deleteNote(note.id)} />
                                 </div>
                               </div>
-                              {/* <p>{note.id}</p> */}
                               <div style={{cursor: 'pointer'}} onClick={() => openUpdateNoteModal(note)}>
                                 <h4>{note.title}</h4>
                               </div>
                               <div className='note-view-edit'>
-                                {/* <div style={{cursor: 'pointer'}} >
-                                  <Icon.List onClick={() => openViewNoteModal(note.id)} />
-                                </div>
-                                <div style={{cursor: 'pointer'}} >
-                                  <Icon.PencilSquare onClick={() => openUpdateNoteModal(note)} />
-                                </div> */}
                                 <div style={{cursor: 'pointer'}} >
                                   <Icon.ArrowLeftSquare onClick={() => moveToTodo(note)} />
                                 </div>
