@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/maxmanayan/coffee-notes/issues"
   },
-  "homepage": "https://github.com/maxmanayan/coffee-notes#readme"
+  "homepage": "https://github.com/maxmanayan/coffee-notes#readme",
+  "dependencies": {
+    "react-hook-form-resolvers": "0.0.1"
+  }
 }
