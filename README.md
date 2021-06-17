@@ -1,4 +1,5 @@
 # Coffee Notes
+### Make an Account Today!
 ### (https://coffeeandnotes.herokuapp.com/)
 
 ## Your own personalized productivity app!
