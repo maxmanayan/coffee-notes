@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     get "/users/:user_id/get_todo_notes", to: "notes#get_todo_notes"
     get "/users/:user_id/get_completed_notes", to: "notes#get_completed_notes"
   end
+  get '*other', to: 'static#index'
 end
