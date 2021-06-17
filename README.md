@@ -12,8 +12,8 @@
 * World Clock and Timer!
 * Daily motivational quotes!
 * Greater Customization to Profile
-..* Option of adding profile picture!
-..* Option of adding nickname for your account!
+  * Option of adding profile picture!
+  * Option of adding nickname for your account!
 
 ### Third-party libraries used:
 * React-Beautiful-DND (https://github.com/atlassian/react-beautiful-dnd) - Drag and Drop, Accessibility
