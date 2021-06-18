@@ -15,7 +15,8 @@ const DragAndDrop = (props) => {
           getCompletedNotes, todoNotes, 
           completedNotes, setTodoNotes, 
           setCompletedNotes, showCreateNoteModal,
-          openCreateNoteModal, closeCreateNoteModal
+          openCreateNoteModal, closeCreateNoteModal,
+          selectedNoteID
         } = props
 
   // const [ viewNote, setViewNote ] = useState(null)
@@ -133,7 +134,7 @@ const DragAndDrop = (props) => {
                       return (
                         <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                           {(provided) => (
-                            <div className='todo-note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                            <div className={`${note.id === selectedNoteID ? 'todo-note-active' : 'todo-note'}`} onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
                               <div className='delete-note'>
                                 <div  style={{cursor: 'pointer'}}>
                                   <Icon.X onClick={() => deleteNote(note.id)} />
@@ -168,7 +169,7 @@ const DragAndDrop = (props) => {
                       return (
                         <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
                           {(provided) => (
-                            <div className='completed-note' onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
+                            <div className={`${note.id === selectedNoteID ? 'completed-note-active' : 'completed-note'}`} onClick={() => displayNote(note.id)} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} >
                               <div className='delete-note'>
                                 <div  style={{cursor: 'pointer'}}>
                                   <Icon.X onClick={() => deleteNote(note.id)} />

@@ -9,6 +9,7 @@ import * as Icon from 'react-bootstrap-icons';
 const Home = () => {
   const { user } = useContext(AuthContext)
   const [note, setNote] = useState(null)
+  const [ selectedNoteID, setSelectedNoteID ] = useState(0)
   const [ todoNotes, setTodoNotes ] = useState([])
   const [ completedNotes, setCompletedNotes ] = useState([])
   const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
@@ -29,6 +30,7 @@ const Home = () => {
       } else {
         let res = await axios.get(`/api/users/${user.id}/notes/${noteID}`)
         setNote(res.data)
+        setSelectedNoteID(res.data.id)
         openTodoList(res.data)
       }
     } catch (error) {
@@ -91,7 +93,7 @@ const Home = () => {
           completedNotes={completedNotes} setTodoNotes={setTodoNotes}
           setCompletedNotes={setCompletedNotes} note={note}
           openCreateNoteModal={openCreateNoteModal} closeCreateNoteModal={closeCreateNoteModal}
-          showCreateNoteModal={showCreateNoteModal}
+          showCreateNoteModal={showCreateNoteModal} selectedNoteID={selectedNoteID}
           />
         </Col>
       </Row>
