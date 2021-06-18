@@ -339,8 +339,8 @@
   width: 200px;
   margin: 15px;
   box-shadow:
-    2px 2px #38220f54,
-    0 0 15px 5px #ece0d1e7;
+    2px 2px 2px 2px #38220f54,
+    0 0 10px 5px #ece0d1e7;
   border-radius: 0px;
 }
 
@@ -384,7 +384,7 @@
   width: 200px;
   margin: 15px;
   box-shadow:
-    2px 2px #38220f54,
+    2px 2px 2px 2px #38220f54,
     0 0 15px 5px #ece0d1e7;
   border-radius: 0px;
 }
