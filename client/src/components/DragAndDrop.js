@@ -40,6 +40,7 @@ const DragAndDrop = (props) => {
       })
       getTodoNotes()
       getCompletedNotes()
+      displayNote(note.id)
     } catch (error) {
       console.log(error)
     }
@@ -54,6 +55,7 @@ const DragAndDrop = (props) => {
       })
       getTodoNotes()
       getCompletedNotes()
+      displayNote(note.id)
     } catch (error) {
       console.log(error)
     }

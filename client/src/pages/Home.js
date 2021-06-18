@@ -62,7 +62,8 @@ const Home = () => {
           displayNote={displayNote} getTodoNotes={getTodoNotes} 
           getCompletedNotes={getCompletedNotes} todoNotes={todoNotes} 
           completedNotes={completedNotes} setTodoNotes={setTodoNotes}
-          setCompletedNotes={setCompletedNotes} />
+          setCompletedNotes={setCompletedNotes} note={note}
+          />
         </Col>
       </Row>
     </div>
