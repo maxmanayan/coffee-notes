@@ -13,7 +13,7 @@ const DragAndDrop = (props) => {
   const { user } = useContext(AuthContext)
   const { displayNote, getTodoNotes, getCompletedNotes, todoNotes, completedNotes, setTodoNotes, setCompletedNotes } = props
 
-  const [ viewNote, setViewNote ] = useState(null)
+  // const [ viewNote, setViewNote ] = useState(null)
   const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
 
   useEffect(() => {
@@ -26,6 +26,7 @@ const DragAndDrop = (props) => {
       let res = await axios.delete(`/api/users/${user.id}/notes/${id}`)
       getTodoNotes()
       getCompletedNotes()
+      displayNote(null)
     } catch (error) {
       console.log(error)
     }
@@ -69,9 +70,9 @@ const DragAndDrop = (props) => {
     setShowCreateNoteModal(false)
   }
 
-  const closeViewNoteModal = () => {
-    setViewNote(null)
-  }
+  // const closeViewNoteModal = () => {
+  //   setViewNote(null)
+  // }
     
   const handleOnDragEnd = (result) => {
     const { destination, source, draggableId } = result;
@@ -200,10 +201,10 @@ const DragAndDrop = (props) => {
         <CreateNoteModal 
           closeCreateNoteModal={closeCreateNoteModal} getTodoNotes={getTodoNotes}
       />}
-      {viewNote && 
+      {/* {viewNote && 
         <ViewNoteModal 
           closeViewNoteModal={closeViewNoteModal} viewNote={viewNote}
-      />}
+      />} */}
 
   </div>
   );

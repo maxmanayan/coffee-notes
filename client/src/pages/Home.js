@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import { NutFill } from "react-bootstrap-icons";
 import DragAndDrop from "../components/DragAndDrop";
 import TodoList from "../components/TodoList";
 import { AuthContext } from "../providers/AuthProvider";
@@ -13,9 +14,14 @@ const Home = () => {
 
   const displayNote = async (noteID) => {
     try {
-      let res = await axios.get(`/api/users/${user.id}/notes/${noteID}`)
-      setNote(res.data)
-      openTodoList(res.data)
+      if (noteID === null) {
+        setNote(null)
+        return
+      } else {
+        let res = await axios.get(`/api/users/${user.id}/notes/${noteID}`)
+        setNote(res.data)
+        openTodoList(res.data)
+      }
     } catch (error) {
       console.log(error)
     }
