@@ -11,42 +11,16 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const DragAndDrop = (props) => {
   const { user } = useContext(AuthContext)
-  const { displayNote } = props
-
-  const [ todoNotes, setTodoNotes ] = useState([])
-  const [ completedNotes, setCompletedNotes ] = useState([])
+  const { displayNote, getTodoNotes, getCompletedNotes, todoNotes, completedNotes, setTodoNotes, setCompletedNotes } = props
 
   const [ viewNote, setViewNote ] = useState(null)
-  const [ updateNote, setUpdateNote ] = useState(null)
-
   const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
 
-  
-   
   useEffect(() => {
     getTodoNotes()
     getCompletedNotes()
   },[])
   
-  
-  const getTodoNotes = async () => {
-    try {
-      let res = await axios.get(`/api/users/${user.id}/get_todo_notes`)
-      setTodoNotes(res.data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  
-  const getCompletedNotes = async () => {
-    try {
-      let res = await axios.get(`/api/users/${user.id}//get_completed_notes`)
-      setCompletedNotes(res.data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   const deleteNote = async (id) => {
     try {
       let res = await axios.delete(`/api/users/${user.id}/notes/${id}`)
@@ -93,14 +67,6 @@ const DragAndDrop = (props) => {
     setShowCreateNoteModal(false)
   }
 
-  const openUpdateNoteModal = (note) => {
-    setUpdateNote(note)
-  }
-  
-  const closeUpdateNoteModal = () => {
-    setUpdateNote(null)
-  }
-  
   const closeViewNoteModal = () => {
     setViewNote(null)
   }
@@ -172,7 +138,7 @@ const DragAndDrop = (props) => {
                                   <Icon.X onClick={() => deleteNote(note.id)} />
                                 </div>
                               </div>
-                              <div style={{cursor: 'pointer'}} onClick={() => openUpdateNoteModal(note)}>
+                              <div style={{cursor: 'pointer'}}>
                                 <h4>{note.title}</h4>
                               </div>
                               <div className='note-view-edit'>
@@ -207,7 +173,7 @@ const DragAndDrop = (props) => {
                                   <Icon.X onClick={() => deleteNote(note.id)} />
                                 </div>
                               </div>
-                              <div style={{cursor: 'pointer'}} onClick={() => openUpdateNoteModal(note)}>
+                              <div style={{cursor: 'pointer'}}>
                                 <h4>{note.title}</h4>
                               </div>
                               <div className='note-view-edit'>
@@ -236,11 +202,7 @@ const DragAndDrop = (props) => {
         <ViewNoteModal 
           closeViewNoteModal={closeViewNoteModal} viewNote={viewNote}
       />}
-      {updateNote && 
-        <UpdateNoteModal 
-          closeUpdateNoteModal={closeUpdateNoteModal} updateNote={updateNote} 
-          getTodoNotes={getTodoNotes} getCompletedNotes={getCompletedNotes}
-      />}
+
   </div>
   );
 }

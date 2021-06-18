@@ -8,6 +8,8 @@ import { AuthContext } from "../providers/AuthProvider";
 const Home = () => {
   const { user } = useContext(AuthContext)
   const [note, setNote] = useState(null)
+  const [ todoNotes, setTodoNotes ] = useState([])
+  const [ completedNotes, setCompletedNotes ] = useState([])
 
   const displayNote = async (noteID) => {
     try {
@@ -19,9 +21,28 @@ const Home = () => {
     }
   }
 
+  const getTodoNotes = async () => {
+    try {
+      let res = await axios.get(`/api/users/${user.id}/get_todo_notes`)
+      setTodoNotes(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  const getCompletedNotes = async () => {
+    try {
+      let res = await axios.get(`/api/users/${user.id}/get_completed_notes`)
+      setCompletedNotes(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   const openTodoList = (note) => {
     return(
-      <TodoList key={note.id} note={note}/>
+      <TodoList key={note.id} note={note} displayNote={displayNote} getTodoNotes={getTodoNotes} getCompletedNotes={getCompletedNotes}/>
     )
   }
 
@@ -37,7 +58,11 @@ const Home = () => {
           </div>
         </Col>
         <Col xs={12} sm={12} md={5}>
-          <DragAndDrop displayNote={displayNote} />
+          <DragAndDrop 
+          displayNote={displayNote} getTodoNotes={getTodoNotes} 
+          getCompletedNotes={getCompletedNotes} todoNotes={todoNotes} 
+          completedNotes={completedNotes} setTodoNotes={setTodoNotes}
+          setCompletedNotes={setCompletedNotes} />
         </Col>
       </Row>
     </div>
