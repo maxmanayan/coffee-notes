@@ -10,7 +10,6 @@ const TodoList = (props) => {
   const { user } = useContext(AuthContext)
   const { note, displayNote, getTodoNotes, getCompletedNotes } = props
   const [items, setItems] = useState(null)
-  const [hideTrash, setHideTrash] = useState(false)
   const [ updateNote, setUpdateNote ] = useState(null)
 
 

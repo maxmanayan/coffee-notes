@@ -381,6 +381,22 @@
   background: #ece0d1;
 }
 
+.todo-create-note {
+  cursor: pointer;
+  color: #09080442;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-create-note:hover {
+  cursor: pointer;
+  color: #090804;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .todo-list-container {
   height: 85vh;
 

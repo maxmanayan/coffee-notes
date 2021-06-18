@@ -11,10 +11,14 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const DragAndDrop = (props) => {
   const { user } = useContext(AuthContext)
-  const { displayNote, getTodoNotes, getCompletedNotes, todoNotes, completedNotes, setTodoNotes, setCompletedNotes } = props
+  const { displayNote, getTodoNotes, 
+          getCompletedNotes, todoNotes, 
+          completedNotes, setTodoNotes, 
+          setCompletedNotes, showCreateNoteModal,
+          openCreateNoteModal, closeCreateNoteModal
+        } = props
 
   // const [ viewNote, setViewNote ] = useState(null)
-  const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
 
   useEffect(() => {
     getTodoNotes()
@@ -62,13 +66,7 @@ const DragAndDrop = (props) => {
     }
   }
   
-  const openCreateNoteModal = () => {
-    setShowCreateNoteModal(true)
-  }
-  
-  const closeCreateNoteModal = () => {
-    setShowCreateNoteModal(false)
-  }
+ 
 
   // const closeViewNoteModal = () => {
   //   setViewNote(null)

@@ -1,16 +1,25 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { NutFill } from "react-bootstrap-icons";
 import DragAndDrop from "../components/DragAndDrop";
 import TodoList from "../components/TodoList";
 import { AuthContext } from "../providers/AuthProvider";
+import * as Icon from 'react-bootstrap-icons';
 
 const Home = () => {
   const { user } = useContext(AuthContext)
   const [note, setNote] = useState(null)
   const [ todoNotes, setTodoNotes ] = useState([])
   const [ completedNotes, setCompletedNotes ] = useState([])
+  const [ showCreateNoteModal, setShowCreateNoteModal ] = useState(false)
+
+  const openCreateNoteModal = () => {
+    setShowCreateNoteModal(true)
+  }
+  
+  const closeCreateNoteModal = () => {
+    setShowCreateNoteModal(false)
+  }
 
   const displayNote = async (noteID) => {
     try {
@@ -58,7 +67,19 @@ const Home = () => {
         <Col xs={12} sm={12} md={7}>
           <div className='todo-list-container'>
             {!note && 
-              <h1 className='todo-list-default-text'>create or select a note...</h1>
+              <>
+                <div>
+                  <h1 className='todo-list-default-text'>create or select an existing note...</h1>
+                </div>
+                <div onClick={openCreateNoteModal} className='todo-create-note' >
+                  <h3>Create Note</h3>
+                  <div style={{display: 'flex', justifyContent: 'flex-start', marginLeft: '5px', paddingBottom: '5px'}}>
+                    <Icon.PlusSquare
+                      size={20} 
+                    />
+                  </div>
+                </div>
+              </>
             }
             {note && openTodoList(note)}
           </div>
@@ -69,6 +90,8 @@ const Home = () => {
           getCompletedNotes={getCompletedNotes} todoNotes={todoNotes} 
           completedNotes={completedNotes} setTodoNotes={setTodoNotes}
           setCompletedNotes={setCompletedNotes} note={note}
+          openCreateNoteModal={openCreateNoteModal} closeCreateNoteModal={closeCreateNoteModal}
+          showCreateNoteModal={showCreateNoteModal}
           />
         </Col>
       </Row>
