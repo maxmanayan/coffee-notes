@@ -1,24 +1,23 @@
-# README
+# Coffee Notes
+### Make an Account Today!
+### (https://coffeeandnotes.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Your own personalized productivity app!
 
-Things you may want to cover:
+### Features:
+* Drag-and-Drop UX
+* Personalized and private accounts
+* Todo-list
 
-* Ruby version
+### Coming Soon:
+* Ability to play music through dashboard!
+* World Clock and Timer!
+* Daily motivational quotes!
+* Greater Customization to Profile
+  * Option of adding profile picture!
+  * Option of adding nickname for your account!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Third-party libraries used:
+* React-Beautiful-DND (https://github.com/atlassian/react-beautiful-dnd) - Drag and Drop, Accessibility
+* React Bootstrap (https://react-bootstrap.github.io/) - Responsiveness, Components and Props
+* React Scroll (https://github.com/fisshy/react-scroll) - Smooth Scroll

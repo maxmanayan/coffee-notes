@@ -328,6 +328,23 @@
   border-radius: 0px;
 }
 
+.todo-note-active {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #ece0d1;
+  padding: 25px;
+  height: 200px;
+  width: 200px;
+  margin: 15px;
+  box-shadow:
+    2px 2px 2px 2px #38220f54,
+    0 0 10px 5px #ece0d1e7;
+  border-radius: 0px;
+}
+
+
 .completed-note {
   display:flex;
   flex-direction: column;
@@ -356,6 +373,22 @@
   border-radius: 0px;
 }
 
+.completed-note-active {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #ece0d181;
+  padding: 25px;
+  height: 200px;
+  width: 200px;
+  margin: 15px;
+  box-shadow:
+    2px 2px 2px 2px #38220f54,
+    0 0 15px 5px #ece0d1e7;
+  border-radius: 0px;
+}
+
 .delete-note {
   display: flex;
   flex-direction: row;
@@ -379,6 +412,22 @@
 
 .modal-button {
   background: #ece0d1;
+}
+
+.todo-create-note {
+  cursor: pointer;
+  color: #09080442;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-create-note:hover {
+  cursor: pointer;
+  color: #090804;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo-list-container {
