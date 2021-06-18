@@ -48,9 +48,9 @@ const UpdateNoteModal = (props) => {
           <Form.Group className='modal-body'>
             <Form.Control className='modal-body' as='textarea' name='info' placeholder='Info' value={info} onChange={(e) => setInfo(e.target.value)} />
           </Form.Group>
-      <Button className='modal-button' style={{background: '#ece0d1', borderColor: '#ece0d1', color: 'black'}} type='submit'>
-        Submit
-      </Button>
+          <Button className='modal-button' style={{background: '#ece0d1', borderColor: '#ece0d1', color: 'black'}} type='submit'>
+            Submit
+          </Button>
         </Form>
       </Modal.Body>
     </Modal>

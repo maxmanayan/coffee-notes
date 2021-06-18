@@ -3,8 +3,6 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import axios from 'axios';
 import * as Icon from 'react-bootstrap-icons';
 import CreateNoteModal from "../components/CreateNoteModal";
-import ViewNoteModal from './ViewNoteModal';
-import UpdateNoteModal from './UpdateNoteModal';
 import { Col } from 'react-bootstrap';
 import { AuthContext } from '../providers/AuthProvider';
 
