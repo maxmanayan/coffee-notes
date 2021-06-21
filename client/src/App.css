@@ -540,3 +540,31 @@
   border-radius: 100%;
   cursor: pointer;
 }
+
+.yt-embed {
+  min-height: 100vh;
+  padding-top: 5em;
+}
+
+.yt-genre-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-bottom: 1em;
+}
+
+
+.yt-genre {
+  color: #09080480;
+  cursor: pointer;
+}
+
+.yt-genre:hover {
+  color: #090804;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+

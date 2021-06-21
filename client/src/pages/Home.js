@@ -5,6 +5,7 @@ import DragAndDrop from "../components/DragAndDrop";
 import TodoList from "../components/TodoList";
 import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from 'react-bootstrap-icons';
+import YoutubeEmbed from "../components/YoutubeEmbed";
 
 const Home = () => {
   const { user } = useContext(AuthContext)
@@ -95,6 +96,11 @@ const Home = () => {
           openCreateNoteModal={openCreateNoteModal} closeCreateNoteModal={closeCreateNoteModal}
           showCreateNoteModal={showCreateNoteModal} selectedNoteID={selectedNoteID}
           />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+            <YoutubeEmbed />
         </Col>
       </Row>
     </div>
