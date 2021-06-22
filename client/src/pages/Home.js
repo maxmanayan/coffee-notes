@@ -6,6 +6,7 @@ import TodoList from "../components/TodoList";
 import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from 'react-bootstrap-icons';
 import YoutubeEmbed from "../components/YoutubeEmbed";
+import SideBar from "../components/SideBar";
 
 const Home = () => {
   const { user } = useContext(AuthContext)
@@ -66,6 +67,9 @@ const Home = () => {
 
   return(
     <div className='home'>
+      <div>
+        <SideBar />
+      </div>
       <Row>
         <Col xs={12} sm={12} md={7}>
           <div className='todo-list-container'>
