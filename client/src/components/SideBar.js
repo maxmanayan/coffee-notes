@@ -20,7 +20,7 @@ const SideBar = () => {
         activeClass="active"
         to="home-music"
         smooth={true}
-        offset={0}
+        offset={30}
         duration={100}
       >
         <div className='sidebar-icon-music'>
