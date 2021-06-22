@@ -13,6 +13,7 @@ const YoutubeSelection = (props) => {
         <h5 className={`${embedID === '5qap5aO4i9A' ? 'yt-genre-active' : 'yt-genre'}`} onClick={() => setEmbedID('5qap5aO4i9A')} >Lofi</h5>
         <h5 className={`${embedID === '52mx7rgZD8g' ? 'yt-genre-active' : 'yt-genre'}`} onClick={() => setEmbedID('52mx7rgZD8g')} >Jazz</h5>
         <h5 className={`${embedID === 'VWPRIe4ft10' ? 'yt-genre-active' : 'yt-genre'}`} onClick={() => setEmbedID('VWPRIe4ft10')} >Rainfall</h5>
+        <h5 className={`${embedID === 'P8j-_MOSrec' ? 'yt-genre-active' : 'yt-genre'}`} onClick={() => setEmbedID('P8j-_MOSrec')} >Ghibli</h5>
       </div>
     </>
   )
