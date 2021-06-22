@@ -70,7 +70,7 @@ const Home = () => {
       <div>
         <SideBar />
       </div>
-      <Row>
+      <Row id='home-notes'>
         <Col xs={12} sm={12} md={7}>
           <div className='todo-list-container'>
             {!note && 
@@ -102,7 +102,7 @@ const Home = () => {
           />
         </Col>
       </Row>
-      <Row>
+      <Row id='home-music'>
         <Col>
             <YoutubeEmbed />
         </Col>
