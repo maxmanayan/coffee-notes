@@ -6,6 +6,13 @@ GIT
     faker (2.18.0)
       i18n (>= 1.6, < 2)
 
+GIT
+  remote: https://github.com/mimemagicrb/mimemagic
+  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  ref: 01f92d8
+  specs:
+    mimemagic (0.3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -193,6 +200,7 @@ DEPENDENCIES
   devise_token_auth
   faker!
   listen (~> 3.3)
+  mimemagic (= 0.3.5)!
   pg (~> 1.1)
   pry-rails
   puma (~> 5.0)
