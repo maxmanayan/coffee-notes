@@ -541,9 +541,23 @@
   cursor: pointer;
 }
 
+.yt-selection-header{
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.yt-selection-subheader{
+  color: #09080480;
+}
+
 .yt-embed {
   min-height: 100vh;
   padding-top: 5em;
+}
+
+.yt-embed-empty-state {
+  padding-top: 5em;
+  color: #09080442;
 }
 
 .yt-genre-container {
@@ -556,7 +570,6 @@
   padding-bottom: 1em;
 }
 
-
 .yt-genre {
   color: #09080480;
   cursor: pointer;
@@ -564,7 +577,10 @@
 
 .yt-genre:hover {
   color: #090804;
-  font-size: 1.5em;
   cursor: pointer;
 }
 
+.yt-genre-active {
+  color: #090804;
+  cursor: pointer;
+}

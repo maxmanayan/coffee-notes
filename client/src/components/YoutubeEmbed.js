@@ -7,7 +7,7 @@ const YoutubeEmbed = () => {
   return(
     <div className="yt-embed">
       <div>
-        <YoutubeSelection setEmbedID={setEmbedID} />
+        <YoutubeSelection embedID={embedID} setEmbedID={setEmbedID} />
       </div>
       {embedID && 
         <iframe
@@ -21,7 +21,10 @@ const YoutubeEmbed = () => {
         />
       }
       {!embedID && 
-        <h1>Select a Genre Above!</h1>
+        <div className="yt-embed-empty-state">
+          <h1>Play Some Background Music!</h1>
+          <h3>Select a Genre Above</h3>
+        </div>
       }
     </div>
   )
