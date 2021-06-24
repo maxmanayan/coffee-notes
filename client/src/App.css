@@ -623,36 +623,36 @@
   cursor: pointer;
 }
 
-.random-quote {
+.motivational-quote {
   height: 100vh;
   padding-top: 5em;
 }
 
-.random-quote-quoteblock {
+.motivational-quote-quoteblock {
   margin-left: 20%;
   margin-right: 20%;
   padding-top: 5em;
   color: #090804;
 }
 
-.random-quote-text {
+.motivational-quote-text {
   color: #0908047e;
 }
 
-.random-quote-author {
+.motivational-quote-author {
   color: #0908047e;
   display: flex;
   justify-content: flex-end;
   padding-top: 2em;
 }
 
-.random-quote-refresh {
+.motivational-quote-refresh {
   padding-top: 3em;
   cursor: pointer;
   color: #0908047e;
 }
 
-.random-quote-refresh:hover {
+.motivational-quote-refresh:hover {
   cursor: pointer;
   color: #090804;
 }

@@ -7,7 +7,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from 'react-bootstrap-icons';
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import SideBar from "../components/SideBar";
-import RandomQuote from "../components/RandomQuote";
+import MotivationalQuote from "../components/MotivationalQuote";
 
 const Home = () => {
   const { user } = useContext(AuthContext)
@@ -110,7 +110,7 @@ const Home = () => {
       </Row>
       <Row id='home-quote'>
         <Col>
-            <RandomQuote/>
+            <MotivationalQuote/>
         </Col>
       </Row>
     </div>

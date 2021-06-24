@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import * as Icon from 'react-bootstrap-icons';
 
-const RandomQuote = () => {
+const MotivationalQuote = () => {
   const [ quoteBlock, setQuoteBlock ] = useState(null)
 
   useEffect(() => {
@@ -23,25 +23,25 @@ const RandomQuote = () => {
     }
   }
   return(
-    <div className='random-quote'>
+    <div className='motivational-quote'>
       {/* <h1>to ponder...</h1> */}
       {/* {quoteBlock && <span>{JSON.stringify(quoteBlock, null, 2)}</span>} */}
-      <div className='random-quote-quoteblock'>
-        <div className='random-quote-text'>
+      <div className='motivational-quote-quoteblock'>
+        <div className='motivational-quote-text'>
           {quoteBlock && <h2>"{quoteBlock.text}"</h2>}
         </div>
-        <div className='random-quote-author'>
+        <div className='motivational-quote-author'>
           {quoteBlock && <h3>- {quoteBlock.author === null ? 'Anonymous' : quoteBlock.author}</h3>}
         </div>
       </div>
       <div>
-        <div className='random-quote-refresh'>
+        <div className='motivational-quote-refresh'>
           <Icon.ArrowRepeat size={30} onClick={getQuote} />
         </div>
-        {/* <h5 className='random-quote-refresh' onClick={getQuote}>Get New Quote</h5> */}
+        {/* <h5 className='motivational-quote-refresh' onClick={getQuote}>Get New Quote</h5> */}
       </div>
     </div>
   )
 };
 
-export default RandomQuote;
+export default MotivationalQuote;
