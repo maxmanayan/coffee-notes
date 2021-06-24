@@ -623,7 +623,13 @@
   cursor: pointer;
 }
 
-.daily-quote {
+.random-quote {
   height: 100vh;
+  padding-top: 5em;
+}
+
+.random-quote-quoteblock {
+  margin-left: 20%;
+  margin-right: 20%;
   padding-top: 5em;
 }

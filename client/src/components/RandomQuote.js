@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-const DailyQuote = () => {
+const RandomQuote = () => {
   const [ quoteBlock, setQuoteBlock ] = useState(null)
 
   useEffect(() => {
@@ -22,19 +22,19 @@ const DailyQuote = () => {
     }
   }
   return(
-    <div className='daily-quote'>
-      <h1>Daily Quote</h1>
+    <div className='random-quote'>
+      <h1>Random Quote</h1>
       {/* {quoteBlock && <span>{JSON.stringify(quoteBlock, null, 2)}</span>} */}
-      <div className='daily-quote-quoteblock'>
-        <div className='daily-quote-text'>
-          {quoteBlock && <h3>{quoteBlock.text}</h3>}
+      <div className='random-quote-quoteblock'>
+        <div className='random-quote-text'>
+          {quoteBlock && <h2>{quoteBlock.text}</h2>}
         </div>
-        <div className='daily-quote-text'>
-          {quoteBlock && <h3>{quoteBlock.author}</h3>}
+        <div className='random-quote-text'>
+          {quoteBlock && <h3>{quoteBlock.author === null ? 'Anonymous' : quoteBlock.author}</h3>}
         </div>
       </div>
     </div>
   )
 };
 
-export default DailyQuote;
+export default RandomQuote;
