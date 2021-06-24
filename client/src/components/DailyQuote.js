@@ -2,7 +2,7 @@ import React from 'react';
 
 const DailyQuote = () => {
   return(
-    <div>
+    <div className='daily-quote'>
       <h1>Daily Quote</h1>
     </div>
   )

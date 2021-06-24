@@ -622,3 +622,7 @@
   color: #090804;
   cursor: pointer;
 }
+
+.daily-quote {
+  height: 100vh;
+}
