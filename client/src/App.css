@@ -134,6 +134,21 @@
   margin-left: 0.5em;
 }
 
+.sidebar-icon-quote {
+  cursor: pointer;
+  margin-bottom: 1em;
+  padding: 3px;
+}
+
+.sidebar-icon-quote:hover {
+  cursor: pointer;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  padding: 3px;
+}
+
+
+
 .user-profile {
   background: #090804;
   height: 100vh;
