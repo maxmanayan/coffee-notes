@@ -21,6 +21,7 @@
 * React-Beautiful-DND (https://github.com/atlassian/react-beautiful-dnd) - Drag and Drop, Accessibility
 * React Bootstrap (https://react-bootstrap.github.io/) - Responsiveness, Components and Props
 * React Scroll (https://github.com/fisshy/react-scroll) - Smooth Scroll
+* Bootstrap Icons (https://icons.getbootstrap.com/) - SVGs
 
 ### APIs used:
 * Quotes Free API by SergeyWebPro (https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373) - Motivational Quotes
