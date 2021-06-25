@@ -24,14 +24,13 @@ const MotivationalQuote = () => {
   }
   return(
     <div className='motivational-quote'>
-      {/* <h1>to ponder...</h1> */}
-      {/* {quoteBlock && <span>{JSON.stringify(quoteBlock, null, 2)}</span>} */}
+      <h1 className='motivational-quote-header'>A Quote to Ponder</h1>
       <div className='motivational-quote-quoteblock'>
         <div className='motivational-quote-text'>
-          {quoteBlock && <h2>"{quoteBlock.text}"</h2>}
+          {quoteBlock && <h3>"{quoteBlock.text}"</h3>}
         </div>
         <div className='motivational-quote-author'>
-          {quoteBlock && <h3>- {quoteBlock.author === null ? 'Anonymous' : quoteBlock.author}</h3>}
+          {quoteBlock && <h4>- {quoteBlock.author === null ? 'Anonymous' : quoteBlock.author}</h4>}
         </div>
       </div>
       <div>

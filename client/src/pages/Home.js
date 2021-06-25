@@ -103,12 +103,17 @@ const Home = () => {
           />
         </Col>
       </Row>
-      <Row id='home-music'>
+      {/* <Row id='home-music'>
+        <Col md={4}>
+            <MotivationalQuote/>
+        </Col>
         <Col md={8}>
             <YoutubeEmbed />
         </Col>
-        <Col md={4}>
-            <MotivationalQuote/>
+      </Row> */}
+      <Row id='home-music'>
+        <Col>
+            <YoutubeEmbed />
         </Col>
       </Row>
       <Row id='home-quote'>

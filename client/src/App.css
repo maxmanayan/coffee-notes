@@ -628,6 +628,10 @@
   padding-top: 5em;
 }
 
+.motivational-quote-header {
+  font-weight: bold;
+}
+
 .motivational-quote-quoteblock {
   margin-left: 20%;
   margin-right: 20%;
