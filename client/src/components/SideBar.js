@@ -27,6 +27,17 @@ const SideBar = () => {
           <Icon.MusicNoteBeamed size={50} />
         </div>
       </Link>
+      <Link
+        activeClass="active"
+        to="home-quote"
+        smooth={true}
+        offset={30}
+        duration={100}
+      >
+        <div className='sidebar-icon-quote'>
+          <Icon.ChatQuote size={48} />
+        </div>
+      </Link>
     </div>
   )
 }

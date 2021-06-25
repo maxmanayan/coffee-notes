@@ -134,6 +134,21 @@
   margin-left: 0.5em;
 }
 
+.sidebar-icon-quote {
+  cursor: pointer;
+  margin-bottom: 1em;
+  padding: 3px;
+}
+
+.sidebar-icon-quote:hover {
+  cursor: pointer;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  padding: 3px;
+}
+
+
+
 .user-profile {
   background: #090804;
   height: 100vh;
@@ -621,4 +636,42 @@
 .yt-genre-active {
   color: #090804;
   cursor: pointer;
+}
+
+.motivational-quote {
+  height: 100vh;
+  padding-top: 5em;
+}
+
+.motivational-quote-header {
+  font-weight: bold;
+}
+
+.motivational-quote-quoteblock {
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 5em;
+  color: #090804;
+}
+
+.motivational-quote-text {
+  color: #0908047e;
+}
+
+.motivational-quote-author {
+  color: #0908047e;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2em;
+}
+
+.motivational-quote-refresh {
+  padding-top: 3em;
+  cursor: pointer;
+  color: #0908047e;
+}
+
+.motivational-quote-refresh:hover {
+  cursor: pointer;
+  color: #090804;
 }

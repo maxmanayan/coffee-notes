@@ -7,6 +7,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from 'react-bootstrap-icons';
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import SideBar from "../components/SideBar";
+import MotivationalQuote from "../components/MotivationalQuote";
 
 const Home = () => {
   const { user } = useContext(AuthContext)
@@ -102,9 +103,22 @@ const Home = () => {
           />
         </Col>
       </Row>
+      {/* <Row id='home-music'>
+        <Col md={4}>
+            <MotivationalQuote/>
+        </Col>
+        <Col md={8}>
+            <YoutubeEmbed />
+        </Col>
+      </Row> */}
       <Row id='home-music'>
         <Col>
             <YoutubeEmbed />
+        </Col>
+      </Row>
+      <Row id='home-quote'>
+        <Col>
+            <MotivationalQuote/>
         </Col>
       </Row>
     </div>
