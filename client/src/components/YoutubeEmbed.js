@@ -1,15 +1,15 @@
-import React, { useState } from "react"
-import YoutubeSelection from "./YoutubeSelection"
+import React, { useState } from "react";
+import YoutubeSelection from "./YoutubeSelection";
 
 const YoutubeEmbed = () => {
-  const [ embedID, setEmbedID ] = useState(null)
+  const [embedID, setEmbedID] = useState(null);
 
-  return(
+  return (
     <div className="yt-embed">
       <div>
         <YoutubeSelection embedID={embedID} setEmbedID={setEmbedID} />
       </div>
-      {embedID && 
+      {embedID && (
         <iframe
           width="853"
           height="480"
@@ -21,15 +21,15 @@ const YoutubeEmbed = () => {
           allowFullScreen
           title="Embedded youtube"
         />
-      }
-      {!embedID && 
+      )}
+      {!embedID && (
         <div className="yt-embed-empty-state">
           <h1>Play Some Background Music!</h1>
           <h3>Select a Genre Above</h3>
         </div>
-      }
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default YoutubeEmbed
+export default YoutubeEmbed;

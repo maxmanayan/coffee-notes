@@ -1,102 +1,168 @@
-import React, { useContext, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useHistory } from 'react-router';
-import { AuthContext } from '../providers/AuthProvider';
+import React, { useContext, useState } from "react";
+import { Button, Form } from "react-bootstrap";
+import { useHistory } from "react-router";
+import { AuthContext } from "../providers/AuthProvider";
 
 const RegisterForm = () => {
-  const { handleRegister } = useContext(AuthContext)
-  const history = useHistory()
+  const { handleRegister } = useContext(AuthContext);
+  const history = useHistory();
 
-  const [noName, setNoName] = useState(false)
-  const [noEmail, setNoEmail] = useState(false)
-  const [noPassword, setNoPassword] = useState(false)
-  const [noPasswordConfirmation, setNoPasswordConfirmation] = useState(false)
-  const [invalidPasswordLength, setInvalidPasswordLength] = useState(false)
-  const [passwordAndConfirmationNoMatch, setPasswordAndConfirmationNoMatch] = useState(false)
-  const [invalidEmail, setInvalidEmail] = useState(false)
+  const [noName, setNoName] = useState(false);
+  const [noEmail, setNoEmail] = useState(false);
+  const [noPassword, setNoPassword] = useState(false);
+  const [noPasswordConfirmation, setNoPasswordConfirmation] = useState(false);
+  const [invalidPasswordLength, setInvalidPasswordLength] = useState(false);
+  const [passwordAndConfirmationNoMatch, setPasswordAndConfirmationNoMatch] =
+    useState(false);
+  const [invalidEmail, setInvalidEmail] = useState(false);
 
   const [account, setAccount] = useState({
-    name: '',
-    email: '',
-    password: '',
-    passwordConfirmation: '',
-  })
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirmation: "",
+  });
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (account.name === '') {
-      setNoName(true)
+    if (account.name === "") {
+      setNoName(true);
     } else {
-      setNoName(false)
+      setNoName(false);
     }
-    if (account.email === '') {
-      setNoEmail(true)
+    if (account.email === "") {
+      setNoEmail(true);
     } else {
-      setNoEmail(false)
+      setNoEmail(false);
     }
 
-    if (account.password === '') {
-      setNoPassword(true)
+    if (account.password === "") {
+      setNoPassword(true);
     } else {
-      setNoPassword(false)
+      setNoPassword(false);
     }
-    if (account.passwordConfirmation === '') {
-      setNoPasswordConfirmation(true)
+    if (account.passwordConfirmation === "") {
+      setNoPasswordConfirmation(true);
     } else {
-      setNoPasswordConfirmation(false)
+      setNoPasswordConfirmation(false);
     }
-    if (account.password.split('').length < 6) {
-      setInvalidPasswordLength(true)
+    if (account.password.split("").length < 6) {
+      setInvalidPasswordLength(true);
     } else {
-      setInvalidPasswordLength(false)
+      setInvalidPasswordLength(false);
     }
     if (account.password !== account.passwordConfirmation) {
-      setPasswordAndConfirmationNoMatch(true)
-      return
+      setPasswordAndConfirmationNoMatch(true);
+      return;
     } else {
-      setPasswordAndConfirmationNoMatch(false)
+      setPasswordAndConfirmationNoMatch(false);
     }
-    
-    let emailFormat = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+
+    let emailFormat = new RegExp(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
     if (!emailFormat.test(account.email)) {
-      setInvalidEmail(true)
-      return
+      setInvalidEmail(true);
+      return;
     } else {
-      setInvalidEmail(false)
+      setInvalidEmail(false);
     }
 
-    handleRegister({ ...account }, history)
-  }
+    handleRegister({ ...account }, history);
+  };
 
-
-  return(
+  return (
     <>
-      <h6 className='login-register-form-title'>Sign Up</h6>
+      <h6 className="login-register-form-title">Sign Up</h6>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className='login-register-form-group'>
-          <Form.Control autoFocus placeholder='Name' id='name' value={account.name} onChange={(e) => setAccount({...account, name: e.target.value})} />
+        <Form.Group className="login-register-form-group">
+          <Form.Control
+            autoFocus
+            placeholder="Name"
+            id="name"
+            value={account.name}
+            onChange={(e) => setAccount({ ...account, name: e.target.value })}
+          />
         </Form.Group>
-        {noName && <p className='login-register-error-text'>*Name required to register</p>}
-        <Form.Group className='login-register-form-group'>
-          <Form.Control placeholder='Email' id='email' value={account.email} onChange={(e) => setAccount({...account, email: e.target.value})} />
+        {noName && (
+          <p className="login-register-error-text">
+            *Name required to register
+          </p>
+        )}
+        <Form.Group className="login-register-form-group">
+          <Form.Control
+            placeholder="Email"
+            id="email"
+            value={account.email}
+            onChange={(e) => setAccount({ ...account, email: e.target.value })}
+          />
         </Form.Group>
-        {noEmail && <p className='login-register-error-text'>*Email required to register</p>}
-        {invalidEmail && <p className='login-register-error-text'>*Invalid email address</p>}
-        <Form.Group className='login-register-form-group'>
-          <Form.Control placeholder='Password' type='password' id='password' value={account.password} onChange={(e) => setAccount({...account, password: e.target.value})} />
+        {noEmail && (
+          <p className="login-register-error-text">
+            *Email required to register
+          </p>
+        )}
+        {invalidEmail && (
+          <p className="login-register-error-text">*Invalid email address</p>
+        )}
+        <Form.Group className="login-register-form-group">
+          <Form.Control
+            placeholder="Password"
+            type="password"
+            id="password"
+            value={account.password}
+            onChange={(e) =>
+              setAccount({ ...account, password: e.target.value })
+            }
+          />
         </Form.Group>
-        {noPassword && <p className='login-register-error-text'>*Password required to register</p>}
-        {invalidPasswordLength && <p className='login-register-error-text'>*Password must be at least 6 characters</p>}
-        <Form.Group className='login-register-form-group'>
-          <Form.Control placeholder='Confirm Password' type='password' id='passwordConfirmation' value={account.passwordConfirmation} onChange={(e) => setAccount({...account, passwordConfirmation: e.target.value})} />
+        {noPassword && (
+          <p className="login-register-error-text">
+            *Password required to register
+          </p>
+        )}
+        {invalidPasswordLength && (
+          <p className="login-register-error-text">
+            *Password must be at least 6 characters
+          </p>
+        )}
+        <Form.Group className="login-register-form-group">
+          <Form.Control
+            placeholder="Confirm Password"
+            type="password"
+            id="passwordConfirmation"
+            value={account.passwordConfirmation}
+            onChange={(e) =>
+              setAccount({ ...account, passwordConfirmation: e.target.value })
+            }
+          />
         </Form.Group>
-        {noPasswordConfirmation && <p className='login-register-error-text'>*Password must be confirmed</p>}
-        {passwordAndConfirmationNoMatch && <p className='login-register-error-text'>*Password and confirmation do not match</p>}
-        <Button style={{marginTop: '1em', background: '#090804', border: 'none', fontWeight: 'bold', padding: '1em 2em'}} type='submit'>SUBMIT</Button>
+        {noPasswordConfirmation && (
+          <p className="login-register-error-text">
+            *Password must be confirmed
+          </p>
+        )}
+        {passwordAndConfirmationNoMatch && (
+          <p className="login-register-error-text">
+            *Password and confirmation do not match
+          </p>
+        )}
+        <Button
+          style={{
+            marginTop: "1em",
+            background: "#090804",
+            border: "none",
+            fontWeight: "bold",
+            padding: "1em 2em",
+          }}
+          type="submit"
+        >
+          SUBMIT
+        </Button>
       </Form>
     </>
-  )
+  );
 };
 
-export default RegisterForm
+export default RegisterForm;
