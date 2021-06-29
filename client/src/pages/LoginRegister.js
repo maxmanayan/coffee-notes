@@ -76,7 +76,9 @@ const LoginRegister = () => {
             }}
           >
             <Col xs={12} sm={12} md={{ span: 5, offset: 6 }}>
-              <h1 className="login-register-welcome">Welcome {user.name}</h1>
+              <h2 className="login-register-welcome">
+                Welcome Back, {user.name}
+              </h2>
             </Col>
           </Row>
           <Row style={{ marginLeft: "1vw", marginRight: "1vw" }}>
