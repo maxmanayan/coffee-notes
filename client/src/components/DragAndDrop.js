@@ -47,11 +47,11 @@ const DragAndDrop = (props) => {
         body: note.body,
         completed: true,
       });
-      // getTodoNotes();
-      getCompletedNotes();
-      // displayNote(note.id);
     } catch (error) {
       console.log(error);
+    } finally {
+      getTodoNotes();
+      getCompletedNotes();
     }
   };
 
@@ -62,11 +62,11 @@ const DragAndDrop = (props) => {
         body: note.body,
         completed: false,
       });
-      getTodoNotes();
-      // getCompletedNotes();
-      // displayNote(note.id);
     } catch (error) {
       console.log(error);
+    } finally {
+      getCompletedNotes();
+      getTodoNotes();
     }
   };
 
@@ -105,17 +105,8 @@ const DragAndDrop = (props) => {
       destination.droppableId === "completed"
     ) {
       const todos = Array.from(todoNotes);
-      const completes = Array.from(completedNotes);
       const [newCompleted] = todos.splice(result.source.index, 1);
-
-      // completes.splice(result.destination.index, 0, newCompleted);
-
-      // const ending = {};
-      // ending[result.source.droppableId] = todos;
-      // ending[result.destination.droppableId] = completes;
-
       moveToCompleted(newCompleted);
-      // return ending;
     }
 
     // moving note from todo list to completed list
