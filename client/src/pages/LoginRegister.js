@@ -89,6 +89,7 @@ const LoginRegister = () => {
                   border: "none",
                   fontWeight: "bold",
                 }}
+                href="/home"
               >
                 Go to Dashboard
               </Button>
