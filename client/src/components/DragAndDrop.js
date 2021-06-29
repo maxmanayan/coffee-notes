@@ -105,7 +105,12 @@ const DragAndDrop = (props) => {
       destination.droppableId === "completed"
     ) {
       const todos = Array.from(todoNotes);
+      const completes = Array.from(completedNotes);
       const [newCompleted] = todos.splice(result.source.index, 1);
+      completes.splice(result.destination.index, 0, newCompleted);
+
+      setTodoNotes(todos);
+      setCompletedNotes(completes);
       moveToCompleted(newCompleted);
     }
 
@@ -115,7 +120,12 @@ const DragAndDrop = (props) => {
       destination.droppableId === "todo"
     ) {
       const completes = Array.from(completedNotes);
+      const todos = Array.from(todoNotes);
       const [newTodo] = completes.splice(result.source.index, 1);
+      todos.splice(result.destination.index, 0, newTodo);
+
+      setCompletedNotes(completes);
+      setTodoNotes(todos);
       moveToTodo(newTodo);
     }
   };
