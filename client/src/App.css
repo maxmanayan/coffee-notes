@@ -629,6 +629,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 
   padding-left: 25%;
   padding-right: 25%;
@@ -638,16 +639,19 @@
 .yt-genre {
   color: #09080480;
   cursor: pointer;
+  padding: 20px 10px;
 }
 
 .yt-genre:hover {
   color: #090804;
   cursor: pointer;
+  padding: 20px 10px;
 }
 
 .yt-genre-active {
   color: #090804;
   cursor: pointer;
+  padding: 10px 10px;
 }
 
 .motivational-quote {
