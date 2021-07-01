@@ -9,8 +9,8 @@ const YoutubeEmbed = () => {
       <div>
         <YoutubeSelection embedID={embedID} setEmbedID={setEmbedID} />
       </div>
-      <div className="yt-iframe-container">
-        {embedID && (
+      {embedID && (
+        <div className="yt-iframe-container">
           <iframe
             className="yt-iframe"
             src={`https://www.youtube.com/embed/${embedID}`}
@@ -19,14 +19,14 @@ const YoutubeEmbed = () => {
             allowFullScreen
             title="Embedded youtube"
           />
-        )}
-        {!embedID && (
-          <div className="yt-embed-empty-state">
-            <h1>Play Some Background Music!</h1>
-            <h3>Select a Genre Above</h3>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
+      {!embedID && (
+        <div className="yt-embed-empty-state">
+          <h1>Play Some Background Music!</h1>
+          <h3>Select a Genre Above</h3>
+        </div>
+      )}
     </div>
   );
 };
