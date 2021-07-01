@@ -602,6 +602,24 @@
   padding-top: 5em;
 }
 
+.yt-iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-left: 20%;
+}
+
+.yt-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 60%;
+}
+
 .yt-embed-empty-state {
   padding-top: 5em;
   color: #09080442;
