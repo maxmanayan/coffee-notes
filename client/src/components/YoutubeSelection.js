@@ -34,7 +34,7 @@ const YoutubeSelection = (props) => {
           className={`${
             embedID === "52mx7rgZD8g" ? "yt-genre-active" : "yt-genre"
           }`}
-          onClick={() => setEmbedID("52mx7rgZD8g")}
+          onClick={() => setEmbedID("rY9RyjqXjeI")}
         >
           Jazz
         </h5>
