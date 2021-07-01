@@ -602,6 +602,24 @@
   padding-top: 5em;
 }
 
+.yt-iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-left: 20%;
+}
+
+.yt-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 60%;
+}
+
 .yt-embed-empty-state {
   padding-top: 5em;
   color: #09080442;
@@ -611,6 +629,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 
   padding-left: 25%;
   padding-right: 25%;
@@ -620,16 +639,19 @@
 .yt-genre {
   color: #09080480;
   cursor: pointer;
+  padding: 20px 10px;
 }
 
 .yt-genre:hover {
   color: #090804;
   cursor: pointer;
+  padding: 20px 10px;
 }
 
 .yt-genre-active {
   color: #090804;
   cursor: pointer;
+  padding: 10px 10px;
 }
 
 .motivational-quote {
