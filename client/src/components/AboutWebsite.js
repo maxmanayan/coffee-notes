@@ -1,6 +1,6 @@
 import React from "react";
 import { Image } from "react-bootstrap";
-import dash from "../images/coffee-notes-dash.jpg";
+import dash from "../images/cn_about_website.jpg";
 
 const AboutWebsite = () => {
   return (
