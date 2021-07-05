@@ -32,9 +32,9 @@ const YoutubeSelection = (props) => {
         </h5>
         <h5
           className={`${
-            embedID === "rY9RyjqXjeI" ? "yt-genre-active" : "yt-genre"
+            embedID === "Mk0EcgzqnDw" ? "yt-genre-active" : "yt-genre"
           }`}
-          onClick={() => setEmbedID("rY9RyjqXjeI")}
+          onClick={() => setEmbedID("Mk0EcgzqnDw")}
         >
           Jazz
         </h5>
@@ -48,9 +48,9 @@ const YoutubeSelection = (props) => {
         </h5>
         <h5
           className={`${
-            embedID === "CFmqh329yW4" ? "yt-genre-active" : "yt-genre"
+            embedID === "djHloBCSF5g" ? "yt-genre-active" : "yt-genre"
           }`}
-          onClick={() => setEmbedID("CFmqh329yW4")}
+          onClick={() => setEmbedID("djHloBCSF5g")}
         >
           Rainfall
         </h5>
