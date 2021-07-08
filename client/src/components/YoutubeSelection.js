@@ -30,14 +30,14 @@ const YoutubeSelection = (props) => {
         >
           Lofi
         </h5>
-        <h5
+        {/* <h5
           className={`${
             embedID === "Mk0EcgzqnDw" ? "yt-genre-active" : "yt-genre"
           }`}
           onClick={() => setEmbedID("Mk0EcgzqnDw")}
         >
           Jazz
-        </h5>
+        </h5> */}
         <h5
           className={`${
             embedID === "P8j-_MOSrec" ? "yt-genre-active" : "yt-genre"
@@ -46,14 +46,14 @@ const YoutubeSelection = (props) => {
         >
           Ghibli
         </h5>
-        <h5
+        {/* <h5
           className={`${
             embedID === "djHloBCSF5g" ? "yt-genre-active" : "yt-genre"
           }`}
           onClick={() => setEmbedID("djHloBCSF5g")}
         >
           Rainfall
-        </h5>
+        </h5> */}
         <h5
           className={`${
             embedID === "HMnatoiMdjA" ? "yt-genre-active" : "yt-genre"
