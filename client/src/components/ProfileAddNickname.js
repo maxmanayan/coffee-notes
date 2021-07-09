@@ -10,7 +10,7 @@ const ProfileAddNickname = (props) => {
     e.preventDefault();
     console.log(nickname);
     try {
-      let res = await axios.put("/api/edit_user", {
+      let res = await axios.put(`/api/users/${user.id}/edit_user`, {
         ...user,
         nickname: nickname,
       });
