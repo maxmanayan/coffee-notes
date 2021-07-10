@@ -77,7 +77,7 @@ const LoginRegister = () => {
           >
             <Col xs={12} sm={12} md={{ span: 5, offset: 6 }}>
               <h2 className="login-register-welcome">
-                Welcome Back, {user.name}
+                Welcome Back, {user.nickname ? user.nickname : user.name}
               </h2>
             </Col>
           </Row>

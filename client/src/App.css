@@ -157,6 +157,50 @@
   padding-top: 5em;
 }
 
+.user-profile-updated-container {
+  display: flex;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.user-profile-updated-card {
+  background: #ece0d180;
+  width: 95%;
+  border-radius: 5px;
+}
+.user-profile-updated-icon {
+  color: white;
+  margin-top: -15px;
+  margin-left: -7px;
+}
+
+.user-profile-categories {
+  color: #ece0d1b6;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-profile-info {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-profile-form {
+  display: flex;
+  width: 300px;
+}
+
+.user-profile-nickname {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-nickname-form {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 .about {
   background-image: url(./images/cafe.jpg);
   background-color: #ece0d180;
