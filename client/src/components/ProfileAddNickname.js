@@ -17,7 +17,6 @@ const ProfileAddNickname = (props) => {
         nickname: nickname,
       });
       setUpdatedCard(true);
-      console.log("user", user);
     } catch (error) {
       console.log(error);
     }
@@ -25,7 +24,7 @@ const ProfileAddNickname = (props) => {
 
   return (
     <>
-      <Row className="user-profile-nickname">
+      <Row className="user-profile-row">
         <Col
           xs={{ span: 4, offset: 4 }}
           md={{ span: 1, offset: 4 }}
@@ -52,15 +51,17 @@ const ProfileAddNickname = (props) => {
                 onChange={(e) => setNickname(e.target.value)}
               />
             </Form.Group>
-            <Button
-              type="submit"
-              style={{
-                background: "#090804",
-                border: "none",
-              }}
-            >
-              Save
-            </Button>
+            {nickname !== user.nickname && (
+              <Button
+                type="submit"
+                style={{
+                  background: "#090804",
+                  border: "none",
+                }}
+              >
+                Save
+              </Button>
+            )}
           </Form>
         </Col>
       </Row>

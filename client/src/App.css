@@ -191,9 +191,9 @@
   width: 300px;
 }
 
-.user-profile-nickname {
-  display: flex;
-  align-items: center;
+.user-profile-row {
+  padding-top: 10px;
+  height: 90px;
 }
 
 .user-profile-nickname-form {
