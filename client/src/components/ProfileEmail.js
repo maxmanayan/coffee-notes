@@ -5,7 +5,7 @@ const ProfileEmail = (props) => {
   const { user } = props;
   return (
     <>
-      <Row className="user-profile-email">
+      <Row className="user-profile-row">
         <Col
           xs={{ span: 4, offset: 4 }}
           md={{ span: 1, offset: 4 }}
