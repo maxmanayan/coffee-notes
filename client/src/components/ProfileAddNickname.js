@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 
 const ProfileAddNickname = (props) => {
-  const { user } = props;
+  const { user, setUpdatedCard } = props;
   const [nickname, setNickname] = useState(
     user.nickname ? user.nickname : null
   );
@@ -12,10 +12,11 @@ const ProfileAddNickname = (props) => {
     e.preventDefault();
     console.log(nickname);
     try {
-      let res = await axios.put(`/api/users/${user.id}/edit_user`, {
+      await axios.put(`/api/users/${user.id}/edit_user`, {
         ...user,
         nickname: nickname,
       });
+      setUpdatedCard(true);
       console.log("user", user);
     } catch (error) {
       console.log(error);
