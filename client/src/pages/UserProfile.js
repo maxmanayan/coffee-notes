@@ -32,7 +32,6 @@ const UserProfile = () => {
           <ProfileAddNickname
             key={user.id}
             user={user}
-            updatedCard={updatedCard}
             setUpdatedCard={setUpdatedCard}
           />
         </div>

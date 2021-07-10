@@ -17,7 +17,6 @@ const ProfileAddNickname = (props) => {
         nickname: nickname,
       });
       setUpdatedCard(true);
-      console.log("user", user);
     } catch (error) {
       console.log(error);
     }
