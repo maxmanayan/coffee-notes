@@ -192,7 +192,8 @@
 }
 
 .user-profile-row {
-  padding-top: 1em;
+  padding-top: 10px;
+  height: 90px;
 }
 
 .user-profile-nickname-form {
