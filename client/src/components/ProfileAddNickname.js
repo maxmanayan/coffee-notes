@@ -26,10 +26,18 @@ const ProfileAddNickname = (props) => {
   return (
     <>
       <Row className="user-profile-nickname">
-        <Col md={{ span: 1, offset: 4 }} className="user-profile-categories">
+        <Col
+          xs={{ span: 4, offset: 4 }}
+          md={{ span: 1, offset: 4 }}
+          className="user-profile-categories"
+        >
           <h3>Nickname:</h3>
         </Col>
-        <Col md={2} className="user-profile-info">
+        <Col
+          xs={{ span: 6, offset: 4 }}
+          md={{ span: 4, offset: 1 }}
+          className="user-profile-info"
+        >
           <Form onSubmit={addNickname} className="user-profile-form">
             <Form.Group>
               <Form.Control
