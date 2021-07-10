@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
 
 const ProfileAddNickname = (props) => {
   const { user } = props;
-  const [nickname, setNickname] = useState(null);
+  const [nickname, setNickname] = useState(
+    user.nickname ? user.nickname : null
+  );
 
   const addNickname = async (e) => {
     e.preventDefault();
@@ -22,26 +24,37 @@ const ProfileAddNickname = (props) => {
 
   return (
     <>
-      {!user.nickname && (
-        <div className="user-profile-nickname-form">
+      <Row className="user-profile-nickname">
+        <Col md={{ span: 1, offset: 4 }} className="user-profile-categories">
           <h3>Nickname:</h3>
-          <Form onSubmit={addNickname}>
+        </Col>
+        <Col md={2} className="user-profile-info">
+          <Form onSubmit={addNickname} className="user-profile-form">
             <Form.Group>
               <Form.Control
+                style={{
+                  background: "#090804",
+                  color: "white",
+                  fontSize: "24px",
+                }}
                 placeholder="Add Nickname"
                 id="nickname"
+                value={nickname}
                 onChange={(e) => setNickname(e.target.value)}
               />
             </Form.Group>
-            <Button type="submit">Add</Button>
+            <Button
+              type="submit"
+              style={{
+                background: "#090804",
+                border: "none",
+              }}
+            >
+              Save
+            </Button>
           </Form>
-        </div>
-      )}
-      {user.nickname && (
-        <div>
-          <h3>Nickname: {user.nickname}</h3>
-        </div>
-      )}
+        </Col>
+      </Row>
     </>
   );
 };

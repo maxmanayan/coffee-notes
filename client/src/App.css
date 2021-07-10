@@ -157,6 +157,27 @@
   padding-top: 5em;
 }
 
+.user-profile-categories {
+  color: #ece0d1b6;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-profile-info {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-profile-form {
+  display: flex;
+}
+
+.user-profile-nickname {
+  display: flex;
+  align-items: center;
+}
+
 .user-profile-nickname-form {
   margin-left: 25%;
   margin-right: 25%;
