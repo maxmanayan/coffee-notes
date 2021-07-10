@@ -31,7 +31,7 @@ const NavBar = () => {
                   fontWeight: "bold",
                 }}
               >
-                Profile
+                {user.nickname ? user.nickname : "Profile"}
               </Nav.Link>
             )}
             {user && (
