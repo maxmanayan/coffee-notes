@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 
 const ProfileName = (props) => {
-  const { user } = props;
+  const { user, setUpdatedCard } = props;
   const [name, setName] = useState(user.name ? user.name : null);
 
   const editName = async (e) => {
@@ -13,7 +13,7 @@ const ProfileName = (props) => {
         ...user,
         name: name,
       });
-      console.log(user);
+      setUpdatedCard(true);
     } catch (error) {
       console.log(error);
     }

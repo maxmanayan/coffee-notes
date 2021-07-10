@@ -27,7 +27,11 @@ const UserProfile = () => {
       )}
       {user && (
         <div>
-          <ProfileName key={user.id} user={user} />
+          <ProfileName
+            key={user.id}
+            user={user}
+            setUpdatedCard={setUpdatedCard}
+          />
           <ProfileEmail key={user.id} user={user} />
           <ProfileAddNickname
             key={user.id}
