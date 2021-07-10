@@ -47,15 +47,17 @@ const ProfileName = (props) => {
                 onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
-            <Button
-              type="submit"
-              style={{
-                background: "#090804",
-                border: "none",
-              }}
-            >
-              Save
-            </Button>
+            {name !== user.name && (
+              <Button
+                type="submit"
+                style={{
+                  background: "#090804",
+                  border: "none",
+                }}
+              >
+                Save
+              </Button>
+            )}
           </Form>
         </Col>
       </Row>

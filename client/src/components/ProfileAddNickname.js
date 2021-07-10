@@ -51,15 +51,17 @@ const ProfileAddNickname = (props) => {
                 onChange={(e) => setNickname(e.target.value)}
               />
             </Form.Group>
-            <Button
-              type="submit"
-              style={{
-                background: "#090804",
-                border: "none",
-              }}
-            >
-              Save
-            </Button>
+            {nickname !== user.nickname && (
+              <Button
+                type="submit"
+                style={{
+                  background: "#090804",
+                  border: "none",
+                }}
+              >
+                Save
+              </Button>
+            )}
           </Form>
         </Col>
       </Row>
