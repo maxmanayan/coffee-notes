@@ -14,7 +14,17 @@ const AboutComingSoon = () => {
             </Col>
             <Col xs={12} md={5}>
               <h3 className="about-coming-soon-text">
-                Smoother Drag and Drop Function
+                Smoother Drag and Drop Experience
+              </h3>
+            </Col>
+          </Row>
+          <Row className="about-coming-soon-row">
+            <Col xs={12} md={{ span: 1, offset: 3 }}>
+              <Icon.PersonSquare color="#090804" size={75} />
+            </Col>
+            <Col xs={12} md={5}>
+              <h3 className="about-coming-soon-text">
+                Greater Customization of User Profile
               </h3>
             </Col>
           </Row>
@@ -32,27 +42,17 @@ const AboutComingSoon = () => {
             </Col>
             <Col xs={12} md={5}>
               <h3 className="about-coming-soon-text">
-                Study Playlist to Help You Focus!
+                Ability to Connect With Spotify Account
               </h3>
             </Col>
           </Row>
           <Row className="about-coming-soon-row">
             <Col xs={12} md={{ span: 1, offset: 3 }}>
-              <Icon.PersonSquare color="#090804" size={75} />
+              <Icon.CardText color="#090804" size={75} />
             </Col>
             <Col xs={12} md={5}>
               <h3 className="about-coming-soon-text">
-                Greater Customization of User Profile
-              </h3>
-            </Col>
-          </Row>
-          <Row className="about-coming-soon-row">
-            <Col xs={12} md={{ span: 1, offset: 3 }}>
-              <Icon.EmojiLaughingFill color="#090804" size={75} />
-            </Col>
-            <Col xs={12} md={5}>
-              <h3 className="about-coming-soon-text">
-                Daily Motivational Quotes
+                Personal Flashcard Decks
               </h3>
             </Col>
           </Row>
