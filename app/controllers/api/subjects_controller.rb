@@ -12,7 +12,7 @@ class Api::SubjectsController < ApplicationController
   end
 
   def create
-    new_subject = @current_user.subject.new(subject_params)
+    new_subject = @current_user.subjects.new(subject_params)
 
     if (new_subject.save) 
       render json: new_subject
@@ -41,7 +41,7 @@ class Api::SubjectsController < ApplicationController
   end
 
   def subject_params
-    require(:subject).permit(:name, :description, :starred)
+    params.require(:subject).permit(:name, :description, :starred)
   end
 
 end
