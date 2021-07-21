@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :notes do 
         resources :items
       end
+      resources :subjects
     end
 
     get "/users/:user_id/get_todo_notes", to: "notes#get_todo_notes"
