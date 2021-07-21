@@ -10,7 +10,7 @@ const FlashcardsContainer = () => {
         <h3>[Search Bar Here]</h3>
       </div>
       <div className="flashcards-viewbox">
-        <FlashcardsSubjects />
+        {screen === "subjects" && <FlashcardsSubjects />}
       </div>
     </div>
   );

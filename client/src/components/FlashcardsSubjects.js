@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
 import CreateSubjectModal from "./CreateSubjectModal";
+import * as Icon from "react-bootstrap-icons";
 
 const FlashcardsSubjects = (props) => {
   const { user } = useContext(AuthContext);
@@ -28,13 +29,35 @@ const FlashcardsSubjects = (props) => {
   const closeCreateSubjectModal = () => {
     setShowCreateSubjectModal(false);
   };
+
+  const renderSubjects = () => {
+    return subjects.map((subject) => {
+      return (
+        <div className="flashcards-subjects-card">
+          <h4>{subject.name}</h4>
+          <h4>{subject.description}</h4>
+        </div>
+      );
+    });
+  };
   return (
-    <div>
-      <h1>FlashcardsSubjects</h1>
-      <div>
-        <span>{JSON.stringify(subjects, null, 2)}</span>
+    <div className="flashcards-subjects">
+      <div className="flashcards-subjects-header">
+        <h1>Subjects</h1>
+        <div className="flashcards-subjects-header-icon">
+          <Icon.PlusSquare onClick={openCreateSubjectModal} size={30}>
+            New Subject
+          </Icon.PlusSquare>
+        </div>
       </div>
-      <Button onClick={openCreateSubjectModal}>New Subject</Button>
+      <div className="flashcards-subjects-container">
+        {!subjects && (
+          <div>
+            <h3>Create a Subject!</h3>
+          </div>
+        )}
+        {subjects && renderSubjects()}
+      </div>
       {showCreateSubjectModal && (
         <CreateSubjectModal
           closeCreateSubjectModal={closeCreateSubjectModal}
