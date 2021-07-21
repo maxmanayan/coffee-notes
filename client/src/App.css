@@ -735,3 +735,8 @@
   cursor: pointer;
   color: #090804;
 }
+
+.flashcards-container {
+  background: red;
+  height: 100vh;
+}
