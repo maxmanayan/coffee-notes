@@ -5,6 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import CreateSubjectModal from "./CreateSubjectModal";
 import * as Icon from "react-bootstrap-icons";
 import UpdateSubjectModal from "./UpdateSubjectModal";
+import DeleteSubjectConfirmationModel from "./DeleteSubjectConfirmationModal";
 
 const FlashcardsSubjects = (props) => {
   const { user } = useContext(AuthContext);
@@ -12,6 +13,8 @@ const FlashcardsSubjects = (props) => {
   const [showCreateSubjectModal, setShowCreateSubjectModal] = useState(false);
   const [showUpdateSubjectModal, setShowUpdateSubjectModal] = useState(false);
   const [updateSubject, setUpdateSubject] = useState(null);
+  const [showDeleteSubjectModal, setShowDeleteSubjectModal] = useState(false);
+  const [deleteSubject, setDeleteSubject] = useState(null);
 
   useEffect(() => {
     getSubjects();
@@ -70,6 +73,15 @@ const FlashcardsSubjects = (props) => {
     setUpdateSubject(null);
   };
 
+  const openDeleteSubjectModal = (subject) => {
+    setShowDeleteSubjectModal(true);
+    setDeleteSubject(subject);
+  };
+  const closeDeleteSubjectModal = () => {
+    setShowDeleteSubjectModal(false);
+    setDeleteSubject(null);
+  };
+
   const renderStarredSubjects = () => {
     return subjects.map((subject) => {
       if (subject.starred === true) {
@@ -78,7 +90,7 @@ const FlashcardsSubjects = (props) => {
             <div className="flashcards-subjects-card-icon-container">
               <div className="flashcards-subjects-card-icon-container-left">
                 <Icon.X
-                  onClick={() => console.log("delete clicked")}
+                  onClick={() => openDeleteSubjectModal(subject)}
                   className="flashcards-subjects-card-delete"
                   size={20}
                 />
@@ -152,6 +164,13 @@ const FlashcardsSubjects = (props) => {
         <UpdateSubjectModal
           closeUpdateSubjectModal={closeUpdateSubjectModal}
           subject={updateSubject}
+          getSubjects={getSubjects}
+        />
+      )}
+      {showDeleteSubjectModal && (
+        <DeleteSubjectConfirmationModel
+          closeDeleteSubjectModal={closeDeleteSubjectModal}
+          subject={deleteSubject}
           getSubjects={getSubjects}
         />
       )}
