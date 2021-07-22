@@ -26,13 +26,68 @@ const FlashcardsDecks = (props) => {
     }
   };
 
+  const starDeck = async (deck) => {
+    try {
+      await axios.put(
+        `/api/users/${user.id}/subjects/${subject.id}/decks/${deck.id}`,
+        {
+          name: deck.name,
+          description: deck.description,
+          starred: true,
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      getDecks();
+    }
+  };
+
+  const unStarDeck = async (deck) => {
+    try {
+      await axios.put(
+        `/api/users/${user.id}/subjects/${subject.id}/decks/${deck.id}`,
+        {
+          name: deck.name,
+          description: deck.description,
+          starred: false,
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      getDecks();
+    }
+  };
+
   const renderStarredDecks = () => {
     return decks.map((deck) => {
       if (deck.starred) {
         return (
-          <div>
-            <h3>{deck.name}</h3>
-            <h5>{deck.description}</h5>
+          <div className="flashcards-decks-card">
+            <div className="flashcards-subjects-card-icon-container">
+              <div className="flashcards-subjects-card-icon-container-left">
+                <Icon.X
+                  onClick={() => console.log("x clicked")}
+                  className="flashcards-subjects-card-delete"
+                  size={20}
+                />
+                <Icon.PencilSquare
+                  onClick={() => console.log("edit clicked")}
+                  className="flashcards-subjects-card-edit"
+                  size={20}
+                />
+              </div>
+              <Icon.StarFill
+                onClick={() => unStarDeck(deck)}
+                size={20}
+                className="flashcards-subjects-card-star-filled"
+              />
+            </div>
+            <div>
+              <h3>{deck.name}</h3>
+              <h5>{deck.description}</h5>
+            </div>
           </div>
         );
       }
@@ -44,8 +99,29 @@ const FlashcardsDecks = (props) => {
       if (!deck.starred) {
         return (
           <div className="flashcards-decks-card">
-            <h3>{deck.name}</h3>
-            <h5>{deck.description}</h5>
+            <div className="flashcards-subjects-card-icon-container">
+              <div className="flashcards-subjects-card-icon-container-left">
+                <Icon.X
+                  onClick={() => console.log("x clicked")}
+                  className="flashcards-subjects-card-delete"
+                  size={20}
+                />
+                <Icon.PencilSquare
+                  onClick={() => console.log("edit clicked")}
+                  className="flashcards-subjects-card-edit"
+                  size={20}
+                />
+              </div>
+              <Icon.Star
+                onClick={() => starDeck(deck)}
+                size={20}
+                className="flashcards-subjects-card-star"
+              />
+            </div>
+            <div>
+              <h3>{deck.name}</h3>
+              <h5>{deck.description}</h5>
+            </div>
           </div>
         );
       }
