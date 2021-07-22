@@ -158,11 +158,13 @@ const FlashcardsSubjects = (props) => {
         </div>
       </div>
       <div className="flashcards-subjects-container">
+        {/* {!subjects && console.log("no subjects")} */}
         {!subjects && (
           <div>
-            <h3>Create a Subject!</h3>
+            <h1>Create a Subject!</h1>
           </div>
         )}
+        {/* <span>{JSON.stringify(subjects, null, 2)}</span> */}
         {subjects && renderStarredSubjects()}
         {subjects && renderUnStarredSubjects()}
       </div>

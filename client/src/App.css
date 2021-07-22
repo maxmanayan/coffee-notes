@@ -746,8 +746,8 @@
 }
 
 .flashcards-viewbox {
-  background: rgba(0, 0, 0, 0.164);
-  border: 5px solid black;
+  background: #0908043d;
+  border: 5px solid #090804;
 
   height: 70vh;
   margin-left: 20%;
