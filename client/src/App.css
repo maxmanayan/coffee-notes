@@ -854,3 +854,9 @@
 .flashcards-subjects-card-text {
   margin-top: 1em;
 }
+
+.flashcards-decks-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
