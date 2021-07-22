@@ -22,7 +22,7 @@ class Api::SubjectsController < ApplicationController
   end
 
   def update 
-    if (@subject.updates(subject_params))
+    if (@subject.update(subject_params))
       render json: @subject
     else
       render json: {errors: new_subject.errors}
