@@ -21,7 +21,9 @@ const FlashcardsContainer = () => {
         {screen === "subjects" && (
           <FlashcardsSubjects switchViewBox={switchViewBox} />
         )}
-        {screen === "decks" && <FlashcardsDecks />}
+        {screen === "decks" && (
+          <FlashcardsDecks switchViewBox={switchViewBox} subject={data} />
+        )}
       </div>
     </div>
   );
