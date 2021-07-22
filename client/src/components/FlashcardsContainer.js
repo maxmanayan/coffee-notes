@@ -5,7 +5,7 @@ const FlashcardsContainer = () => {
   const [screen, setScreen] = useState("subjects");
   return (
     <div className="flashcards-container">
-      <h1>FlashcardsContainer</h1>
+      <h1>Flashcards</h1>
       <div className="flashcards-searchbar">
         <h3>[Search Bar Here]</h3>
       </div>

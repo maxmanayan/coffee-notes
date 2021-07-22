@@ -4,11 +4,14 @@ import { Button } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
 import CreateSubjectModal from "./CreateSubjectModal";
 import * as Icon from "react-bootstrap-icons";
+import UpdateSubjectModal from "./UpdateSubjectModal";
 
 const FlashcardsSubjects = (props) => {
   const { user } = useContext(AuthContext);
   const [subjects, setSubjects] = useState(null);
   const [showCreateSubjectModal, setShowCreateSubjectModal] = useState(false);
+  const [showUpdateSubjectModal, setShowUpdateSubjectModal] = useState(false);
+  const [updateSubject, setUpdateSubject] = useState(null);
 
   useEffect(() => {
     getSubjects();
@@ -58,12 +61,33 @@ const FlashcardsSubjects = (props) => {
     setShowCreateSubjectModal(false);
   };
 
+  const openUpdateSubjectModal = (subject) => {
+    setShowUpdateSubjectModal(true);
+    setUpdateSubject(subject);
+  };
+  const closeUpdateSubjectModal = () => {
+    setShowUpdateSubjectModal(false);
+    setUpdateSubject(null);
+  };
+
   const renderStarredSubjects = () => {
     return subjects.map((subject) => {
       if (subject.starred === true) {
         return (
           <div className="flashcards-subjects-card">
-            <div className="flashcards-subjects-card-star-container">
+            <div className="flashcards-subjects-card-icon-container">
+              <div className="flashcards-subjects-card-icon-container-left">
+                <Icon.X
+                  onClick={() => console.log("delete clicked")}
+                  className="flashcards-subjects-card-delete"
+                  size={20}
+                />
+                <Icon.PencilSquare
+                  onClick={() => openUpdateSubjectModal(subject)}
+                  className="flashcards-subjects-card-edit"
+                  size={20}
+                />
+              </div>
               <Icon.StarFill
                 onClick={() => unStarSubject(subject)}
                 size={20}
@@ -85,7 +109,7 @@ const FlashcardsSubjects = (props) => {
       if (subject.starred === false) {
         return (
           <div className="flashcards-subjects-card">
-            <div className="flashcards-subjects-card-star-container">
+            <div className="flashcards-subjects-card-icon-container">
               <Icon.Star
                 onClick={() => starSubject(subject)}
                 size={20}
@@ -121,6 +145,13 @@ const FlashcardsSubjects = (props) => {
       {showCreateSubjectModal && (
         <CreateSubjectModal
           closeCreateSubjectModal={closeCreateSubjectModal}
+          getSubjects={getSubjects}
+        />
+      )}
+      {showUpdateSubjectModal && (
+        <UpdateSubjectModal
+          closeUpdateSubjectModal={closeUpdateSubjectModal}
+          subject={updateSubject}
           getSubjects={getSubjects}
         />
       )}
