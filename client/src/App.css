@@ -855,8 +855,37 @@
   margin-top: 1em;
 }
 
+.flashcards-decks {
+  /* background: red; */
+}
+
 .flashcards-decks-header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.flashcards-decks-card-container {
+  height: 60vh;
+  width: 90%;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-left: 3em;
+}
+
+.flashcards-decks-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  margin: 1em;
+
+  background: beige;
+
+  width: 450px;
+  height: 275px;
 }

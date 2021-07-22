@@ -26,6 +26,32 @@ const FlashcardsDecks = (props) => {
     }
   };
 
+  const renderStarredDecks = () => {
+    return decks.map((deck) => {
+      if (deck.starred) {
+        return (
+          <div>
+            <h3>{deck.name}</h3>
+            <h5>{deck.description}</h5>
+          </div>
+        );
+      }
+    });
+  };
+
+  const renderUnStarredDecks = () => {
+    return decks.map((deck) => {
+      if (!deck.starred) {
+        return (
+          <div className="flashcards-decks-card">
+            <h3>{deck.name}</h3>
+            <h5>{deck.description}</h5>
+          </div>
+        );
+      }
+    });
+  };
+
   const openCreateDeckModal = () => {
     setShowCreateDeckModal(true);
   };
@@ -42,8 +68,13 @@ const FlashcardsDecks = (props) => {
           <Icon.PlusSquare onClick={openCreateDeckModal} size={30} />
         </div>
       </div>
+      <div className="flashcards-decks-card-container">
+        {decks && renderStarredDecks()}
+        {decks && renderUnStarredDecks()}
+      </div>
       {subject && <span>{JSON.stringify(subject, null, 2)}</span>}
       {decks && <span>{JSON.stringify(decks, null, 2)}</span>}
+
       {showCreateDeckModal && (
         <CreateDeckModal
           closeCreateDeckModal={closeCreateDeckModal}
