@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_21_220716) do
+ActiveRecord::Schema.define(version: 2021_07_22_221601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "decks", force: :cascade do |t|
+    t.bigint "subject_id", null: false
+    t.string "name"
+    t.text "description"
+    t.boolean "starred"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subject_id"], name: "index_decks_on_subject_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "content"
@@ -74,6 +84,7 @@ ActiveRecord::Schema.define(version: 2021_07_21_220716) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "decks", "subjects"
   add_foreign_key "items", "notes"
   add_foreign_key "notes", "users"
   add_foreign_key "subjects", "users"
