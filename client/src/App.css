@@ -835,6 +835,7 @@
 
 .flashcards-subjects-card-star {
   cursor: pointer;
+  color: rgba(218, 165, 32, 0.74);
 }
 .flashcards-subjects-card-star:hover {
   cursor: pointer;

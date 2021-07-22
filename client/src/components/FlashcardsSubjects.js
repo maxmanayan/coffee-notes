@@ -122,6 +122,18 @@ const FlashcardsSubjects = (props) => {
         return (
           <div className="flashcards-subjects-card">
             <div className="flashcards-subjects-card-icon-container">
+              <div className="flashcards-subjects-card-icon-container-left">
+                <Icon.X
+                  onClick={() => openDeleteSubjectModal(subject)}
+                  className="flashcards-subjects-card-delete"
+                  size={20}
+                />
+                <Icon.PencilSquare
+                  onClick={() => openUpdateSubjectModal(subject)}
+                  className="flashcards-subjects-card-edit"
+                  size={20}
+                />
+              </div>
               <Icon.Star
                 onClick={() => starSubject(subject)}
                 size={20}
