@@ -9,6 +9,7 @@ import DeleteSubjectConfirmationModel from "./DeleteSubjectConfirmationModal";
 
 const FlashcardsSubjects = (props) => {
   const { user } = useContext(AuthContext);
+  const { switchViewBox } = props;
   const [subjects, setSubjects] = useState(null);
   const [showCreateSubjectModal, setShowCreateSubjectModal] = useState(false);
   const [showUpdateSubjectModal, setShowUpdateSubjectModal] = useState(false);
@@ -109,6 +110,11 @@ const FlashcardsSubjects = (props) => {
             <div className="flashcards-subjects-card-text">
               <h3>{subject.name}</h3>
               <h6>{subject.description}</h6>
+            </div>
+            <div>
+              <Button onClick={() => switchViewBox("decks", subject)}>
+                View Decks
+              </Button>
             </div>
           </div>
         );
