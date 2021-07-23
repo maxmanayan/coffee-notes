@@ -856,7 +856,8 @@
 }
 
 .flashcards-decks {
-  /* background: red; */
+  display: flex;
+  flex-direction: column;
 }
 
 .flashcards-decks-header {
