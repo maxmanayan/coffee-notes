@@ -163,7 +163,7 @@ const FlashcardsDecks = (props) => {
     <div className="flashcards-decks">
       <div className="flashcards-decks-header">
         <Button onClick={() => switchViewBox("subjects", null)}>Back</Button>
-        <h1>Decks</h1>
+        <h1>{subject.name} Decks</h1>
         <div className="flashcards-subjects-header-icon">
           <Icon.PlusSquare onClick={openCreateDeckModal} size={30} />
         </div>
