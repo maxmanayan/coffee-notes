@@ -1,4 +1,6 @@
 class Api::FlashcardsController < ApplicationController
+  before_action :get_deck, only: [:index, :show, :create, :update, :destroy]
+
 
   def index
     render json: @deck.flashcards.all

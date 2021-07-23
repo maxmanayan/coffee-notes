@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import FlashcardsCards from "./FlashcardsCards";
 import FlashcardsDecks from "./FlashcardsDecks";
 import FlashcardsSubjects from "./FlashcardsSubjects";
 
 const FlashcardsContainer = () => {
   const [screen, setScreen] = useState("subjects");
-  const [data, setData] = useState(null);
+  const [subject, setSubject] = useState(null);
+  const [deck, setDeck] = useState(null);
 
-  const switchViewBox = (screenType, dataType) => {
+  const switchViewBox = (screenType, subject, deck) => {
     setScreen(screenType);
-    setData(dataType);
+    setSubject(subject);
+    setDeck(deck);
   };
 
   return (
@@ -22,7 +25,14 @@ const FlashcardsContainer = () => {
           <FlashcardsSubjects switchViewBox={switchViewBox} />
         )}
         {screen === "decks" && (
-          <FlashcardsDecks switchViewBox={switchViewBox} subject={data} />
+          <FlashcardsDecks switchViewBox={switchViewBox} subject={subject} />
+        )}
+        {screen === "flashcards" && (
+          <FlashcardsCards
+            switchViewBox={switchViewBox}
+            subject={subject}
+            deck={deck}
+          />
         )}
       </div>
     </div>

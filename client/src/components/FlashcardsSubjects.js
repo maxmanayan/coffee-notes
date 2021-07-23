@@ -112,7 +112,7 @@ const FlashcardsSubjects = (props) => {
               <h6>{subject.description}</h6>
             </div>
             <div>
-              <Button onClick={() => switchViewBox("decks", subject)}>
+              <Button onClick={() => switchViewBox("decks", subject, null)}>
                 View Decks
               </Button>
             </div>
@@ -151,7 +151,7 @@ const FlashcardsSubjects = (props) => {
               <h6>{subject.description}</h6>
             </div>
             <div>
-              <Button onClick={() => switchViewBox("decks", subject)}>
+              <Button onClick={() => switchViewBox("decks", subject, null)}>
                 View Decks
               </Button>
             </div>

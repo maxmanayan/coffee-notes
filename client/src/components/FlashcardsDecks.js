@@ -128,6 +128,13 @@ const FlashcardsDecks = (props) => {
               <h3>{deck.name}</h3>
               <h5>{deck.description}</h5>
             </div>
+            <div>
+              <Button
+                onClick={() => switchViewBox("flashcards", subject, deck)}
+              >
+                Study Flashcards
+              </Button>
+            </div>
           </div>
         );
       }
@@ -162,7 +169,9 @@ const FlashcardsDecks = (props) => {
   return (
     <div className="flashcards-decks">
       <div className="flashcards-decks-header">
-        <Button onClick={() => switchViewBox("subjects", null)}>Back</Button>
+        <Button onClick={() => switchViewBox("subjects", null, null)}>
+          Back
+        </Button>
         <h1>{subject.name} Decks</h1>
         <div className="flashcards-subjects-header-icon">
           <Icon.PlusSquare onClick={openCreateDeckModal} size={30} />
