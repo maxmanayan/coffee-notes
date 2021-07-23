@@ -914,6 +914,12 @@
   justify-content: center;
   margin-left: 5%;
   margin-right: 5%;
+  padding-left: 3em;
+}
+
+.flashcards-individual-card-block {
+  display: flex;
+  align-items: center;
 }
 
 .flashcards-individual-card {
@@ -927,4 +933,15 @@
 
   width: 450px;
   height: 275px;
+}
+
+.flashcards-individual-card-flip {
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+.flashcards-individual-card-flip:hover {
+  padding-left: 1em;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.493);
 }
