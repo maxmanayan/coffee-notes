@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FlashcardsCards from "./FlashcardsCards";
+import FlashcardsCardsContainer from "./FlashcardsCardsContainer";
 import FlashcardsDecks from "./FlashcardsDecks";
 import FlashcardsSubjects from "./FlashcardsSubjects";
 
@@ -28,7 +28,7 @@ const FlashcardsContainer = () => {
           <FlashcardsDecks switchViewBox={switchViewBox} subject={subject} />
         )}
         {screen === "flashcards" && (
-          <FlashcardsCards
+          <FlashcardsCardsContainer
             switchViewBox={switchViewBox}
             subject={subject}
             deck={deck}

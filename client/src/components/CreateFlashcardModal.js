@@ -21,10 +21,11 @@ const CreateFlashcardModal = (props) => {
           starred: false,
         }
       );
+      getFlashcards();
     } catch (error) {
       console.log(error);
     } finally {
-      getFlashcards();
+      closeCreateFlashcardModal();
     }
   };
 

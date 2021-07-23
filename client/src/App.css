@@ -890,3 +890,41 @@
   width: 450px;
   height: 275px;
 }
+
+.flashcards-cards {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.flashcards-cards-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcards-cards-container {
+  height: 60vh;
+  width: 60%;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.flashcards-individual-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  margin: 1em;
+
+  background: beige;
+
+  width: 450px;
+  height: 275px;
+}

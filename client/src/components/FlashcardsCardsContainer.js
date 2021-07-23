@@ -4,8 +4,9 @@ import { Button } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
 import CreateFlashcardModal from "./CreateFlashcardModal";
 import * as Icon from "react-bootstrap-icons";
+import FlashcardsCardsIndividual from "./FlashcardsCardsIndividual";
 
-const FlashcardsCards = (props) => {
+const FlashcardsCardsContainer = (props) => {
   const { user } = useContext(AuthContext);
   const { switchViewBox, subject, deck } = props;
   const [flashcards, setFlashcards] = useState(null);
@@ -27,6 +28,26 @@ const FlashcardsCards = (props) => {
     }
   };
 
+  const renderStarredFlashcardFronts = () => {
+    return flashcards.map((flashcard) => {
+      if (flashcard.starred) {
+        return (
+          <FlashcardsCardsIndividual key={flashcard.id} flashcard={flashcard} />
+        );
+      }
+    });
+  };
+
+  const renderUnStarredFlashcardFronts = () => {
+    return flashcards.map((flashcard) => {
+      if (!flashcard.starred) {
+        return (
+          <FlashcardsCardsIndividual key={flashcard.id} flashcard={flashcard} />
+        );
+      }
+    });
+  };
+
   const openCreateFlashcardModal = () => {
     setShowCreateFlashcardModal(true);
   };
@@ -35,8 +56,8 @@ const FlashcardsCards = (props) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="flashcards-cards">
+      <div className="flashcards-cards-header">
         <Button onClick={() => switchViewBox("decks", subject, null)}>
           Back
         </Button>
@@ -45,8 +66,9 @@ const FlashcardsCards = (props) => {
           <Icon.PlusSquare onClick={openCreateFlashcardModal} size={30} />
         </div>
       </div>
-      <div>
-        {flashcards && <span>{JSON.stringify(flashcards, null, 2)}</span>}
+      <div className="flashcards-cards-container">
+        {flashcards && renderStarredFlashcardFronts()}
+        {flashcards && renderUnStarredFlashcardFronts()}
       </div>
 
       {showCreateFlashcardModal && (
@@ -61,4 +83,4 @@ const FlashcardsCards = (props) => {
   );
 };
 
-export default FlashcardsCards;
+export default FlashcardsCardsContainer;
