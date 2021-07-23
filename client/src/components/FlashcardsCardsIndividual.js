@@ -58,6 +58,7 @@ const FlashcardsCardsIndividual = (props) => {
               size={20}
             />
           </div>
+          <div>{showFront ? <h6>front</h6> : <h6>back</h6>}</div>
           {flashcard.starred ? (
             <Icon.StarFill
               onClick={unStarFlashcard}
@@ -73,9 +74,7 @@ const FlashcardsCardsIndividual = (props) => {
           )}
         </div>
         <div>
-          {showFront && <h4>{flashcard.front}</h4>}
-
-          {!showFront && <h4>{flashcard.back}</h4>}
+          {showFront ? <h4>{flashcard.front}</h4> : <h4>{flashcard.back}</h4>}
         </div>
       </div>
       <div className="flashcards-individual-card-flip">
