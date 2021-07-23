@@ -5,6 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from "react-bootstrap-icons";
 import CreateDeckModal from "./CreateDeckModal";
 import UpdateDeckModal from "./UpdateDeckModal";
+import DeleteDeckConfirmationModel from "./DeleteDeckConfirmationModal";
 
 const FlashcardsDecks = (props) => {
   const { user } = useContext(AuthContext);
@@ -73,7 +74,7 @@ const FlashcardsDecks = (props) => {
             <div className="flashcards-subjects-card-icon-container">
               <div className="flashcards-subjects-card-icon-container-left">
                 <Icon.X
-                  onClick={() => console.log("x clicked")}
+                  onClick={() => openDeleteDeckModal(deck)}
                   className="flashcards-subjects-card-delete"
                   size={20}
                 />
@@ -107,7 +108,7 @@ const FlashcardsDecks = (props) => {
             <div className="flashcards-subjects-card-icon-container">
               <div className="flashcards-subjects-card-icon-container-left">
                 <Icon.X
-                  onClick={() => console.log("x clicked")}
+                  onClick={() => openDeleteDeckModal(deck)}
                   className="flashcards-subjects-card-delete"
                   size={20}
                 />
@@ -172,8 +173,6 @@ const FlashcardsDecks = (props) => {
         {decks && renderStarredDecks()}
         {decks && renderUnStarredDecks()}
       </div>
-      {subject && <span>{JSON.stringify(subject, null, 2)}</span>}
-      {decks && <span>{JSON.stringify(decks, null, 2)}</span>}
 
       {showCreateDeckModal && (
         <CreateDeckModal
@@ -182,12 +181,19 @@ const FlashcardsDecks = (props) => {
           subject={subject}
         />
       )}
-
       {showUpdateDeckModal && (
         <UpdateDeckModal
           closeUpdateDeckModal={closeUpdateDeckModal}
           subject={subject}
           deck={updateDeck}
+          getDecks={getDecks}
+        />
+      )}
+      {showDeleteDeckModal && (
+        <DeleteDeckConfirmationModel
+          closeDeleteDeckModal={closeDeleteDeckModal}
+          subject={subject}
+          deck={deleteDeck}
           getDecks={getDecks}
         />
       )}
