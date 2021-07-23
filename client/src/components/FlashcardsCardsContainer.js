@@ -32,7 +32,13 @@ const FlashcardsCardsContainer = (props) => {
     return flashcards.map((flashcard) => {
       if (flashcard.starred) {
         return (
-          <FlashcardsCardsIndividual key={flashcard.id} flashcard={flashcard} />
+          <FlashcardsCardsIndividual
+            key={flashcard.id}
+            subject={subject}
+            deck={deck}
+            flashcard={flashcard}
+            getFlashcards={getFlashcards}
+          />
         );
       }
     });
@@ -42,7 +48,13 @@ const FlashcardsCardsContainer = (props) => {
     return flashcards.map((flashcard) => {
       if (!flashcard.starred) {
         return (
-          <FlashcardsCardsIndividual key={flashcard.id} flashcard={flashcard} />
+          <FlashcardsCardsIndividual
+            key={flashcard.id}
+            subject={subject}
+            deck={deck}
+            flashcard={flashcard}
+            getFlashcards={getFlashcards}
+          />
         );
       }
     });
