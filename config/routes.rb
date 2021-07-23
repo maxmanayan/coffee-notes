@@ -8,7 +8,9 @@ Rails.application.routes.draw do
         resources :items
       end
       resources :subjects do 
-        resources :decks
+        resources :decks do 
+          resources :flashcards
+        end
       end
     end
 
