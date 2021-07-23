@@ -4,12 +4,17 @@ import { Button } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from "react-bootstrap-icons";
 import CreateDeckModal from "./CreateDeckModal";
+import UpdateDeckModal from "./UpdateDeckModal";
 
 const FlashcardsDecks = (props) => {
   const { user } = useContext(AuthContext);
   const { switchViewBox, subject } = props;
   const [decks, setDecks] = useState(null);
   const [showCreateDeckModal, setShowCreateDeckModal] = useState(false);
+  const [showUpdateDeckModal, setShowUpdateDeckModal] = useState(false);
+  const [updateDeck, setUpdateDeck] = useState(null);
+  const [showDeleteDeckModal, setShowDeleteDeckModal] = useState(false);
+  const [deleteDeck, setDeleteDeck] = useState(null);
 
   useEffect(() => {
     getDecks();
@@ -73,7 +78,7 @@ const FlashcardsDecks = (props) => {
                   size={20}
                 />
                 <Icon.PencilSquare
-                  onClick={() => console.log("edit clicked")}
+                  onClick={() => openUpdateDeckModal(deck)}
                   className="flashcards-subjects-card-edit"
                   size={20}
                 />
@@ -107,7 +112,7 @@ const FlashcardsDecks = (props) => {
                   size={20}
                 />
                 <Icon.PencilSquare
-                  onClick={() => console.log("edit clicked")}
+                  onClick={() => openUpdateDeckModal(deck)}
                   className="flashcards-subjects-card-edit"
                   size={20}
                 />
@@ -135,6 +140,24 @@ const FlashcardsDecks = (props) => {
     setShowCreateDeckModal(false);
   };
 
+  const openUpdateDeckModal = (deck) => {
+    setShowUpdateDeckModal(true);
+    setUpdateDeck(deck);
+  };
+  const closeUpdateDeckModal = () => {
+    setShowUpdateDeckModal(false);
+    setUpdateDeck(null);
+  };
+
+  const openDeleteDeckModal = (deck) => {
+    setShowDeleteDeckModal(true);
+    setDeleteDeck(deck);
+  };
+  const closeDeleteDeckModal = () => {
+    setShowDeleteDeckModal(false);
+    setDeleteDeck(null);
+  };
+
   return (
     <div className="flashcards-decks">
       <div className="flashcards-decks-header">
@@ -145,6 +168,7 @@ const FlashcardsDecks = (props) => {
         </div>
       </div>
       <div className="flashcards-decks-card-container">
+        {!decks && <h1>Create a New Deck</h1>}
         {decks && renderStarredDecks()}
         {decks && renderUnStarredDecks()}
       </div>
@@ -156,6 +180,15 @@ const FlashcardsDecks = (props) => {
           closeCreateDeckModal={closeCreateDeckModal}
           getDecks={getDecks}
           subject={subject}
+        />
+      )}
+
+      {showUpdateDeckModal && (
+        <UpdateDeckModal
+          closeUpdateDeckModal={closeUpdateDeckModal}
+          subject={subject}
+          deck={updateDeck}
+          getDecks={getDecks}
         />
       )}
     </div>
