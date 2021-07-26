@@ -3,6 +3,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from "react-bootstrap-icons";
 import axios from "axios";
 import UpdateFlashcardModal from "./UpdateFlashcardModal";
+import DeleteFlashcardConfirmationModal from "./DeleteFlashcardConfirmationModal";
 
 const FlashcardsCardsIndividual = (props) => {
   const { user } = useContext(AuthContext);
@@ -73,7 +74,7 @@ const FlashcardsCardsIndividual = (props) => {
         <div className="flashcards-subjects-card-icon-container">
           <div className="flashcards-subjects-card-icon-container-left">
             <Icon.X
-              onClick={() => console.log("delete clicked")}
+              onClick={() => openDeleteFlashcardModal(flashcard)}
               className="flashcards-subjects-card-delete"
               size={20}
             />
@@ -109,6 +110,16 @@ const FlashcardsCardsIndividual = (props) => {
       {showUpdateFlashcardModal && (
         <UpdateFlashcardModal
           closeUpdateFlashcardModal={closeUpdateFlashcardModal}
+          subject={subject}
+          deck={deck}
+          flashcard={flashcard}
+          getFlashcards={getFlashcards}
+        />
+      )}
+
+      {showDeleteFlashcardModal && (
+        <DeleteFlashcardConfirmationModal
+          closeDeleteFlashcardModal={closeDeleteFlashcardModal}
           subject={subject}
           deck={deck}
           flashcard={flashcard}

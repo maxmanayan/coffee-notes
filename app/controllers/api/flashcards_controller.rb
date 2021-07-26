@@ -30,8 +30,8 @@ class Api::FlashcardsController < ApplicationController
     end
   end
 
-  def delete
-    render json: @deck.flashcard.find(params[:id]).destroy
+  def destroy
+    render json: @deck.flashcards.find(params[:id]).destroy
   end
 
 
