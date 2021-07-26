@@ -2,11 +2,18 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from "react-bootstrap-icons";
 import axios from "axios";
+import UpdateFlashcardModal from "./UpdateFlashcardModal";
 
 const FlashcardsCardsIndividual = (props) => {
   const { user } = useContext(AuthContext);
   const { subject, deck, flashcard, getFlashcards } = props;
   const [showFront, setShowFront] = useState(true);
+  const [showUpdateFlashcardModal, setShowUpdateFlashcardModal] =
+    useState(false);
+  const [updateFlashcard, setUpdateFlashcard] = useState(null);
+  const [showDeleteFlashcardModal, setShowDeleteFlashcardModal] =
+    useState(false);
+  const [deleteFlashcard, setDeleteFlashcard] = useState(null);
 
   const starFlashcard = async (e) => {
     e.preventDefault();
@@ -42,6 +49,24 @@ const FlashcardsCardsIndividual = (props) => {
     }
   };
 
+  const openUpdateFlashcardModal = (flashcard) => {
+    setShowUpdateFlashcardModal(true);
+    setUpdateFlashcard(flashcard);
+  };
+  const closeUpdateFlashcardModal = () => {
+    setShowUpdateFlashcardModal(false);
+    setUpdateFlashcard(null);
+  };
+
+  const openDeleteFlashcardModal = (flashcard) => {
+    setShowDeleteFlashcardModal(true);
+    setDeleteFlashcard(flashcard);
+  };
+  const closeDeleteFlashcardModal = () => {
+    setShowDeleteFlashcardModal(false);
+    setDeleteFlashcard(null);
+  };
+
   return (
     <div className="flashcards-individual-card-block">
       <div className="flashcards-individual-card">
@@ -53,7 +78,7 @@ const FlashcardsCardsIndividual = (props) => {
               size={20}
             />
             <Icon.PencilSquare
-              onClick={() => console.log("edit clicked")}
+              onClick={() => openUpdateFlashcardModal(flashcard)}
               className="flashcards-subjects-card-edit"
               size={20}
             />
@@ -80,6 +105,16 @@ const FlashcardsCardsIndividual = (props) => {
       <div className="flashcards-individual-card-flip">
         <Icon.ArrowRepeat onClick={() => setShowFront(!showFront)} size={30} />
       </div>
+
+      {showUpdateFlashcardModal && (
+        <UpdateFlashcardModal
+          closeUpdateFlashcardModal={closeUpdateFlashcardModal}
+          subject={subject}
+          deck={deck}
+          flashcard={flashcard}
+          getFlashcards={getFlashcards}
+        />
+      )}
     </div>
   );
 };
