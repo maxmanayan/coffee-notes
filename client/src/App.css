@@ -146,6 +146,18 @@
   margin-left: 0.5em;
   padding: 3px;
 }
+.sidebar-icon-flashcards {
+  cursor: pointer;
+  margin-bottom: 1em;
+  padding: 3px;
+}
+
+.sidebar-icon-flashcards:hover {
+  cursor: pointer;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  padding: 3px;
+}
 
 .user-profile {
   background: #090804;

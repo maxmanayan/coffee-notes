@@ -38,6 +38,17 @@ const SideBar = () => {
           <Icon.ChatQuote size={48} />
         </div>
       </Link>
+      <Link
+        activeClass="active"
+        to="home-flashcards"
+        smooth={true}
+        offset={30}
+        duration={100}
+      >
+        <div className="sidebar-icon-flashcards">
+          <Icon.CardText size={46} />
+        </div>
+      </Link>
     </div>
   );
 };
