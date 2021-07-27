@@ -178,7 +178,7 @@ const FlashcardsDecks = (props) => {
         </div>
       </div>
       <div className="flashcards-decks-card-container">
-        {!decks && <h1>Create a New Deck</h1>}
+        {decks && decks.length === 0 && <h1>Create a New Deck</h1>}
         {decks && renderStarredDecks()}
         {decks && renderUnStarredDecks()}
       </div>
