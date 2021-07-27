@@ -79,6 +79,9 @@ const FlashcardsCardsContainer = (props) => {
         </div>
       </div>
       <div className="flashcards-cards-container">
+        {flashcards && flashcards.length === 0 && (
+          <h1>Create New Flashcards</h1>
+        )}
         {flashcards && renderStarredFlashcardFronts()}
         {flashcards && renderUnStarredFlashcardFronts()}
       </div>
