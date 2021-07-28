@@ -22,8 +22,8 @@ const FlashcardsContainer = () => {
 
   return (
     <div className="flashcards-container">
-      <h1>Flashcards</h1>
-      <div className="flashcards-searchbar">
+      <h1 className="flashcards-header">Flashcards</h1>
+      <div>
         <FlashcardsSearchBar
           search={search}
           setSearch={setSearch}

@@ -13,8 +13,9 @@ const FlashcardsSearchBar = (props) => {
     }
   };
   return (
-    <div>
+    <div className="flashcards-searchbar-container">
       <input
+        className="flashcards-searchbar"
         placeholder="Search for a deck..."
         value={search}
         onChange={startSearchFilter}

@@ -717,6 +717,7 @@
 
 .motivational-quote-header {
   font-weight: bold;
+  font-size: 3em;
 }
 
 .motivational-quote-quoteblock {
@@ -753,8 +754,21 @@
   padding-top: 5em;
 }
 
+.flashcards-header {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.flashcards-searchbar-container {
+  margin-bottom: 1em;
+}
+
 .flashcards-searchbar {
-  color: gray;
+  /* background: rgba(128, 128, 128, 0.11); */
+  padding: 8px 0 8px 1em;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
 }
 
 .flashcards-viewbox {
