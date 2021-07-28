@@ -80,7 +80,7 @@ const FlashcardsCardsContainer = (props) => {
       </div>
       <div className="flashcards-cards-container">
         {flashcards && flashcards.length === 0 && (
-          <h1>Create New Flashcards</h1>
+          <h3>Create New Flashcards</h3>
         )}
         {flashcards && renderStarredFlashcardFronts()}
         {flashcards && renderUnStarredFlashcardFronts()}

@@ -48,6 +48,20 @@ const FlashcardsAllDecks = (props) => {
     }
   };
 
+  // const loopAllDecks = (allDecks) => {
+  //   allDecks.forEach(deck => {
+  //     getAllDecks
+  //   })
+  // }
+
+  // const getAllFlashcards = async () => {
+  //   try {
+  //     let res = await axios.get(`/api/users/${user.id}/subjects/${subject.id}/decks/${deck.id}/flashcards`)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
   const renderStarredDecks = () => {
     return allDecks
       .filter((deck) => {
@@ -112,7 +126,7 @@ const FlashcardsAllDecks = (props) => {
       })
       .map((deck) => {
         let subjectObj = subjects.filter((subject) => {
-          if (subject.id === deck.subject_id) return subject;
+          if (subject.id === deck.subject_id) return { ...subject };
         });
         if (!deck.starred) {
           return (
