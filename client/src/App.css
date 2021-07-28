@@ -773,7 +773,8 @@
 
 .flashcards-viewbox {
   background: #0908043d;
-  border: 5px solid #090804;
+  border: 5px solid #090804bd;
+  border-radius: 5px;
 
   height: 70vh;
   margin-left: 20%;
@@ -783,8 +784,6 @@
 .flashcards-subjects {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 .flashcards-subjects-header {
