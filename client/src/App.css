@@ -962,12 +962,50 @@
   box-shadow: 0px 0px 10px 10px #38220f21;
 }
 
+.flashcards-individual-card-flip {
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+.flashcards-individual-card-flip:hover {
+  padding-left: 1em;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.493);
+}
+/* -----------flashcard flip animation---------------- */
+
 .flip {
   animation: flip 0.8s;
-  /* transform: rotateX(180deg); */
+  -webkit-animation: flip 0.8s;
+  -moz-animation: flip 0.8s;
+  -o-animation: flip 0.8s;
 }
 
 @keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@-o-keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@-moz-keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@-webkit-keyframes flip {
   0% {
     transform: rotateX(0deg);
   }
@@ -1032,24 +1070,4 @@
   }
 }
 
-/* 
-@keyframes flipText {
-  0% {
-    transform: translate(0px);
-  }
-  50% {
-    transform: translate(100px);
-    background-color: blue;
-  }
-} */
-
-.flashcards-individual-card-flip {
-  padding-left: 1em;
-  cursor: pointer;
-}
-
-.flashcards-individual-card-flip:hover {
-  padding-left: 1em;
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.493);
-}
+/* ^^^^^^^^^^^^^flashcard flip animation^^^^^^^^^^^^^^^ */
