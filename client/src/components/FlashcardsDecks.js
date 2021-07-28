@@ -23,6 +23,7 @@ const FlashcardsDecks = (props) => {
 
   const getDecks = async () => {
     try {
+      console.log("subject in getDecks", subject);
       let res = await axios.get(
         `/api/users/${user.id}/subjects/${subject.id}/decks`
       );
@@ -93,6 +94,13 @@ const FlashcardsDecks = (props) => {
             <div>
               <h3>{deck.name}</h3>
               <h5>{deck.description}</h5>
+            </div>
+            <div>
+              <Button
+                onClick={() => switchViewBox("flashcards", subject, deck)}
+              >
+                Study Flashcards
+              </Button>
             </div>
           </div>
         );

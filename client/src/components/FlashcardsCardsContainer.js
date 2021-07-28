@@ -19,6 +19,7 @@ const FlashcardsCardsContainer = (props) => {
 
   const getFlashcards = async () => {
     try {
+      console.log("subject", subject);
       let res = await axios.get(
         `/api/users/${user.id}/subjects/${subject.id}/decks/${deck.id}/flashcards`
       );

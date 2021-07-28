@@ -1,12 +1,24 @@
 import React from "react";
 
 const FlashcardsSearchBar = (props) => {
-  const { setSearch } = props;
+  const { search, setSearch, setScreen } = props;
+
+  const startSearchFilter = (e) => {
+    setSearch(e.target.value);
+    console.log(search);
+
+    if (e.target.value === "") {
+      setScreen("subjects");
+    } else {
+      setScreen("allDecks");
+    }
+  };
   return (
     <div>
       <input
         placeholder="Search for a deck..."
-        onChange={(e) => setSearch(e.target.value)}
+        value={search}
+        onChange={startSearchFilter}
       />
     </div>
   );

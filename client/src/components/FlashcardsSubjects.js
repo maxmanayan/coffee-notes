@@ -170,7 +170,7 @@ const FlashcardsSubjects = (props) => {
       </div>
       <div className="flashcards-subjects-container">
         {/* {!subjects && console.log("no subjects")} */}
-        {!subjects && (
+        {subjects && subjects.length === 0 && (
           <div>
             <h1>Create a Subject!</h1>
           </div>
