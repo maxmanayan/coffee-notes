@@ -9,6 +9,7 @@ const FlashcardsCardsIndividual = (props) => {
   const { user } = useContext(AuthContext);
   const { subject, deck, flashcard, getFlashcards } = props;
   const [showFront, setShowFront] = useState(true);
+  const [flip, setFlip] = useState(false);
   const [showUpdateFlashcardModal, setShowUpdateFlashcardModal] =
     useState(false);
   const [updateFlashcard, setUpdateFlashcard] = useState(null);
@@ -50,6 +51,20 @@ const FlashcardsCardsIndividual = (props) => {
     }
   };
 
+  const flipCard = () => {
+    setFlip(true);
+    setTimeout(flipText, 300);
+    setTimeout(stopFlip, 500);
+  };
+
+  const flipText = () => {
+    setShowFront(!showFront);
+  };
+
+  const stopFlip = () => {
+    setFlip(false);
+  };
+
   const openUpdateFlashcardModal = (flashcard) => {
     setShowUpdateFlashcardModal(true);
     setUpdateFlashcard(flashcard);
@@ -70,41 +85,49 @@ const FlashcardsCardsIndividual = (props) => {
 
   return (
     <div className="flashcards-individual-card-block">
-      <div className="flashcards-individual-card">
-        <div className="flashcards-subjects-card-icon-container">
-          <div className="flashcards-subjects-card-icon-container-left">
-            <Icon.X
-              onClick={() => openDeleteFlashcardModal(flashcard)}
-              className="flashcards-subjects-card-delete"
-              size={20}
-            />
-            <Icon.PencilSquare
-              onClick={() => openUpdateFlashcardModal(flashcard)}
-              className="flashcards-subjects-card-edit"
-              size={20}
-            />
+      <div
+        className={`${
+          showFront
+            ? "flashcards-individual-card-front"
+            : "flashcards-individual-card-back"
+        } ${flip ? "flip" : ""}`}
+      >
+        <div className={`${flip ? "flicker-text" : ""}`}>
+          <div className="flashcards-subjects-card-icon-container">
+            <div className="flashcards-subjects-card-icon-container-left">
+              <Icon.X
+                onClick={() => openDeleteFlashcardModal(flashcard)}
+                className="flashcards-subjects-card-delete"
+                size={20}
+              />
+              <Icon.PencilSquare
+                onClick={() => openUpdateFlashcardModal(flashcard)}
+                className="flashcards-subjects-card-edit"
+                size={20}
+              />
+            </div>
+            <div>{showFront ? <h6>front</h6> : <h6>back</h6>}</div>
+            {flashcard.starred ? (
+              <Icon.StarFill
+                onClick={unStarFlashcard}
+                size={20}
+                className="flashcards-subjects-card-star-filled"
+              />
+            ) : (
+              <Icon.Star
+                onClick={starFlashcard}
+                size={20}
+                className="flashcards-subjects-card-star"
+              />
+            )}
           </div>
-          <div>{showFront ? <h6>front</h6> : <h6>back</h6>}</div>
-          {flashcard.starred ? (
-            <Icon.StarFill
-              onClick={unStarFlashcard}
-              size={20}
-              className="flashcards-subjects-card-star-filled"
-            />
-          ) : (
-            <Icon.Star
-              onClick={starFlashcard}
-              size={20}
-              className="flashcards-subjects-card-star"
-            />
-          )}
-        </div>
-        <div>
-          {showFront ? <h4>{flashcard.front}</h4> : <h4>{flashcard.back}</h4>}
+          <div>
+            {showFront ? <h4>{flashcard.front}</h4> : <h4>{flashcard.back}</h4>}
+          </div>
         </div>
       </div>
       <div className="flashcards-individual-card-flip">
-        <Icon.ArrowRepeat onClick={() => setShowFront(!showFront)} size={30} />
+        <Icon.ArrowRepeat onClick={flipCard} size={30} />
       </div>
 
       {showUpdateFlashcardModal && (

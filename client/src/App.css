@@ -934,7 +934,7 @@
   align-items: center;
 }
 
-.flashcards-individual-card {
+.flashcards-individual-card-front {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -945,7 +945,103 @@
 
   width: 450px;
   height: 275px;
+  box-shadow: 0px 0px 10px 10px #38220f21;
 }
+
+.flashcards-individual-card-back {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  margin: 1em;
+
+  background: rgba(245, 245, 220, 0.788);
+
+  width: 450px;
+  height: 275px;
+  box-shadow: 0px 0px 10px 10px #38220f21;
+}
+
+.flip {
+  animation: flip 0.8s;
+  /* transform: rotateX(180deg); */
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+
+.flicker-text {
+  min-height: 100%;
+  -webkit-animation: flicker-text 0.7s infinite;
+  -moz-animation: flicker-text 0.7s infinite;
+  -o-animation: flicker-text 0.7s infinite;
+  animation: flicker-text 0.7s infinite;
+}
+
+@keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 
+@keyframes flipText {
+  0% {
+    transform: translate(0px);
+  }
+  50% {
+    transform: translate(100px);
+    background-color: blue;
+  }
+} */
 
 .flashcards-individual-card-flip {
   padding-left: 1em;
