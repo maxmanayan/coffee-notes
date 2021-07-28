@@ -5,7 +5,6 @@ const FlashcardsSearchBar = (props) => {
 
   const startSearchFilter = (e) => {
     setSearch(e.target.value);
-    console.log(search);
 
     if (e.target.value === "") {
       setScreen("subjects");

@@ -16,7 +16,6 @@ const FlashcardsContainer = () => {
 
   const switchViewBox = (screenType, subjectObj, deckObj) => {
     setScreen(screenType);
-    console.log("subjectObj", subjectObj);
     setSubject(subjectObj);
     setDeck(deckObj);
   };
