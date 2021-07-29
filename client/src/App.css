@@ -898,13 +898,14 @@
 .flashcards-decks-card-container {
   height: 60vh;
   width: 90%;
+  max-width: 1200px;
   overflow-y: scroll;
 
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   margin-left: 5%;
   margin-right: 5%;
-  padding-left: 3em;
 }
 
 .flashcards-decks-card {
