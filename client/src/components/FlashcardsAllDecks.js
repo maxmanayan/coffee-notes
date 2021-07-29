@@ -99,12 +99,23 @@ const FlashcardsAllDecks = (props) => {
                   className="flashcards-subjects-card-star-filled"
                 />
               </div>
-              <div>
-                <h3>{deck.name}</h3>
-                <h5>{deck.description}</h5>
+              <div className="flashcards-decks-card-text">
+                <h3 className="flashcards-decks-card-text-header">
+                  {deck.name}
+                </h3>
+                <h5 className="flashcards-decks-card-text-subheader">
+                  {deck.description}
+                </h5>
               </div>
-              <div>
-                <Button onClick={() => switchToFlashcard(deck, ...subjectObj)}>
+              <div className="flashcards-decks-card-button">
+                <Button
+                  style={{
+                    background: " #4a2c2a",
+                    border: "none",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => switchToFlashcard(deck, ...subjectObj)}
+                >
                   Study Flashcards
                 </Button>
               </div>
@@ -151,12 +162,23 @@ const FlashcardsAllDecks = (props) => {
                   className="flashcards-subjects-card-star"
                 />
               </div>
-              <div>
-                <h3>{deck.name}</h3>
-                <h5>{deck.description}</h5>
+              <div className="flashcards-decks-card-text">
+                <h3 className="flashcards-decks-card-text-header">
+                  {deck.name}
+                </h3>
+                <h5 className="flashcards-decks-card-text-subheader">
+                  {deck.description}
+                </h5>
               </div>
-              <div>
-                <Button onClick={() => switchToFlashcard(deck, ...subjectObj)}>
+              <div className="flashcards-decks-card-button">
+                <Button
+                  style={{
+                    background: " #4a2c2a",
+                    border: "none",
+                    fontWeight: "bold",
+                  }}
+                  onClick={() => switchToFlashcard(deck, ...subjectObj)}
+                >
                   Study Flashcards
                 </Button>
               </div>

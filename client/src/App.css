@@ -817,7 +817,7 @@
 
 .flashcards-subjects-card {
   cursor: pointer;
-  background: #f7f3ede0;
+  background: rgba(245, 245, 220, 0.863);
 
   margin: 2em;
   height: 250px;
@@ -833,7 +833,7 @@
 
 .flashcards-subjects-card:hover {
   cursor: pointer;
-  background: #f7f3ed;
+  background: rgba(245, 245, 220, 0.925);
 
   margin: 2em;
   height: 250px;
@@ -977,7 +977,7 @@
 }
 
 .flashcards-decks-card-text-header {
-  font-weight: bold;
+  color: #090804;
 }
 
 .flashcards-decks-card-text-subheader {
