@@ -837,6 +837,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-left: 1em;
+  flex-wrap: wrap;
 }
 
 .flashcards-subjects-card-delete {
@@ -932,7 +933,8 @@
 .flashcards-cards-container {
   color: #090804;
   height: 60vh;
-  width: 60%;
+  width: 100%;
+  max-width: 600px;
   overflow-y: scroll;
 
   display: flex;
@@ -940,16 +942,19 @@
   justify-content: center;
   margin-left: 5%;
   margin-right: 5%;
-  padding-left: 3em;
+  /* padding-left: 3em; */
 }
 
 .flashcards-individual-card-block {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   min-width: 30px;
 }
 
 .flashcards-front-back-text {
+  margin-left: -1em;
   margin-right: 1em;
   color: rgba(0, 0, 0, 0.342);
 }
