@@ -188,8 +188,11 @@ const FlashcardsSubjects = (props) => {
       </div>
       <div className="flashcards-subjects-container">
         {subjects && subjects.length === 0 && (
-          <div>
+          <div className="flashcards-empty-state">
             <h1>Create a Subject!</h1>
+            <div className="flashcards-subjects-header-icon">
+              <Icon.PlusSquare onClick={openCreateSubjectModal} size={30} />
+            </div>
           </div>
         )}
         {subjects && renderStarredSubjects()}

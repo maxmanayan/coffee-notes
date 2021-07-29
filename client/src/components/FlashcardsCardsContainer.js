@@ -87,7 +87,12 @@ const FlashcardsCardsContainer = (props) => {
       </div>
       <div className="flashcards-cards-container">
         {flashcards && flashcards.length === 0 && (
-          <h3>Create New Flashcards</h3>
+          <div className="flashcards-empty-state">
+            <h1>Create New Flashcards</h1>
+            <div className="flashcards-subjects-header-icon">
+              <Icon.PlusSquare onClick={openCreateFlashcardModal} size={30} />
+            </div>
+          </div>
         )}
         {flashcards && renderStarredFlashcardFronts()}
         {flashcards && renderUnStarredFlashcardFronts()}

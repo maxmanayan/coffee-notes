@@ -206,7 +206,14 @@ const FlashcardsDecks = (props) => {
         </div>
       </div>
       <div className="flashcards-decks-card-container">
-        {decks && decks.length === 0 && <h1>Create a New Deck</h1>}
+        {decks && decks.length === 0 && (
+          <div className="flashcards-empty-state">
+            <h1>Create a New Deck</h1>
+            <div className="flashcards-subjects-header-icon">
+              <Icon.PlusSquare onClick={openCreateDeckModal} size={30} />
+            </div>
+          </div>
+        )}
         {decks && renderStarredDecks()}
         {decks && renderUnStarredDecks()}
       </div>
