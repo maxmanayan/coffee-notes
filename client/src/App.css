@@ -930,6 +930,7 @@
 }
 
 .flashcards-cards-container {
+  color: #090804;
   height: 60vh;
   width: 60%;
   overflow-y: scroll;
@@ -945,6 +946,12 @@
 .flashcards-individual-card-block {
   display: flex;
   align-items: center;
+  min-width: 30px;
+}
+
+.flashcards-front-back-text {
+  margin-right: 1em;
+  color: rgba(0, 0, 0, 0.342);
 }
 
 .flashcards-individual-card-front {
@@ -954,7 +961,7 @@
 
   margin: 1em;
 
-  background: beige;
+  background: rgba(245, 245, 220, 0.863);
 
   width: 450px;
   height: 275px;
@@ -973,6 +980,13 @@
   width: 450px;
   height: 275px;
   box-shadow: 0px 0px 10px 10px #38220f21;
+}
+
+.flashcards-individual-card-text {
+  height: 14em;
+  padding: 1em 1em 0 1em;
+
+  overflow-y: scroll;
 }
 
 .flashcards-individual-card-flip {

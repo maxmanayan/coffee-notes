@@ -106,7 +106,9 @@ const FlashcardsCardsIndividual = (props) => {
                 size={20}
               />
             </div>
-            <div>{showFront ? <h6>front</h6> : <h6>back</h6>}</div>
+            <div className="flashcards-front-back-text">
+              {showFront ? <h6>front</h6> : <h6>back</h6>}
+            </div>
             {flashcard.starred ? (
               <Icon.StarFill
                 onClick={unStarFlashcard}
@@ -121,7 +123,7 @@ const FlashcardsCardsIndividual = (props) => {
               />
             )}
           </div>
-          <div>
+          <div className="flashcards-individual-card-text">
             {showFront ? <h4>{flashcard.front}</h4> : <h4>{flashcard.back}</h4>}
           </div>
         </div>
