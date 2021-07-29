@@ -973,6 +973,16 @@
   min-width: 30px;
 }
 
+.flashcards-individual-card-block:hover {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 30px;
+  border-radius: 5px;
+  background: rgba(223, 220, 220, 0.116);
+}
+
 .flashcards-front-back-text {
   margin-left: -1em;
   margin-right: 1em;
