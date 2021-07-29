@@ -817,7 +817,7 @@
 
 .flashcards-subjects-card {
   cursor: pointer;
-  background: aliceblue;
+  background: #f7f3ede0;
 
   margin: 2em;
   height: 250px;
@@ -825,6 +825,24 @@
 
   display: flex;
   flex-direction: column;
+  box-shadow: 0 5px 10px rgba(185, 175, 154, 0.466),
+    0 15px 40px rgba(201, 190, 166, 0.014);
+
+  border-radius: 10px;
+}
+
+.flashcards-subjects-card:hover {
+  cursor: pointer;
+  background: #f7f3ed;
+
+  margin: 2em;
+  height: 250px;
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 10px rgba(185, 175, 154, 0.692),
+    0 15px 40px rgba(201, 195, 166, 0.2);
 
   border-radius: 10px;
 }
@@ -882,6 +900,21 @@
 }
 
 .flashcards-subjects-card-text {
+  margin-top: 1em;
+}
+
+.flashcards-subjects-card-text-header {
+  color: #090804;
+}
+
+.flashcards-subjects-card-text-subheader {
+  color: #0908047e;
+}
+
+.flashcards-subjects-card-button {
+  margin-top: 1em;
+}
+.flashcards-subjects-card-button:hover {
   margin-top: 1em;
 }
 

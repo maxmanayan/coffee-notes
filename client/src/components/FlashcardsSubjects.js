@@ -111,8 +111,15 @@ const FlashcardsSubjects = (props) => {
               <h3>{subject.name}</h3>
               <h6>{subject.description}</h6>
             </div>
-            <div>
-              <Button onClick={() => switchViewBox("decks", subject, null)}>
+            <div className="flashcards-subjects-card-button">
+              <Button
+                style={{
+                  background: " #4a2c2a",
+                  border: "none",
+                  fontWeight: "bold",
+                }}
+                onClick={() => switchViewBox("decks", subject, null)}
+              >
                 View Decks
               </Button>
             </div>
@@ -147,11 +154,22 @@ const FlashcardsSubjects = (props) => {
               />
             </div>
             <div className="flashcards-subjects-card-text">
-              <h3>{subject.name}</h3>
-              <h6>{subject.description}</h6>
+              <h3 className="flashcards-subjects-card-text-header">
+                {subject.name}
+              </h3>
+              <h6 className="flashcards-subjects-card-text-subheader">
+                {subject.description}
+              </h6>
             </div>
-            <div>
-              <Button onClick={() => switchViewBox("decks", subject, null)}>
+            <div className="flashcards-subjects-card-button">
+              <Button
+                style={{
+                  background: " #4a2c2a",
+                  border: "none",
+                  fontWeight: "bold",
+                }}
+                onClick={() => switchViewBox("decks", subject, null)}
+              >
                 View Decks
               </Button>
             </div>
@@ -169,13 +187,11 @@ const FlashcardsSubjects = (props) => {
         </div>
       </div>
       <div className="flashcards-subjects-container">
-        {/* {!subjects && console.log("no subjects")} */}
         {subjects && subjects.length === 0 && (
           <div>
             <h1>Create a Subject!</h1>
           </div>
         )}
-        {/* <span>{JSON.stringify(subjects, null, 2)}</span> */}
         {subjects && renderStarredSubjects()}
         {subjects && renderUnStarredSubjects()}
       </div>
