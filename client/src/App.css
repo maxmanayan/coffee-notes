@@ -781,6 +781,10 @@
   margin-right: 20%;
 }
 
+.flashcards-buttons {
+  color: red;
+}
+
 .flashcards-subjects {
   display: flex;
   flex-direction: column;
@@ -932,6 +936,19 @@
 
   width: 450px;
   height: 275px;
+}
+
+.flashcards-decks-card-text {
+  padding-top: 1em;
+  height: 10em;
+}
+
+.flashcards-decks-card-text-header {
+  font-weight: bold;
+}
+
+.flashcards-decks-card-text-subheader {
+  color: #0908047e;
 }
 
 .flashcards-cards {

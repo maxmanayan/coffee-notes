@@ -90,12 +90,19 @@ const FlashcardsDecks = (props) => {
                 className="flashcards-subjects-card-star-filled"
               />
             </div>
-            <div>
-              <h3>{deck.name}</h3>
-              <h5>{deck.description}</h5>
+            <div className="flashcards-decks-card-text">
+              <h3 className="flashcards-decks-card-text-header">{deck.name}</h3>
+              <h5 className="flashcards-decks-card-text-subheader">
+                {deck.description}
+              </h5>
             </div>
-            <div>
+            <div className="flashcards-decks-card-button">
               <Button
+                style={{
+                  background: " #4a2c2a",
+                  border: "none",
+                  fontWeight: "bold",
+                }}
                 onClick={() => switchViewBox("flashcards", subject, deck)}
               >
                 Study Flashcards
@@ -131,12 +138,19 @@ const FlashcardsDecks = (props) => {
                 className="flashcards-subjects-card-star"
               />
             </div>
-            <div>
-              <h3>{deck.name}</h3>
-              <h5>{deck.description}</h5>
+            <div className="flashcards-decks-card-text">
+              <h3 className="flashcards-decks-card-text-header">{deck.name}</h3>
+              <h5 className="flashcards-decks-card-text-subheader">
+                {deck.description}
+              </h5>
             </div>
-            <div>
+            <div className="flashcards-decks-card-button">
               <Button
+                style={{
+                  background: " #4a2c2a",
+                  border: "none",
+                  fontWeight: "bold",
+                }}
                 onClick={() => switchViewBox("flashcards", subject, deck)}
               >
                 Study Flashcards
@@ -176,7 +190,14 @@ const FlashcardsDecks = (props) => {
   return (
     <div className="flashcards-decks">
       <div className="flashcards-decks-header">
-        <Button onClick={() => switchViewBox("subjects", null, null)}>
+        <Button
+          style={{
+            background: " #4a2c2a",
+            border: "none",
+            fontWeight: "bold",
+          }}
+          onClick={() => switchViewBox("subjects", null, null)}
+        >
           Back
         </Button>
         <h1>{subject.name} Decks</h1>

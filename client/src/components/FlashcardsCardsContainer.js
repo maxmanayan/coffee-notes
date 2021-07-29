@@ -70,7 +70,14 @@ const FlashcardsCardsContainer = (props) => {
   return (
     <div className="flashcards-cards">
       <div className="flashcards-cards-header">
-        <Button onClick={() => switchViewBox("decks", subject, null)}>
+        <Button
+          style={{
+            background: " #4a2c2a",
+            border: "none",
+            fontWeight: "bold",
+          }}
+          onClick={() => switchViewBox("decks", subject, null)}
+        >
           Back
         </Button>
         <h1>{deck.name} Flashcards</h1>
