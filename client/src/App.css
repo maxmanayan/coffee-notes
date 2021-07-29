@@ -888,8 +888,11 @@
 
 .flashcards-decks-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .flashcards-decks-card-container {
@@ -926,8 +929,11 @@
 
 .flashcards-cards-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .flashcards-cards-container {
