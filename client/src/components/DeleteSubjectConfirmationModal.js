@@ -23,7 +23,7 @@ const DeleteSubjectConfirmationModel = (props) => {
     <div>
       <Modal show={true}>
         <Modal.Header className="modal-header">
-          <Modal.Title>Update Note</Modal.Title>
+          <Modal.Title>Delete Subject</Modal.Title>
           <div style={{ cursor: "pointer" }}>
             <Icon.X onClick={closeDeleteSubjectModal} size={20} />
           </div>
@@ -38,18 +38,28 @@ const DeleteSubjectConfirmationModel = (props) => {
               files within...
             </h5>
           </div>
-          <Button onClick={closeDeleteSubjectModal}>Cancel</Button>
-          <Button
-            className="modal-button"
-            style={{
-              background: "#ece0d1",
-              borderColor: "#ece0d1",
-              color: "black",
-            }}
-            onClick={deleteSubject}
-          >
-            Delete
-          </Button>
+          <div className="modal-button-container">
+            <Button
+              style={{
+                background: "#ece0d1",
+                borderColor: "#ece0d1",
+                color: "black",
+              }}
+              onClick={closeDeleteSubjectModal}
+            >
+              Cancel
+            </Button>
+            <Button
+              style={{
+                background: " #4a2c2a",
+                border: "none",
+                fontWeight: "bold",
+              }}
+              onClick={deleteSubject}
+            >
+              Delete
+            </Button>
+          </div>
         </Modal.Body>
       </Modal>
     </div>

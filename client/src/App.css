@@ -749,6 +749,11 @@
   color: #090804;
 }
 
+.modal-button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .flashcards-container {
   height: 100vh;
   padding-top: 5em;

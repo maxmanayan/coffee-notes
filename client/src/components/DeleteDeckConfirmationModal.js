@@ -25,7 +25,7 @@ const DeleteDeckConfirmationModel = (props) => {
     <div>
       <Modal show={true}>
         <Modal.Header className="modal-header">
-          <Modal.Title>Update Note</Modal.Title>
+          <Modal.Title>Delete Deck</Modal.Title>
           <div style={{ cursor: "pointer" }}>
             <Icon.X onClick={closeDeleteDeckModal} size={20} />
           </div>
@@ -37,18 +37,28 @@ const DeleteDeckConfirmationModel = (props) => {
               Deleting this subject will also delete all flashcards within...
             </h5>
           </div>
-          <Button onClick={closeDeleteDeckModal}>Cancel</Button>
-          <Button
-            className="modal-button"
-            style={{
-              background: "#ece0d1",
-              borderColor: "#ece0d1",
-              color: "black",
-            }}
-            onClick={deleteDeck}
-          >
-            Delete
-          </Button>
+          <div className="modal-button-container">
+            <Button
+              style={{
+                background: "#ece0d1",
+                borderColor: "#ece0d1",
+                color: "black",
+              }}
+              onClick={closeDeleteDeckModal}
+            >
+              Cancel
+            </Button>
+            <Button
+              style={{
+                background: " #4a2c2a",
+                border: "none",
+                fontWeight: "bold",
+              }}
+              onClick={deleteDeck}
+            >
+              Delete
+            </Button>
+          </div>
         </Modal.Body>
       </Modal>
     </div>

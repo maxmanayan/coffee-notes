@@ -30,7 +30,7 @@ const UpdateSubjectModal = (props) => {
     <div>
       <Modal show={true}>
         <Modal.Header className="modal-header">
-          <Modal.Title>Update Note</Modal.Title>
+          <Modal.Title>Update Subject</Modal.Title>
           <div style={{ cursor: "pointer" }}>
             <Icon.X onClick={closeUpdateSubjectModal} size={20} />
           </div>
@@ -56,17 +56,19 @@ const UpdateSubjectModal = (props) => {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </Form.Group>
-            <Button
-              className="modal-button"
-              style={{
-                background: "#ece0d1",
-                borderColor: "#ece0d1",
-                color: "black",
-              }}
-              type="submit"
-            >
-              Submit
-            </Button>
+            <div className="modal-button-container">
+              <Button
+                className="modal-button"
+                style={{
+                  background: " #4a2c2a",
+                  border: "none",
+                  fontWeight: "bold",
+                }}
+                type="submit"
+              >
+                Submit
+              </Button>
+            </div>
           </Form>
         </Modal.Body>
       </Modal>

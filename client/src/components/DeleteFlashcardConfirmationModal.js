@@ -26,7 +26,7 @@ const DeleteFlashcardConfirmationModal = (props) => {
     <div>
       <Modal show={true}>
         <Modal.Header className="modal-header">
-          <Modal.Title>Update Note</Modal.Title>
+          <Modal.Title>Delete Flashcard</Modal.Title>
           <div style={{ cursor: "pointer" }}>
             <Icon.X onClick={closeDeleteFlashcardModal} size={20} />
           </div>
@@ -38,18 +38,28 @@ const DeleteFlashcardConfirmationModal = (props) => {
             </h3>
             <h5>Once deleted, you will not be able to recover it...</h5>
           </div>
-          <Button onClick={closeDeleteFlashcardModal}>Cancel</Button>
-          <Button
-            className="modal-button"
-            style={{
-              background: "#ece0d1",
-              borderColor: "#ece0d1",
-              color: "black",
-            }}
-            onClick={deleteFlashcard}
-          >
-            Delete
-          </Button>
+          <div className="modal-button-container">
+            <Button
+              style={{
+                background: "#ece0d1",
+                borderColor: "#ece0d1",
+                color: "black",
+              }}
+              onClick={closeDeleteFlashcardModal}
+            >
+              Cancel
+            </Button>
+            <Button
+              style={{
+                background: " #4a2c2a",
+                border: "none",
+                fontWeight: "bold",
+              }}
+              onClick={deleteFlashcard}
+            >
+              Delete
+            </Button>
+          </div>
         </Modal.Body>
       </Modal>
     </div>
