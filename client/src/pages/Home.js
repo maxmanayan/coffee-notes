@@ -77,74 +77,73 @@ const Home = () => {
       <div>
         <SideBar />
       </div>
-      <Row id="home-notes">
-        <Col xs={12} sm={12} md={7}>
-          <div className="todo-list-container">
-            {!note && (
-              <>
-                <div>
-                  <h1 className="todo-list-default-text">
-                    create or select an existing note...
-                  </h1>
-                </div>
-                <div onClick={openCreateNoteModal} className="todo-create-note">
-                  <h3>Create Note</h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      marginLeft: "5px",
-                      paddingBottom: "5px",
-                    }}
-                  >
-                    <Icon.PlusSquare size={20} />
-                  </div>
-                </div>
-              </>
-            )}
-            {note && openTodoList(note)}
-          </div>
-        </Col>
-        <Col xs={12} sm={12} md={5}>
-          <DragAndDrop
-            displayNote={displayNote}
-            getTodoNotes={getTodoNotes}
-            getCompletedNotes={getCompletedNotes}
-            todoNotes={todoNotes}
-            completedNotes={completedNotes}
-            setTodoNotes={setTodoNotes}
-            setCompletedNotes={setCompletedNotes}
-            note={note}
-            openCreateNoteModal={openCreateNoteModal}
-            closeCreateNoteModal={closeCreateNoteModal}
-            showCreateNoteModal={showCreateNoteModal}
-            selectedNoteID={selectedNoteID}
-          />
-        </Col>
-      </Row>
-      {/* <Row id='home-music'>
-        <Col md={4}>
-            <MotivationalQuote/>
-        </Col>
-        <Col md={8}>
-            <YoutubeEmbed />
-        </Col>
-      </Row> */}
-      <Row id="home-music">
-        <Col>
-          <YoutubeEmbed />
-        </Col>
-      </Row>
-      <Row id="home-quote">
-        <Col>
-          <MotivationalQuote />
-        </Col>
-      </Row>
-      <Row id="home-flashcards">
-        <Col>
-          <FlashcardsContainer />
-        </Col>
-      </Row>
+      {user && (
+        <div>
+          <Row id="home-notes">
+            <Col xs={12} sm={12} md={7}>
+              <div className="todo-list-container">
+                {!note && (
+                  <>
+                    <div>
+                      <h1 className="todo-list-default-text">
+                        create or select an existing note...
+                      </h1>
+                    </div>
+                    <div
+                      onClick={openCreateNoteModal}
+                      className="todo-create-note"
+                    >
+                      <h3>Create Note</h3>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-start",
+                          marginLeft: "5px",
+                          paddingBottom: "5px",
+                        }}
+                      >
+                        <Icon.PlusSquare size={20} />
+                      </div>
+                    </div>
+                  </>
+                )}
+                {note && openTodoList(note)}
+              </div>
+            </Col>
+            <Col xs={12} sm={12} md={5}>
+              <DragAndDrop
+                displayNote={displayNote}
+                getTodoNotes={getTodoNotes}
+                getCompletedNotes={getCompletedNotes}
+                todoNotes={todoNotes}
+                completedNotes={completedNotes}
+                setTodoNotes={setTodoNotes}
+                setCompletedNotes={setCompletedNotes}
+                note={note}
+                openCreateNoteModal={openCreateNoteModal}
+                closeCreateNoteModal={closeCreateNoteModal}
+                showCreateNoteModal={showCreateNoteModal}
+                selectedNoteID={selectedNoteID}
+              />
+            </Col>
+          </Row>
+          <Row id="home-music">
+            <Col>
+              <YoutubeEmbed />
+            </Col>
+          </Row>
+          <Row id="home-quote">
+            <Col>
+              <MotivationalQuote />
+            </Col>
+          </Row>
+          <Row id="home-flashcards">
+            <Col>
+              <FlashcardsContainer />
+            </Col>
+          </Row>
+        </div>
+      )}
     </div>
   );
 };
