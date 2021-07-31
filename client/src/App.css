@@ -146,6 +146,18 @@
   margin-left: 0.5em;
   padding: 3px;
 }
+.sidebar-icon-flashcards {
+  cursor: pointer;
+  margin-bottom: 1em;
+  padding: 3px;
+}
+
+.sidebar-icon-flashcards:hover {
+  cursor: pointer;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  padding: 3px;
+}
 
 .user-profile {
   background: #090804;
@@ -705,6 +717,7 @@
 
 .motivational-quote-header {
   font-weight: bold;
+  font-size: 3em;
 }
 
 .motivational-quote-quoteblock {
@@ -735,3 +748,452 @@
   cursor: pointer;
   color: #090804;
 }
+
+.modal-button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flashcards-container {
+  height: 105vh;
+  padding-top: 5em;
+}
+
+.flashcards-empty-state {
+  width: 100%;
+  height: 200px;
+  color: #0908047e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcards-header {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.flashcards-searchbar-container {
+  margin-bottom: 1em;
+}
+
+.flashcards-searchbar {
+  /* background: rgba(128, 128, 128, 0.11); */
+  padding: 8px 0 8px 1em;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.flashcards-viewbox {
+  background: #0908043d;
+  border: 5px solid #090804bd;
+  border-radius: 5px;
+
+  height: 70vh;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.flashcards-buttons {
+  color: red;
+}
+
+.flashcards-subjects {
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcards-subjects-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.flashcards-subjects-header-icon {
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.flashcards-subjects-container {
+  height: 60vh;
+  width: 90%;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* padding-left: 3em; */
+}
+
+.flashcards-subjects-card {
+  cursor: pointer;
+  background: rgba(245, 245, 220, 0.863);
+
+  margin: 2em;
+  height: 250px;
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 10px rgba(185, 175, 154, 0.466),
+    0 15px 40px rgba(201, 190, 166, 0.014);
+
+  border-radius: 10px;
+}
+
+.flashcards-subjects-card:hover {
+  cursor: pointer;
+  background: rgba(245, 245, 220, 0.925);
+
+  margin: 2em;
+  height: 250px;
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 10px rgba(185, 175, 154, 0.692),
+    0 15px 40px rgba(201, 195, 166, 0.2);
+
+  border-radius: 10px;
+}
+
+.flashcards-subjects-card-icon-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.flashcards-subjects-card-icon-container-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1em;
+  flex-wrap: wrap;
+}
+
+.flashcards-subjects-card-delete {
+  cursor: pointer;
+}
+
+.flashcards-subjects-card-delete:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.493);
+}
+
+.flashcards-subjects-card-edit {
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.flashcards-subjects-card-edit:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.493);
+}
+
+.flashcards-subjects-card-star {
+  cursor: pointer;
+  color: rgba(218, 165, 32, 0.74);
+}
+.flashcards-subjects-card-star:hover {
+  cursor: pointer;
+  color: goldenrod;
+}
+
+.flashcards-subjects-card-star-filled {
+  cursor: pointer;
+  color: goldenrod;
+}
+.flashcards-subjects-card-star-filled:hover {
+  cursor: pointer;
+  color: rgba(218, 165, 32, 0.74);
+}
+
+.flashcards-subjects-card-text {
+  margin-top: 1em;
+}
+
+.flashcards-subjects-card-text-header {
+  color: #090804;
+}
+
+.flashcards-subjects-card-text-subheader {
+  color: #0908047e;
+}
+
+.flashcards-subjects-card-button {
+  margin-top: 1em;
+}
+.flashcards-subjects-card-button:hover {
+  margin-top: 1em;
+}
+
+.flashcards-decks {
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcards-decks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.flashcards-decks-card-container {
+  height: 60vh;
+  width: 90%;
+  max-width: 1200px;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.flashcards-decks-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1em;
+  border-radius: 5px;
+  background: rgba(245, 245, 220, 0.863);
+  width: 450px;
+  height: 275px;
+}
+
+.flashcards-decks-card:hover {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  margin: 1em;
+
+  background: beige;
+  box-shadow: 1px 1px rgba(17, 17, 17, 0.829);
+  box-shadow: 5px 5px 5px rgba(245, 245, 220, 0.253);
+
+  width: 450px;
+  height: 275px;
+}
+
+.flashcards-decks-card-text {
+  padding-top: 1em;
+  height: 10em;
+}
+
+.flashcards-decks-card-text-header {
+  color: #090804;
+}
+
+.flashcards-decks-card-text-subheader {
+  color: #0908047e;
+}
+
+.flashcards-cards {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.flashcards-cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.flashcards-cards-container {
+  color: #090804;
+  height: 60vh;
+  width: 100%;
+  max-width: 600px;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* padding-left: 3em; */
+}
+
+.flashcards-individual-card-block {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 30px;
+}
+
+.flashcards-individual-card-block:hover {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 30px;
+  border-radius: 5px;
+  background: rgba(223, 220, 220, 0.116);
+}
+
+.flashcards-front-back-text {
+  margin-left: -1em;
+  margin-right: 1em;
+  color: rgba(0, 0, 0, 0.342);
+}
+
+.flashcards-individual-card-front {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  margin: 1em;
+
+  background: rgba(245, 245, 220, 0.863);
+
+  width: 450px;
+  height: 275px;
+  box-shadow: 0px 0px 10px 10px #38220f21;
+}
+
+.flashcards-individual-card-back {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  margin: 1em;
+
+  background: rgba(245, 245, 220, 0.788);
+
+  width: 450px;
+  height: 275px;
+  box-shadow: 0px 0px 10px 10px #38220f21;
+}
+
+.flashcards-individual-card-text {
+  height: 14em;
+  padding: 1em 1em 0 1em;
+
+  overflow-y: scroll;
+}
+
+.flashcards-individual-card-flip {
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+.flashcards-individual-card-flip:hover {
+  padding-left: 1em;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.493);
+}
+/* -----------flashcard flip animation---------------- */
+
+.flip {
+  animation: flip 0.8s;
+  -webkit-animation: flip 0.8s;
+  -moz-animation: flip 0.8s;
+  -o-animation: flip 0.8s;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@-o-keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@-moz-keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@-webkit-keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+
+.flicker-text {
+  min-height: 100%;
+  -webkit-animation: flicker-text 0.7s infinite;
+  -moz-animation: flicker-text 0.7s infinite;
+  -o-animation: flicker-text 0.7s infinite;
+  animation: flicker-text 0.7s infinite;
+}
+
+@keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes flicker-text {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ^^^^^^^^^^^^^flashcard flip animation^^^^^^^^^^^^^^^ */

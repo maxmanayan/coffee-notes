@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :notes, dependent: :destroy
+  has_many :subjects, dependent: :destroy
 end

@@ -25,7 +25,7 @@ class Api::ItemsController < ApplicationController
     if @item.update(item_params)
       render json: @item
     else
-      render json: {errors: new_item.errors}
+      render json: {errors: @item.errors}
     end
   end
 

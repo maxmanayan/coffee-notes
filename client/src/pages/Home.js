@@ -8,6 +8,7 @@ import * as Icon from "react-bootstrap-icons";
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import SideBar from "../components/SideBar";
 import MotivationalQuote from "../components/MotivationalQuote";
+import FlashcardsContainer from "../components/FlashcardsContainer";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -137,6 +138,11 @@ const Home = () => {
       <Row id="home-quote">
         <Col>
           <MotivationalQuote />
+        </Col>
+      </Row>
+      <Row id="home-flashcards">
+        <Col>
+          <FlashcardsContainer />
         </Col>
       </Row>
     </div>
