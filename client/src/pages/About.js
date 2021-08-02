@@ -16,7 +16,7 @@ const About = () => {
             <Link
               activeClass="active"
               to="about-website"
-              spy={true}
+              spy={false}
               smooth={true}
               offset={0}
               duration={300}
@@ -29,7 +29,7 @@ const About = () => {
             <Link
               activeClass="active"
               to="about-creator"
-              spy={true}
+              spy={false}
               smooth={true}
               offset={0}
               duration={300}
@@ -42,7 +42,7 @@ const About = () => {
             <Link
               activeClass="active"
               to="about-coming-soon"
-              spy={true}
+              spy={false}
               smooth={true}
               offset={0}
               duration={300}
