@@ -223,12 +223,20 @@
   background-attachment: fixed;
   position: absolute;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.about-nav {
+  height: 100vh;
 }
 
 .about-header {
   color: #090804;
   padding-top: 1em;
-  font-size: 100px;
+  font-size: 15vh;
   font-weight: bolder;
 }
 
@@ -237,8 +245,8 @@
   justify-content: space-around;
   align-items: center;
   height: 67vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .about-icon-text {
@@ -263,6 +271,8 @@
 .about-website {
   background: #090804;
   height: 100vh;
+  overflow-y: scroll;
+  background-attachment: fixed;
 }
 
 .about-website-header {
@@ -290,7 +300,7 @@
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
-  min-width: 1024px;
+  /* min-width: 1024px; */
   width: 100%;
   height: auto;
 }
@@ -332,9 +342,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   min-height: 100vh;
-  min-width: 1024px;
+  /* min-width: 1024px; */
   width: 100%;
   height: auto;
   border-top: 1px solid rgba(0, 0, 0, 0.425);
