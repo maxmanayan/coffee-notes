@@ -52,7 +52,7 @@ const AboutComingSoon = () => {
             </Col>
             <Col xs={12} md={5}>
               <h3 className="about-coming-soon-text">
-                Personal Flashcard Decks
+                Flashcards - Improved Search Ability
               </h3>
             </Col>
           </Row>
