@@ -92,9 +92,22 @@
   margin-right: 0.5em;
 }
 
+.navbar-left {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 20%;
+}
+
 .navbar-logo {
   margin-left: 1em;
   margin-top: none;
+}
+
+.world-clock {
+  margin-left: 2em;
+  font-size: 30px;
 }
 
 .sidebar {
