@@ -13,12 +13,12 @@ const NavBar = () => {
     <div>
       <Navbar fixed="top">
         <div className="navbar">
-          <Navbar.Brand className="navbar-logo" href="home">
-            <div className="navbar-left">
+          <div className="navbar-left">
+            <Navbar.Brand className="navbar-logo" href="home">
               <img src={cnLogo} height="40px" />
-              {user && <WorldClock />}
-            </div>
-          </Navbar.Brand>
+            </Navbar.Brand>
+            {user && <WorldClock />}
+          </div>
           <Nav>
             <Nav.Link
               href="/about"

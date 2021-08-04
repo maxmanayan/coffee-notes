@@ -9,10 +9,6 @@ const WorldClock = (props) => {
 
   return (
     <div className="world-clock">
-      {/* <Button onClick={() => changeWorldClock("h:mm:ss A", true)}>
-        Change
-      </Button>
-      <h3>World Clock</h3> */}
       <Clock
         format={worldClock.format}
         ticking={worldClock.ticking}
