@@ -4,7 +4,7 @@ import ProfileSettingsUpdateClock from "./ProfileSettingsUpdateClock";
 
 const ProfileSettings = (props) => {
   return (
-    <div>
+    <div className="user-profile-settings">
       <h1>Settings</h1>
       <div>
         <ProfileSettingsCreateClock />

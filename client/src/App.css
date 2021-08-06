@@ -229,6 +229,29 @@
   margin-right: 25%;
 }
 
+.user-profile-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-left: 25%;
+  margin-right: 25%;
+  /* background: red; */
+}
+
+.user-profile-clock-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 15vw;
+}
+
+.user-profile-clock-switch {
+  padding-left: 1em;
+  padding-top: 5px;
+}
+
 .clock-switch {
   position: relative;
   display: inline-block;

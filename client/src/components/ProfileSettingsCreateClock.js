@@ -2,9 +2,9 @@ import React from "react";
 
 const ProfileSettingsCreateClock = (props) => {
   return (
-    <div>
-      <h3>CreateClock</h3>
-      <div>
+    <div className="user-profile-clock-form">
+      <h3>Clock</h3>
+      <div className="user-profile-clock-switch">
         <label className="clock-switch">
           <input
             type="checkbox"
