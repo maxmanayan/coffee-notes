@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileSettingsCreateClock = (props) => {
   return (
-    <div className="user-profile-clock-form">
+    <div className="user-profile-clock-toggle">
       <h3>Clock</h3>
       <div className="user-profile-clock-switch">
         <label className="clock-switch">

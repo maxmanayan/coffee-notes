@@ -239,7 +239,7 @@
   /* background: red; */
 }
 
-.user-profile-clock-form {
+.user-profile-clock-toggle {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -247,6 +247,27 @@
   width: 15vw;
 }
 
+.user-profile-clock-form {
+  /* background-color: red; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-clock-form-radios {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-profile-clock-form-radios h6 {
+  padding-right: 1em;
+}
+
+.user-profile-clock-form-checkbox {
+  display: flex;
+  justify-content: space-around;
+}
 .user-profile-clock-switch {
   padding-left: 1em;
   padding-top: 5px;
