@@ -8,6 +8,7 @@ const ProfileSettingsUpdateClock = (props) => {
 
   const [clock, setClock] = useState(null);
   const [show, setShow] = useState(clock && clock.show ? true : false);
+  const [format, setFormat] = useState(clock && clock.format);
 
   useEffect(() => {
     getClock();
@@ -18,6 +19,7 @@ const ProfileSettingsUpdateClock = (props) => {
       let res = await axios.get(`/api/users/${user.id}/clocks`);
       setClock(res.data[0]);
       setShow(res.data[0].show);
+      setFormat(res.data[0].format);
     } catch (error) {
       console.log(error);
     }
@@ -46,6 +48,25 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log(error);
     } finally {
       getClock();
+      // window.location.reload();
+    }
+  };
+
+  const changeFormat = async (e) => {
+    e.preventDefault();
+    try {
+      console.log("in changeFormat", format);
+      await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
+        show: clock.show,
+        format: clock.format === "h:mm:ss A" ? "HH:mm:ss" : "h:mm:ss A",
+        ticking: clock.ticking,
+        timezone: clock.timezone,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      getClock();
+      // window.location.reload();
     }
   };
 
@@ -53,12 +74,6 @@ const ProfileSettingsUpdateClock = (props) => {
     <div>
       <div className="user-profile-clock-toggle">
         <h3>Clock</h3>
-        {/* <div className="user-profile-clock-switch">
-          <label className="clock-switch">
-            <input type="checkbox" onClick={(e) => createClock(e)} />
-            <span className="clock-switch-slider"></span>
-          </label>
-        </div> */}
         <Form>
           <div className="user-profile-clock-form-checkbox">
             <Form.Check
@@ -68,7 +83,7 @@ const ProfileSettingsUpdateClock = (props) => {
               id="checkbox"
               value={show}
               onChange={(e) => {
-                setShow(!show);
+                // setShow(!show);
                 showClock(e);
               }}
             />
@@ -87,18 +102,30 @@ const ProfileSettingsUpdateClock = (props) => {
               <h6>Clock Type</h6>
               <div>
                 <Form.Check
+                  checked={format === "h:mm:ss A" ? true : false}
                   inline
                   label="12 hour"
                   name="group1"
                   type="radio"
                   id="inline-radio-1"
+                  value={format}
+                  onChange={(e) => {
+                    // setFormat("h:mm:ss A");
+                    changeFormat(e);
+                  }}
                 />
                 <Form.Check
+                  checked={format === "HH:mm:ss" ? true : false}
                   inline
                   label="24 hour"
                   name="group1"
                   type="radio"
                   id="inline-radio-2"
+                  value={format}
+                  onChange={(e) => {
+                    // setFormat("HH:mm:ss");
+                    changeFormat(e);
+                  }}
                 />
               </div>
             </div>

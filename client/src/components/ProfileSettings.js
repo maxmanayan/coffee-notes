@@ -7,7 +7,7 @@ const ProfileSettings = (props) => {
     <div className="user-profile-settings">
       <h1>Settings</h1>
       <div>
-        <ProfileSettingsCreateClock />
+        {/* <ProfileSettingsCreateClock /> */}
         <ProfileSettingsUpdateClock />
       </div>
     </div>
