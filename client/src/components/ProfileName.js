@@ -41,8 +41,8 @@ const ProfileName = (props) => {
                   color: "white",
                   fontSize: "24px",
                 }}
-                placeholder="Add Nickname"
-                id="nickname"
+                placeholder="Add Name"
+                id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
