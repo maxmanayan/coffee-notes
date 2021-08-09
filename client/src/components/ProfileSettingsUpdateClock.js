@@ -46,7 +46,7 @@ const ProfileSettingsUpdateClock = (props) => {
         <h3>Clock</h3>
         <div className="user-profile-clock-switch">
           <label className="clock-switch">
-            <input type="checkbox" onClick={createClock} />
+            <input type="checkbox" onClick={(e) => createClock(e)} />
             <span className="clock-switch-slider"></span>
           </label>
         </div>
