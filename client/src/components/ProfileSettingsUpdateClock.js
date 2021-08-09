@@ -9,6 +9,7 @@ const ProfileSettingsUpdateClock = (props) => {
   const [clock, setClock] = useState(null);
   const [show, setShow] = useState(clock && clock.show ? true : false);
   const [format, setFormat] = useState(clock && clock.format);
+  const [ticking, setTicking] = useState(clock && clock.ticking);
 
   useEffect(() => {
     getClock();
@@ -20,6 +21,7 @@ const ProfileSettingsUpdateClock = (props) => {
       setClock(res.data[0]);
       setShow(res.data[0].show);
       setFormat(res.data[0].format);
+      setTicking(res.data[0].ticking);
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +62,24 @@ const ProfileSettingsUpdateClock = (props) => {
         show: clock.show,
         format: clock.format === "h:mm:ss A" ? "HH:mm:ss" : "h:mm:ss A",
         ticking: clock.ticking,
+        timezone: clock.timezone,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      getClock();
+      // window.location.reload();
+    }
+  };
+
+  const changeTicking = async (e) => {
+    e.preventDefault();
+    try {
+      console.log("in changeFormat", format);
+      await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
+        show: clock.show,
+        format: clock.format,
+        ticking: !clock.ticking,
         timezone: clock.timezone,
       });
     } catch (error) {
@@ -131,7 +151,12 @@ const ProfileSettingsUpdateClock = (props) => {
             </div>
             <div className="user-profile-clock-form-checkbox">
               <h6>Show seconds</h6>
-              <Form.Check name="group1" type="checkbox" id="secondsCheckbox" />
+              <Form.Check
+                checked={ticking}
+                name="group1"
+                type="checkbox"
+                id="secondsCheckbox"
+              />
             </div>
           </Form>
         </div>
