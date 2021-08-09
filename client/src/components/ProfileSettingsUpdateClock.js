@@ -23,7 +23,7 @@ const ProfileSettingsUpdateClock = (props) => {
     }
   };
 
-  const createClock = async (e) => {
+  const showClock = async (e) => {
     e.preventDefault();
     try {
       if (!clock) {
@@ -35,10 +35,17 @@ const ProfileSettingsUpdateClock = (props) => {
           timezone: null,
         });
       } else {
-        console.log("Already a clock here", clock);
+        await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
+          show: !clock.show,
+          format: clock.format,
+          ticking: clock.ticking,
+          timezone: clock.timezone,
+        });
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      getClock();
     }
   };
 
@@ -60,7 +67,10 @@ const ProfileSettingsUpdateClock = (props) => {
               type="checkbox"
               id="checkbox"
               value={show}
-              onChange={() => setShow(!show)}
+              onChange={(e) => {
+                setShow(!show);
+                showClock(e);
+              }}
             />
           </div>
         </Form>
@@ -70,33 +80,35 @@ const ProfileSettingsUpdateClock = (props) => {
           <p>No Clock</p>
         )}
       </div>
-      <div className="user-profile-clock-form">
-        <Form>
-          <div className="user-profile-clock-form-radios">
-            <h6>Clock Type</h6>
-            <div>
-              <Form.Check
-                inline
-                label="12 hour"
-                name="group1"
-                type="radio"
-                id="inline-radio-1"
-              />
-              <Form.Check
-                inline
-                label="24 hour"
-                name="group1"
-                type="radio"
-                id="inline-radio-2"
-              />
+      {show && (
+        <div className="user-profile-clock-form">
+          <Form>
+            <div className="user-profile-clock-form-radios">
+              <h6>Clock Type</h6>
+              <div>
+                <Form.Check
+                  inline
+                  label="12 hour"
+                  name="group1"
+                  type="radio"
+                  id="inline-radio-1"
+                />
+                <Form.Check
+                  inline
+                  label="24 hour"
+                  name="group1"
+                  type="radio"
+                  id="inline-radio-2"
+                />
+              </div>
             </div>
-          </div>
-          <div className="user-profile-clock-form-checkbox">
-            <h6>Show seconds</h6>
-            <Form.Check name="group1" type="checkbox" id="checkbox" />
-          </div>
-        </Form>
-      </div>
+            <div className="user-profile-clock-form-checkbox">
+              <h6>Show seconds</h6>
+              <Form.Check name="group1" type="checkbox" id="secondsCheckbox" />
+            </div>
+          </Form>
+        </div>
+      )}
     </div>
   );
 };
