@@ -9,7 +9,7 @@ const ProfileSettingsUpdateClock = (props) => {
   const [clock, setClock] = useState(null);
   const [show, setShow] = useState(clock && clock.show ? true : false);
   const [format, setFormat] = useState(clock && clock.format);
-  const [ticking, setTicking] = useState(clock && clock.ticking);
+  const [seconds, setSeconds] = useState(clock && clock.format);
 
   useEffect(() => {
     getClock();
@@ -21,7 +21,7 @@ const ProfileSettingsUpdateClock = (props) => {
       setClock(res.data[0]);
       setShow(res.data[0].show);
       setFormat(res.data[0].format);
-      setTicking(res.data[0].ticking);
+      setSeconds(res.data[0].format);
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +60,10 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log("in changeFormat", format);
       await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
         show: clock.show,
-        format: clock.format === "h:mm:ss A" ? "HH:mm:ss" : "h:mm:ss A",
+        // format: clock.format === "h:mm:ss A" ? "HH:mm:ss" : "h:mm:ss A",
+        format: `${clock.format.includes("h:mm") ? "HH:mm" : "h:mm"}${
+          clock.format.includes(":ss") ? ":ss" : ""
+        }${clock.format.includes("h:mm") ? "" : " A"}`,
         ticking: clock.ticking,
         timezone: clock.timezone,
       });
@@ -72,14 +75,19 @@ const ProfileSettingsUpdateClock = (props) => {
     }
   };
 
-  const changeTicking = async (e) => {
+  const changeSeconds = async (e) => {
     e.preventDefault();
     try {
-      console.log("in changeFormat", format);
+      console.log(
+        "changingTicking",
+        clock.format.includes(":ss") ? "has seconds" : "no seconds"
+      );
       await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
         show: clock.show,
-        format: clock.format,
-        ticking: !clock.ticking,
+        format: clock.format.includes(":ss")
+          ? clock.format.replace(":ss", "")
+          : clock.format + ":ss",
+        ticking: clock.ticking,
         timezone: clock.timezone,
       });
     } catch (error) {
@@ -122,7 +130,7 @@ const ProfileSettingsUpdateClock = (props) => {
               <h6>Clock Type</h6>
               <div>
                 <Form.Check
-                  checked={format === "h:mm:ss A" ? true : false}
+                  checked={format && format.includes("h:mm") ? true : false}
                   inline
                   label="12 hour"
                   name="group1"
@@ -135,7 +143,7 @@ const ProfileSettingsUpdateClock = (props) => {
                   }}
                 />
                 <Form.Check
-                  checked={format === "HH:mm:ss" ? true : false}
+                  checked={format && format.includes("HH:mm") ? true : false}
                   inline
                   label="24 hour"
                   name="group1"
@@ -152,10 +160,12 @@ const ProfileSettingsUpdateClock = (props) => {
             <div className="user-profile-clock-form-checkbox">
               <h6>Show seconds</h6>
               <Form.Check
-                checked={ticking}
+                checked={format && format.includes(":ss") ? true : false}
                 name="group1"
                 type="checkbox"
                 id="secondsCheckbox"
+                value={seconds}
+                onChange={(e) => changeSeconds(e)}
               />
             </div>
           </Form>
