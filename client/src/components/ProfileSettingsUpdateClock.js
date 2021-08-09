@@ -7,6 +7,7 @@ const ProfileSettingsUpdateClock = (props) => {
   const { user } = useContext(AuthContext);
 
   const [clock, setClock] = useState(null);
+  const [show, setShow] = useState(clock && clock.show ? true : false);
 
   useEffect(() => {
     getClock();
@@ -15,7 +16,8 @@ const ProfileSettingsUpdateClock = (props) => {
   const getClock = async () => {
     try {
       let res = await axios.get(`/api/users/${user.id}/clocks`);
-      setClock(res.data);
+      setClock(res.data[0]);
+      setShow(res.data[0].show);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +26,7 @@ const ProfileSettingsUpdateClock = (props) => {
   const createClock = async (e) => {
     e.preventDefault();
     try {
-      if (clock.length === 0) {
+      if (!clock) {
         console.log("no clock created yet");
         await axios.post(`/api/users/${user.id}/clocks`, {
           show: true,
@@ -33,7 +35,7 @@ const ProfileSettingsUpdateClock = (props) => {
           timezone: null,
         });
       } else {
-        console.log("Already a clock here");
+        console.log("Already a clock here", clock);
       }
     } catch (error) {
       console.log(error);
@@ -44,12 +46,24 @@ const ProfileSettingsUpdateClock = (props) => {
     <div>
       <div className="user-profile-clock-toggle">
         <h3>Clock</h3>
-        <div className="user-profile-clock-switch">
+        {/* <div className="user-profile-clock-switch">
           <label className="clock-switch">
             <input type="checkbox" onClick={(e) => createClock(e)} />
             <span className="clock-switch-slider"></span>
           </label>
-        </div>
+        </div> */}
+        <Form>
+          <div className="user-profile-clock-form-checkbox">
+            <Form.Check
+              checked={show}
+              name="group1"
+              type="checkbox"
+              id="checkbox"
+              value={show}
+              onChange={() => setShow(!show)}
+            />
+          </div>
+        </Form>
         {clock ? (
           <span>{JSON.stringify(clock, null, 2)}</span>
         ) : (
