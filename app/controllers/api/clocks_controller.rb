@@ -1,6 +1,6 @@
 class Api::ClocksController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :create, :update, :destroy]
-  before_action :get_note, only: [:show, :update, :destroy]
+  before_action :get_clock, only: [:show, :update, :destroy]
 
   def index
     render json: @current_user.clocks.all
@@ -39,7 +39,7 @@ class Api::ClocksController < ApplicationController
   end
 
   def clock_params
-    params.require(:clock).permit(:show, :str, :ticking, :timezone)
+    params.require(:clock).permit(:show, :format, :ticking, :timezone)
   end
 
 end
