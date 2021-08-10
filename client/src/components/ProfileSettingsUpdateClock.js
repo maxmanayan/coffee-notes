@@ -60,7 +60,6 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log("in changeFormat", format);
       await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
         show: clock.show,
-        // format: clock.format === "h:mm:ss A" ? "HH:mm:ss" : "h:mm:ss A",
         format: `${clock.format.includes("h:mm") ? "HH:mm" : "h:mm"}${
           clock.format.includes(":ss") ? ":ss" : ""
         }${clock.format.includes("h:mm") ? "" : " A"}`,
@@ -138,7 +137,6 @@ const ProfileSettingsUpdateClock = (props) => {
                   id="inline-radio-1"
                   value={format}
                   onChange={(e) => {
-                    // setFormat("h:mm:ss A");
                     changeFormat(e);
                   }}
                 />
@@ -151,7 +149,6 @@ const ProfileSettingsUpdateClock = (props) => {
                   id="inline-radio-2"
                   value={format}
                   onChange={(e) => {
-                    // setFormat("HH:mm:ss");
                     changeFormat(e);
                   }}
                 />
