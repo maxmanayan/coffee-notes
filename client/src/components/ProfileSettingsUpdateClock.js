@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
+import Clock from "react-live-clock";
 
 const ProfileSettingsUpdateClock = (props) => {
   const { user } = useContext(AuthContext);
@@ -50,7 +51,7 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log(error);
     } finally {
       getClock();
-      // window.location.reload();
+      window.location.reload();
     }
   };
 
@@ -70,7 +71,7 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log(error);
     } finally {
       getClock();
-      // window.location.reload();
+      window.location.reload();
     }
   };
 
@@ -93,7 +94,7 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log(error);
     } finally {
       getClock();
-      // window.location.reload();
+      window.location.reload();
     }
   };
 
@@ -166,6 +167,15 @@ const ProfileSettingsUpdateClock = (props) => {
               />
             </div>
           </Form>
+          <div className="world-clock">
+            {clock && clock.show && (
+              <Clock
+                format={clock.format}
+                ticking={clock.ticking}
+                timezone={clock.timezone}
+              />
+            )}
+          </div>
         </div>
       )}
     </div>
