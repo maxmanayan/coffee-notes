@@ -5,20 +5,21 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const WorldClock = (props) => {
   const { user } = useContext(AuthContext);
-  const [clock, setClock] = useState(null);
+  const { clock } = props;
+  // const [clock, setClock] = useState(null);
 
-  useEffect(() => {
-    getClock();
-  }, []);
+  // useEffect(() => {
+  //   getClock();
+  // }, []);
 
-  const getClock = async () => {
-    try {
-      let res = await axios.get(`/api/users/${user.id}/clocks`);
-      setClock(res.data[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getClock = async () => {
+  //   try {
+  //     let res = await axios.get(`/api/users/${user.id}/clocks`);
+  //     setClock(res.data[0]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className="world-clock">

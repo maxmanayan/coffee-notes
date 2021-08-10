@@ -17,7 +17,7 @@ const NavBar = () => {
             <Navbar.Brand className="navbar-logo" href="home">
               <img src={cnLogo} height="40px" />
             </Navbar.Brand>
-            {user && <WorldClock />}
+            {/* {user && <WorldClock />} */}
           </div>
           <Nav>
             <Nav.Link
