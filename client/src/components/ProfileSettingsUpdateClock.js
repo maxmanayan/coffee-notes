@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
-import Clock from "react-live-clock";
 import WorldClock from "./WorldClock";
 
 const ProfileSettingsUpdateClock = (props) => {
@@ -114,11 +113,6 @@ const ProfileSettingsUpdateClock = (props) => {
             />
           </div>
         </Form>
-        {clock ? (
-          <span>{JSON.stringify(clock, null, 2)}</span>
-        ) : (
-          <p>No Clock</p>
-        )}
       </div>
       {clock && clock.show && (
         <div className="user-profile-clock-form">
