@@ -7,7 +7,6 @@ import WorldClock from "./WorldClock";
 
 const ProfileSettingsUpdateClock = (props) => {
   const { user } = useContext(AuthContext);
-  const { hideForm } = props;
 
   const [clock, setClock] = useState(null);
   const [refreshClock, setRefreshClock] = useState(false);
