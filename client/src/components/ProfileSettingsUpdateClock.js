@@ -51,9 +51,6 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log(error);
     } finally {
       getClock();
-      renderClock();
-
-      // window.location.reload();
     }
   };
 
@@ -73,9 +70,6 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log(error);
     } finally {
       getClock();
-      renderClock();
-
-      // window.location.reload();
     }
   };
 
@@ -97,8 +91,6 @@ const ProfileSettingsUpdateClock = (props) => {
       console.log(error);
     } finally {
       getClock();
-      renderClock();
-      // window.location.reload();
     }
   };
 
