@@ -9,9 +9,6 @@ const ProfileSettingsUpdateClock = (props) => {
   const { user } = useContext(AuthContext);
 
   const [clock, setClock] = useState(null);
-  // const [show, setShow] = useState(clock && clock.show ? true : false);
-  // const [format, setFormat] = useState(clock && clock.format);
-  // const [seconds, setSeconds] = useState(clock && clock.format);
 
   useEffect(() => {
     getClock();
@@ -22,10 +19,6 @@ const ProfileSettingsUpdateClock = (props) => {
     try {
       let res = await axios.get(`/api/users/${user.id}/clocks`);
       setClock(res.data[0]);
-      // setShow(res.data[0].show);
-      // setFormat(res.data[0].format);
-      // setSeconds(res.data[0].format);
-      // renderClock();
     } catch (error) {
       console.log(error);
     }
@@ -63,7 +56,6 @@ const ProfileSettingsUpdateClock = (props) => {
   const changeFormat = async (e) => {
     e.preventDefault();
     try {
-      // console.log("in changeFormat", format);
       await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
         show: clock.show,
         format: `${clock.format.includes("h:mm") ? "HH:mm" : "h:mm"}${
@@ -85,10 +77,6 @@ const ProfileSettingsUpdateClock = (props) => {
   const changeSeconds = async (e) => {
     e.preventDefault();
     try {
-      console.log(
-        "changingTicking",
-        clock.format.includes(":ss") ? "has seconds" : "no seconds"
-      );
       await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
         show: clock.show,
         format: clock.format.includes(":ss")
@@ -108,8 +96,8 @@ const ProfileSettingsUpdateClock = (props) => {
     }
   };
 
-  const renderClock = (clock) => {
-    return <WorldClock clock={clock} />;
+  const renderClock = () => {
+    return <WorldClock key={clock.id} clock={clock} />;
   };
 
   return (
@@ -123,9 +111,7 @@ const ProfileSettingsUpdateClock = (props) => {
               name="group1"
               type="checkbox"
               id="checkbox"
-              // value={show}
               onChange={(e) => {
-                // setShow(!show);
                 showClock(e);
               }}
             />
@@ -152,7 +138,6 @@ const ProfileSettingsUpdateClock = (props) => {
                   name="group1"
                   type="radio"
                   id="inline-radio-1"
-                  // value={format}
                   onChange={(e) => {
                     changeFormat(e);
                   }}
@@ -166,7 +151,6 @@ const ProfileSettingsUpdateClock = (props) => {
                   name="group1"
                   type="radio"
                   id="inline-radio-2"
-                  // value={format}
                   onChange={(e) => {
                     changeFormat(e);
                   }}
@@ -180,16 +164,13 @@ const ProfileSettingsUpdateClock = (props) => {
                 name="group1"
                 type="checkbox"
                 id="secondsCheckbox"
-                // value={seconds}
                 onChange={(e) => changeSeconds(e)}
               />
             </div>
           </Form>
-          <div className="world-clock">
-            {clock && clock.show && renderClock(clock)}
-          </div>
         </div>
       )}
+      <div className="world-clock">{clock && clock.show && renderClock()}</div>
     </div>
   );
 };
