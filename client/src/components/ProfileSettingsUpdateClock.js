@@ -7,8 +7,10 @@ import WorldClock from "./WorldClock";
 
 const ProfileSettingsUpdateClock = (props) => {
   const { user } = useContext(AuthContext);
+  const { hideForm } = props;
 
   const [clock, setClock] = useState(null);
+  const [refreshClock, setRefreshClock] = useState(false);
 
   useEffect(() => {
     getClock();
@@ -21,6 +23,8 @@ const ProfileSettingsUpdateClock = (props) => {
       setClock(res.data[0]);
     } catch (error) {
       console.log(error);
+    } finally {
+      setRefreshClock(false);
     }
   };
 
@@ -55,6 +59,7 @@ const ProfileSettingsUpdateClock = (props) => {
 
   const changeFormat = async (e) => {
     e.preventDefault();
+    setRefreshClock(true);
     try {
       await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
         show: clock.show,
@@ -76,6 +81,7 @@ const ProfileSettingsUpdateClock = (props) => {
 
   const changeSeconds = async (e) => {
     e.preventDefault();
+    setRefreshClock(true);
     try {
       await axios.put(`/api/users/${user.id}/clocks/${clock.id}`, {
         show: clock.show,
@@ -102,75 +108,85 @@ const ProfileSettingsUpdateClock = (props) => {
 
   return (
     <div>
-      <div className="user-profile-clock-toggle">
-        <h3>Clock</h3>
-        <Form>
-          <div className="user-profile-clock-form-checkbox">
-            <Form.Check
-              checked={clock && clock.show}
-              name="group1"
-              type="checkbox"
-              id="checkbox"
-              onChange={(e) => {
-                showClock(e);
-              }}
-            />
-          </div>
-        </Form>
-        {clock ? (
-          <span>{JSON.stringify(clock, null, 2)}</span>
-        ) : (
-          <p>No Clock</p>
-        )}
-      </div>
-      {clock && clock.show && (
-        <div className="user-profile-clock-form">
-          <Form>
-            <div className="user-profile-clock-form-radios">
-              <h6>Clock Type</h6>
-              <div>
+      {!hideForm && (
+        <>
+          <div className="user-profile-clock-toggle">
+            <h3>Clock</h3>
+            <Form>
+              <div className="user-profile-clock-form-checkbox">
                 <Form.Check
-                  checked={
-                    clock && clock.format.includes("h:mm") ? true : false
-                  }
-                  inline
-                  label="12 hour"
+                  checked={clock && clock.show}
                   name="group1"
-                  type="radio"
-                  id="inline-radio-1"
+                  type="checkbox"
+                  id="checkbox"
                   onChange={(e) => {
-                    changeFormat(e);
-                  }}
-                />
-                <Form.Check
-                  checked={
-                    clock && clock.format.includes("HH:mm") ? true : false
-                  }
-                  inline
-                  label="24 hour"
-                  name="group1"
-                  type="radio"
-                  id="inline-radio-2"
-                  onChange={(e) => {
-                    changeFormat(e);
+                    showClock(e);
                   }}
                 />
               </div>
+            </Form>
+            {clock ? (
+              <span>{JSON.stringify(clock, null, 2)}</span>
+            ) : (
+              <p>No Clock</p>
+            )}
+          </div>
+          {clock && clock.show && (
+            <div className="user-profile-clock-form">
+              <Form>
+                <div className="user-profile-clock-form-radios">
+                  <h6>Clock Type</h6>
+                  <div>
+                    <Form.Check
+                      checked={
+                        clock && clock.format.includes("h:mm") ? true : false
+                      }
+                      inline
+                      label="12 hour"
+                      name="group1"
+                      type="radio"
+                      id="inline-radio-1"
+                      onChange={(e) => {
+                        changeFormat(e);
+                      }}
+                    />
+                    <Form.Check
+                      checked={
+                        clock && clock.format.includes("HH:mm") ? true : false
+                      }
+                      inline
+                      label="24 hour"
+                      name="group1"
+                      type="radio"
+                      id="inline-radio-2"
+                      onChange={(e) => {
+                        changeFormat(e);
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="user-profile-clock-form-checkbox">
+                  <h6>Show seconds</h6>
+                  <Form.Check
+                    checked={
+                      clock && clock.format.includes(":ss") ? true : false
+                    }
+                    name="group1"
+                    type="checkbox"
+                    id="secondsCheckbox"
+                    onChange={(e) => changeSeconds(e)}
+                  />
+                </div>
+              </Form>
             </div>
-            <div className="user-profile-clock-form-checkbox">
-              <h6>Show seconds</h6>
-              <Form.Check
-                checked={clock && clock.format.includes(":ss") ? true : false}
-                name="group1"
-                type="checkbox"
-                id="secondsCheckbox"
-                onChange={(e) => changeSeconds(e)}
-              />
-            </div>
-          </Form>
+          )}
+        </>
+      )}
+      {!refreshClock && (
+        <div className="world-clock">
+          {clock && clock.show && renderClock()}
         </div>
       )}
-      <div className="world-clock">{clock && clock.show && renderClock()}</div>
     </div>
   );
 };

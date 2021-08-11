@@ -8,7 +8,7 @@ const ProfileSettings = (props) => {
       <h1>Settings</h1>
       <div>
         {/* <ProfileSettingsCreateClock /> */}
-        <ProfileSettingsUpdateClock />
+        <ProfileSettingsUpdateClock hideForm={false} />
       </div>
     </div>
   );
