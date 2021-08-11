@@ -5,7 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const WorldClock = (props) => {
   const { user } = useContext(AuthContext);
-  // const { clock } = props;
+
   const [clock, setClock] = useState(null);
 
   useEffect(() => {
