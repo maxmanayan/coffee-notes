@@ -100,79 +100,73 @@ const ProfileSettingsUpdateClock = (props) => {
 
   return (
     <div>
-      {!hideForm && (
-        <>
-          <div className="user-profile-clock-toggle">
-            <h3>Clock</h3>
-            <Form>
-              <div className="user-profile-clock-form-checkbox">
+      <div className="user-profile-clock-toggle">
+        <h3>Clock</h3>
+        <Form>
+          <div className="user-profile-clock-form-checkbox">
+            <Form.Check
+              checked={clock && clock.show}
+              name="group1"
+              type="checkbox"
+              id="checkbox"
+              onChange={(e) => {
+                showClock(e);
+              }}
+            />
+          </div>
+        </Form>
+        {clock ? (
+          <span>{JSON.stringify(clock, null, 2)}</span>
+        ) : (
+          <p>No Clock</p>
+        )}
+      </div>
+      {clock && clock.show && (
+        <div className="user-profile-clock-form">
+          <Form>
+            <div className="user-profile-clock-form-radios">
+              <h6>Clock Type</h6>
+              <div>
                 <Form.Check
-                  checked={clock && clock.show}
+                  checked={
+                    clock && clock.format.includes("h:mm") ? true : false
+                  }
+                  inline
+                  label="12 hour"
                   name="group1"
-                  type="checkbox"
-                  id="checkbox"
+                  type="radio"
+                  id="inline-radio-1"
                   onChange={(e) => {
-                    showClock(e);
+                    changeFormat(e);
+                  }}
+                />
+                <Form.Check
+                  checked={
+                    clock && clock.format.includes("HH:mm") ? true : false
+                  }
+                  inline
+                  label="24 hour"
+                  name="group1"
+                  type="radio"
+                  id="inline-radio-2"
+                  onChange={(e) => {
+                    changeFormat(e);
                   }}
                 />
               </div>
-            </Form>
-            {clock ? (
-              <span>{JSON.stringify(clock, null, 2)}</span>
-            ) : (
-              <p>No Clock</p>
-            )}
-          </div>
-          {clock && clock.show && (
-            <div className="user-profile-clock-form">
-              <Form>
-                <div className="user-profile-clock-form-radios">
-                  <h6>Clock Type</h6>
-                  <div>
-                    <Form.Check
-                      checked={
-                        clock && clock.format.includes("h:mm") ? true : false
-                      }
-                      inline
-                      label="12 hour"
-                      name="group1"
-                      type="radio"
-                      id="inline-radio-1"
-                      onChange={(e) => {
-                        changeFormat(e);
-                      }}
-                    />
-                    <Form.Check
-                      checked={
-                        clock && clock.format.includes("HH:mm") ? true : false
-                      }
-                      inline
-                      label="24 hour"
-                      name="group1"
-                      type="radio"
-                      id="inline-radio-2"
-                      onChange={(e) => {
-                        changeFormat(e);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="user-profile-clock-form-checkbox">
-                  <h6>Show seconds</h6>
-                  <Form.Check
-                    checked={
-                      clock && clock.format.includes(":ss") ? true : false
-                    }
-                    name="group1"
-                    type="checkbox"
-                    id="secondsCheckbox"
-                    onChange={(e) => changeSeconds(e)}
-                  />
-                </div>
-              </Form>
             </div>
-          )}
-        </>
+            <div className="user-profile-clock-form-checkbox">
+              <h6>Show seconds</h6>
+              <Form.Check
+                checked={clock && clock.format.includes(":ss") ? true : false}
+                name="group1"
+                type="checkbox"
+                id="secondsCheckbox"
+                onChange={(e) => changeSeconds(e)}
+              />
+            </div>
+          </Form>
+        </div>
       )}
       {!refreshClock && (
         <div className="world-clock">
