@@ -103,7 +103,7 @@ const ProfileSettingsUpdateClock = (props) => {
   };
 
   const renderClock = () => {
-    return <WorldClock key={clock.id} clock={clock} />;
+    return <WorldClock />;
   };
 
   return (
