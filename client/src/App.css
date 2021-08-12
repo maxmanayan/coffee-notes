@@ -247,8 +247,6 @@
 }
 
 .user-profile-clock-form {
-  /* background-color: red; */
-
   display: flex;
   flex-direction: column;
   align-items: center;
