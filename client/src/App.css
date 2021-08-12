@@ -95,13 +95,13 @@
 .navbar-left {
   color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: flex-end;
-  width: 12%;
 }
 
 .navbar-logo {
   margin-left: 1em;
+  padding-right: 1em;
   margin-top: none;
 }
 
