@@ -4,8 +4,6 @@ import { useHistory } from "react-router";
 import { AuthContext } from "../providers/AuthProvider";
 import cnLogo from "../images/coffee-notes-logo.png";
 import WorldClock from "./WorldClock";
-// import ProfileSettings from "./ProfileSettings";
-import ProfileSettingsUpdateClock from "./ProfileSettingsClockForm";
 
 const NavBar = () => {
   const { user, handleLogout } = useContext(AuthContext);
