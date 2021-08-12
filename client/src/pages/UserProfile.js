@@ -4,6 +4,7 @@ import ProfileName from "../components/ProfileName";
 import ProfileEmail from "../components/ProfileEmail";
 import { AuthContext } from "../providers/AuthProvider";
 import * as Icon from "react-bootstrap-icons";
+import ProfileSettings from "../components/ProfileSettings";
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
@@ -27,17 +28,22 @@ const UserProfile = () => {
       )}
       {user && (
         <div>
-          <ProfileName
-            key={user.id}
-            user={user}
-            setUpdatedCard={setUpdatedCard}
-          />
-          <ProfileEmail key={user.id} user={user} />
-          <ProfileAddNickname
-            key={user.id}
-            user={user}
-            setUpdatedCard={setUpdatedCard}
-          />
+          <div>
+            <ProfileName
+              key={user.id}
+              user={user}
+              setUpdatedCard={setUpdatedCard}
+            />
+            <ProfileEmail key={user.id} user={user} />
+            <ProfileAddNickname
+              key={user.id}
+              user={user}
+              setUpdatedCard={setUpdatedCard}
+            />
+          </div>
+          <div>
+            <ProfileSettings />
+          </div>
         </div>
       )}
     </div>

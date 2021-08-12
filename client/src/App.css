@@ -17,7 +17,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  padding-top: 5em;
+  padding-top: 6em;
 }
 
 .no-match {
@@ -92,9 +92,25 @@
   margin-right: 0.5em;
 }
 
+.navbar-left {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
 .navbar-logo {
   margin-left: 1em;
+  padding-right: 1em;
   margin-top: none;
+}
+
+.world-clock {
+  display: flex;
+  font-size: 24px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #6348322a;
 }
 
 .sidebar {
@@ -213,6 +229,50 @@
   margin-right: 25%;
 }
 
+.user-profile-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 1em;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.user-profile-clock-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.user-profile-clock-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-clock-form-radios {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-profile-clock-form-radios h6 {
+  padding-right: 1em;
+}
+
+.user-profile-clock-form-checkbox {
+  display: flex;
+  justify-content: space-around;
+}
+
+.clock-form-sample-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .about {
   background-image: url(./images/cafe.jpg);
   background-color: #ece0d180;
@@ -223,12 +283,20 @@
   background-attachment: fixed;
   position: absolute;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.about-nav {
+  height: 100vh;
 }
 
 .about-header {
   color: #090804;
   padding-top: 1em;
-  font-size: 100px;
+  font-size: 15vh;
   font-weight: bolder;
 }
 
@@ -237,8 +305,8 @@
   justify-content: space-around;
   align-items: center;
   height: 67vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .about-icon-text {
@@ -263,6 +331,8 @@
 .about-website {
   background: #090804;
   height: 100vh;
+  overflow-y: scroll;
+  background-attachment: fixed;
 }
 
 .about-website-header {
@@ -290,7 +360,7 @@
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
-  min-width: 1024px;
+  /* min-width: 1024px; */
   width: 100%;
   height: auto;
 }
@@ -332,9 +402,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   min-height: 100vh;
-  min-width: 1024px;
+  /* min-width: 1024px; */
   width: 100%;
   height: auto;
   border-top: 1px solid rgba(0, 0, 0, 0.425);
