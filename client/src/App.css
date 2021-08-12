@@ -242,9 +242,8 @@
 .user-profile-clock-toggle {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-
-  width: 15vw;
+  align-items: center;
+  width: 100%;
 }
 
 .user-profile-clock-form {
