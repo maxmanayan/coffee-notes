@@ -12,6 +12,7 @@ Rails.application.routes.draw do
           resources :flashcards
         end
       end
+      resources :clocks
     end
 
     get "/users/:user_id/get_todo_notes", to: "notes#get_todo_notes"

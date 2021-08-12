@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
 
   has_many :notes, dependent: :destroy
   has_many :subjects, dependent: :destroy
+  has_many :clocks, dependent: :destroy
 end

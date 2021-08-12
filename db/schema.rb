@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_23_205907) do
+ActiveRecord::Schema.define(version: 2021_08_09_213938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clocks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.boolean "show"
+    t.string "format"
+    t.boolean "ticking"
+    t.string "timezone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_clocks_on_user_id"
+  end
 
   create_table "decks", force: :cascade do |t|
     t.bigint "subject_id", null: false
@@ -94,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_07_23_205907) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "clocks", "users"
   add_foreign_key "decks", "subjects"
   add_foreign_key "flashcards", "decks"
   add_foreign_key "items", "notes"

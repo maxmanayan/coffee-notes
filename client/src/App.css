@@ -95,13 +95,13 @@
 .navbar-left {
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-end;
-  width: 12%;
 }
 
 .navbar-logo {
   margin-left: 1em;
+  padding-right: 1em;
   margin-top: none;
 }
 
@@ -227,6 +227,50 @@
 .user-profile-nickname-form {
   margin-left: 25%;
   margin-right: 25%;
+}
+
+.user-profile-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 1em;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.user-profile-clock-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.user-profile-clock-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-clock-form-radios {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-profile-clock-form-radios h6 {
+  padding-right: 1em;
+}
+
+.user-profile-clock-form-checkbox {
+  display: flex;
+  justify-content: space-around;
+}
+
+.clock-form-sample-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about {

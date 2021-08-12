@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  show: false
+  format: MyString
+  ticking: false
+  timezone: MyString
+
+two:
+  user: two
+  show: false
+  format: MyString
+  ticking: false
+  timezone: MyString
