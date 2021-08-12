@@ -7,17 +7,14 @@ import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./providers/AuthProvider";
 import { initMiddleware } from "devise-axios";
-import SettingsProvider from "./providers/SettingsProvider";
 
 initMiddleware();
 
 ReactDOM.render(
   <AuthProvider>
-    <SettingsProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </SettingsProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </AuthProvider>,
   document.getElementById("root")
 );
