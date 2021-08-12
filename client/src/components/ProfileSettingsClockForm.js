@@ -99,7 +99,7 @@ const ProfileSettingsClockForm = (props) => {
   return (
     <div>
       <div className="user-profile-clock-toggle">
-        <h3>Clock</h3>
+        <h3 style={{ marginRight: "1em" }}>Clock</h3>
         <Form>
           <div className="user-profile-clock-form-checkbox">
             <Form.Check
