@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 import { AuthContext } from "../providers/AuthProvider";
 import WorldClock from "./WorldClock";
 
-const ProfileSettingsUpdateClock = (props) => {
+const ProfileSettingsClockForm = (props) => {
   const { user } = useContext(AuthContext);
 
   const [clock, setClock] = useState(null);
@@ -170,4 +170,4 @@ const ProfileSettingsUpdateClock = (props) => {
   );
 };
 
-export default ProfileSettingsUpdateClock;
+export default ProfileSettingsClockForm;
