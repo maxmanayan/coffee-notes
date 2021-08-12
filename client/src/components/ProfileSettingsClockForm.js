@@ -162,7 +162,8 @@ const ProfileSettingsClockForm = (props) => {
         </div>
       )}
       {!refreshClock && (
-        <div className="world-clock">
+        <div className="clock-form-sample-container">
+          <h4>Your Clock Will Be Updated To:</h4>
           {clock && clock.show && renderClock()}
         </div>
       )}

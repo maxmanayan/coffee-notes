@@ -326,6 +326,13 @@
   transform: translateX(17px);
 }
 
+.clock-form-sample-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .about {
   background-image: url(./images/cafe.jpg);
   background-color: #ece0d180;
