@@ -22,13 +22,15 @@ const WorldClock = (props) => {
   };
 
   return (
-    <div className="world-clock">
+    <div>
       {clock && clock.show && (
-        <Clock
-          format={clock.format}
-          ticking={clock.ticking}
-          timezone={clock.timezone}
-        />
+        <div className="world-clock">
+          <Clock
+            format={clock.format}
+            ticking={clock.ticking}
+            timezone={clock.timezone}
+          />
+        </div>
       )}
     </div>
   );
