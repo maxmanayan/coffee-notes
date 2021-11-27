@@ -16,7 +16,7 @@ const YoutubeSelection = (props) => {
         </h5>
         <h5
           className={`${
-            embedID === "_3IphE64yRA" ? "yt-genre-active" : "yt-genre"
+            embedID === "7P9e9xTI_oA" ? "yt-genre-active" : "yt-genre"
           }`}
           onClick={() => setEmbedID("7P9e9xTI_oA")}
         >
@@ -40,7 +40,7 @@ const YoutubeSelection = (props) => {
         </h5> */}
         <h5
           className={`${
-            embedID === "P8j-_MOSrec" ? "yt-genre-active" : "yt-genre"
+            embedID === "YymhpFhQ0Gw" ? "yt-genre-active" : "yt-genre"
           }`}
           onClick={() => setEmbedID("YymhpFhQ0Gw")}
         >
@@ -56,11 +56,11 @@ const YoutubeSelection = (props) => {
         </h5> */}
         <h5
           className={`${
-            embedID === "HMnatoiMdjA" ? "yt-genre-active" : "yt-genre"
+            embedID === "nfjUsX_LHXg" ? "yt-genre-active" : "yt-genre"
           }`}
-          onClick={() => setEmbedID("HMnatoiMdjA")}
+          onClick={() => setEmbedID("nfjUsX_LHXg")}
         >
-          Nature
+          Christmas 🎄
         </h5>
       </div>
     </>
