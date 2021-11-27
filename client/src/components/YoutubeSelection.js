@@ -42,7 +42,7 @@ const YoutubeSelection = (props) => {
           className={`${
             embedID === "P8j-_MOSrec" ? "yt-genre-active" : "yt-genre"
           }`}
-          onClick={() => setEmbedID("P8j-_MOSrec")}
+          onClick={() => setEmbedID("YymhpFhQ0Gw")}
         >
           Ghibli
         </h5>
