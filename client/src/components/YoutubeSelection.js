@@ -56,9 +56,9 @@ const YoutubeSelection = (props) => {
         </h5> */}
         <h5
           className={`${
-            embedID === "nfjUsX_LHXg" ? "yt-genre-active" : "yt-genre"
+            embedID === "MCdGikDU1V8" ? "yt-genre-active" : "yt-genre"
           }`}
-          onClick={() => setEmbedID("nfjUsX_LHXg")}
+          onClick={() => setEmbedID("MCdGikDU1V8")}
         >
           Christmas 🎄
         </h5>
