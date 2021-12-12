@@ -902,7 +902,7 @@
 
 .flashcards-subjects-card {
   cursor: pointer;
-  background: rgba(245, 245, 220, 0.863);
+  background: #ece0d1;
 
   margin: 2em;
   height: 250px;
@@ -918,7 +918,7 @@
 
 .flashcards-subjects-card:hover {
   cursor: pointer;
-  background: rgba(245, 245, 220, 0.925);
+  background: #ece0d1c4;
 
   margin: 2em;
   height: 250px;
@@ -1036,7 +1036,7 @@
   flex-wrap: wrap;
   margin: 1em;
   border-radius: 5px;
-  background: rgba(245, 245, 220, 0.863);
+  background: #ece0d1;
   width: 450px;
   height: 275px;
 }
@@ -1048,7 +1048,7 @@
 
   margin: 1em;
 
-  background: beige;
+  background: #ece0d1c4;
   box-shadow: 1px 1px rgba(17, 17, 17, 0.829);
   box-shadow: 5px 5px 5px rgba(245, 245, 220, 0.253);
 
@@ -1131,7 +1131,7 @@
 
   margin: 1em;
 
-  background: rgba(245, 245, 220, 0.863);
+  background: #ece0d1;
 
   width: 450px;
   height: 275px;
@@ -1145,7 +1145,7 @@
 
   margin: 1em;
 
-  background: rgba(245, 245, 220, 0.788);
+  background: #ece0d1c4;
 
   width: 450px;
   height: 275px;
